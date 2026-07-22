@@ -1,0 +1,131 @@
+=== PAGE 1 ===
+ ETERNAL 
+ BY AZIMUTH BUSINESS ON WHEELS 
+ Homepage Copy Deck 
+ India's First Ultra-Premium Luxury Funeral Mobility Brand 
+ Prepared for website development · Delhi NCR launch · 2026 
+ How to read this deck 
+ Gold-barred lines are the exact copy to place on the page.  ↳  italic notes  describe layout, CTA behaviour,  and design 
+ intent for the developer/designer. Copy uses only approved brand vocabulary; forbidden terms (ambulance, mortuary 
+ van, dead body transport, EV) never appear. 
+=== PAGE 2 ===
+ 1 · Hero Section 
+ ↳   Full-width cinematic hero — muted looped brand ﬁlm,  or a high-quality vehicle image. Dark warm overlay for legibility. Two CTA 
+ buttons, gold primary + outlined secondary. 
+ EYEBROW 
+ Established in Dignity · Delhi NCR 
+ HEADLINE (H1) 
+ India's First Ultra-Premium Luxury Funeral Mobility 
+ SUB-TAGLINE 
+ From Utility to Legacy. From Transport to Tribute. 
+ CALL-TO-ACTION BUTTONS 
+ ●  Primary (gold): View Our Vehicle 
+ ●  Secondary (outlined): Partner With Us 
+ 2 · Brand Introduction Strip 
+ ↳   Full-width band in Rich Dark Brown. Single italic  philosophy line, centred, with a small gold label beneath. A moment of pause 
+ between hero and content. 
+ PHILOSOPHY LINE 
+ “We don't build vehicles. We create experiences that honour life and respect every goodbye.” 
+ ATTRIBUTION LABEL 
+ The Eternal Promise 
+ 3 · Why Eternal 
+ ↳   Section intro, then three differentiator cards with  line icons. Cards sit on ivory with a hairline gold border; gentle lift on hover. 
+ SECTION EYEBROW 
+ Why Eternal 
+ SECTION HEADING (H2) 
+ A farewell worthy of every life 
+ SECTION INTRO 
+ India's funeral mobility has long meant modified utility vehicles — cold, unbranded, purely 
+ functional. Eternal was created to change that, with one purpose-built ceremonial hearse 
+ designed to the standard families and institutions deserve. 
+ CARD 01 — SILENT LUXURY 
+ Acoustic-insulated interiors, warm ambient lighting, and climate-controlled calm — free of 
+ engine noise and clinical starkness. A peaceful space for reflection and prayer. 
+ CARD 02 — PREMIUM DESIGN 
+ Champagne gold detailing, panoramic reinforced glass, and hospitality-grade textures — 
+ ceremonial craftsmanship that signals respect and quality at every touchpoint. 
+ CARD 03 — INSTITUTIONAL TRUST 
+=== PAGE 3 ===
+ Built to the standards hospitals, NGOs, and municipal bodies require — hospital-grade 
+ antimicrobial surfaces, reliable engineering, and consistently professional presentation. 
+ 4 · The Eternal Vehicle 
+ ↳   Two-column block on Soft Blush. Left: editorial  vehicle image with gold-framed detailing. Right: copy + a two-column feature list 
+ with gold diamond markers. 
+ EYEBROW 
+ One Vehicle · One Promise 
+ HEADING (H2) 
+ The Silent Journey, the Glass Sanctuary 
+ LEAD PARAGRAPH 
+ Not two variants, not a range — a single, fully-loaded ceremonial hearse built from the 
+ ground up on a wide-body chassis, engineered for comfort, dignity, and grace. 
+ FEATURE LIST 
+ ●  Panoramic side glass — 360° ceremonial viewing 
+ ●  Precision hydraulic bier platform 
+ ●  Warm ambient lighting & calm interiors 
+ ●  Hospital-grade antimicrobial surfaces 
+ ●  Aromatic air puriﬁcation throughout 
+ ●  High-ﬁdelity surround sound 
+ ●  External LED memorial displays 
+ ●  Integrated ﬂoral mounting systems 
+ 5 · Institutional Trust Bar 
+ ↳   Full-width Rich Dark Brown band. Partner categories  in serif, separated by thin gold dividers. Swap for real partner logos once 
+ contracts allow. 
+ EYEBROW 
+ Trusted by Institutions Across Delhi NCR 
+ HEADING 
+ Built for the partners who set the standard 
+ PARTNER CATEGORIES 
+ ●  Premium Hospitals 
+ ●  Funeral Management Companies 
+ ●  Municipal Corporations 
+ ●  Religious Trusts & NGOs 
+ 6 · Testimonial / Message Pull-Quotes 
+ ↳   Three pull-quote cards, each with a gold top-rule.  Audience-speciﬁc brand messaging until real testimonials from early partners 
+ are available. 
+ SECTION EYEBROW 
+ Designed for Respect · Built for Remembrance 
+ SECTION HEADING 
+ Where trust meets tribute 
+=== PAGE 4 ===
+ QUOTE 1 — FOR HOSPITALS 
+ “Your patients' families deserve the same care at departure as at admission.” 
+ QUOTE 2 — FOR FUNERAL MANAGEMENT COMPANIES 
+ “Upgrade your fleet. Upgrade your brand. Elevate every farewell you serve.” 
+ QUOTE 3 — FOR FAMILIES 
+ “Your loved one lived with dignity. Their final journey deserves nothing less.” 
+ 7 · Closing Call-to-Action 
+ ↳   Full-width brown gradient band closing the page.  Directs institutional visitors to the partnership / demo ﬂow. 
+ EYEBROW 
+ Partner With Eternal 
+ HEADING (H2) 
+ Bring dignified farewell mobility to those you serve 
+ SUPPORTING LINE 
+ We work with hospitals, funeral firms, municipal bodies, and religious trusts across Delhi 
+ NCR. Let's discuss a partnership built on trust and tribute. 
+ CTA BUTTONS 
+ ●  Primary (gold): Request a Partnership 
+ ●  Secondary (outlined): Schedule a Vehicle Demonstration 
+ 8 · Footer 
+ BRAND TAGLINE 
+ “From Utility to Legacy. From Transport to Tribute.” 
+ QUICK LINKS 
+ Home · About Eternal · Our Vehicle · Services · For Institutions · Contact 
+ CONNECT 
+ LinkedIn (primary) · Instagram · WhatsApp Business · “We respond within 24 business hours” 
+ LEGAL 
+ © 2026 Azimuth Business on Wheels. All Rights Reserved. · Privacy Policy · Terms of Use 
+ ↳   Fixed WhatsApp Business click-to-chat button persists  on every page (bottom-right). 
+=== PAGE 5 ===
+ Appendix · Brand Guardrails 
+ APPROVED TAGLINES USED 
+ ●  From Utility to Legacy. From Transport to Tribute. (primary) 
+ ●  Every farewell deserves dignity. (brand promise) 
+ ●  Designed for respect. Built for remembrance. 
+ ●  Where trust meets tribute. (institutional) 
+ NEVER USE 
+ Ambulance · mortuary van · dead body / corpse transport · hearse van (generic) · cheap / affordable · EV / 
+ electric / zero emissions · two vehicles or variants. None of these appear in this copy. 
+ PALETTE & TYPE REFERENCE 
+ Cream #FDF8F0 · Rich Dark Brown #2C1810 · Champagne Gold #8B6914 · Charcoal #1A1A1A · Warm 
+ White #FFFFFF · Soft Blush #F5EFE6. Headings: Cormorant Garamond / Playfair Display. Body: Lato / 
+ Inter / Raleway (min 16px). 

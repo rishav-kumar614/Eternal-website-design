@@ -1,0 +1,512 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #08080a;
+    color: #e2e8f0;
+    overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+}
+
+/* ========================================================================= */
+/* ULTRA-LUXURY LIGHT THEME (Ivory, Pearl & Royal Gold)                      */
+/* ========================================================================= */
+
+/* Image Overlay Cards Contrast (White & Gold Text Over Dark Photos) */
+.gallery-card-text h3,
+html.light .gallery-card-text h3 {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7) !important;
+}
+
+.gallery-card-text p,
+html.light .gallery-card-text p {
+  color: #F1F5F9 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
+}
+
+.gallery-card-text span,
+html.light .gallery-card-text span {
+  color: #F3E5AB !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* WhatsApp Widget Overrides in Light Theme */
+html.light .whatsapp-card {
+  background-color: #FFFFFF !important;
+  border-color: rgba(184, 134, 11, 0.35) !important;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2) !important;
+}
+
+html.light .whatsapp-title {
+  color: #0F172A !important;
+}
+
+html.light .whatsapp-close-btn {
+  color: #0F172A !important;
+  background-color: #F3ECE0 !important;
+}
+
+html.light .whatsapp-chat-bubble {
+  background-color: #F8F3EA !important;
+  color: #0F172A !important;
+  border-color: rgba(184, 134, 11, 0.3) !important;
+}
+
+html.light .whatsapp-action-btn,
+html.light .whatsapp-trigger-btn {
+  background-color: #059669 !important;
+  background-image: none !important;
+  color: #FFFFFF !important;
+}
+
+/* Modal Buttons in Dark Mode */
+.modal-close-btn {
+  background-color: rgba(17, 18, 22, 0.8) !important;
+  color: #94a3b8 !important;
+}
+.modal-close-btn:hover {
+  background-color: rgba(212, 175, 55, 0.2) !important;
+  color: #f3e5ab !important;
+}
+
+.modal-tab-inactive {
+  background-color: rgba(17, 18, 22, 0.6) !important;
+  color: #cbd5e1 !important;
+}
+.modal-tab-inactive:hover {
+  background-color: rgba(212, 175, 55, 0.15) !important;
+  color: #f3e5ab !important;
+}
+
+/* Hero Image & Overlay Switching */
+.hero-img-light {
+  display: none;
+}
+.hero-img-dark {
+  display: block;
+}
+
+html.light .hero-img-dark {
+  display: none !important;
+}
+
+html.light .hero-img-light {
+  display: block !important;
+}
+
+html.light body {
+  background-color: #FAF8F5;
+  color: #0F172A;
+}
+
+html.light main {
+  background-color: #FAF8F5;
+}
+
+/* Hero Dark Mode Overlay Gradients & Side Shadows (Rich & Dramatic) */
+.hero-radial-overlay {
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(10, 10, 14, 0.65) 75%, rgba(8, 8, 10, 0.95) 100%);
+}
+
+.hero-side-overlay-left {
+  background: linear-gradient(to right, rgba(8, 8, 10, 0.95) 0%, rgba(8, 8, 10, 0.6) 45%, transparent 100%);
+}
+
+.hero-side-overlay-right {
+  background: linear-gradient(to left, rgba(8, 8, 10, 0.95) 0%, rgba(8, 8, 10, 0.6) 45%, transparent 100%);
+}
+
+.hero-bg-overlay {
+  background: linear-gradient(180deg, rgba(8, 8, 10, 0.85) 0%, rgba(8, 8, 10, 0.25) 45%, rgba(8, 8, 10, 0.8) 85%, #08080a 100%);
+}
+
+/* 1 · Hero Section Typography & Contrast in Light Theme */
+html.light .hero-section {
+  background-color: #FAF8F5 !important;
+}
+
+/* Completely remove all dark & gradient overlays from Light Theme hero background */
+html.light .hero-radial-overlay,
+html.light .hero-side-overlay-left,
+html.light .hero-side-overlay-right,
+html.light .hero-bg-overlay {
+  display: none !important;
+}
+
+/* Hero Headline Text in Light Mode (Clean, Crisp, Solid) */
+html.light .hero-section h1 {
+  color: #0F172A !important;
+  text-shadow: none !important;
+}
+
+html.light .hero-section h1 span {
+  color: #0F172A;
+}
+
+html.light .hero-section h1 span.gold-gradient-text {
+  background: linear-gradient(135deg, #B8860B 0%, #D4AF37 50%, #8B6914 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: none !important;
+}
+
+html.light .hero-section p {
+  color: #334155 !important;
+  text-shadow: none !important;
+  font-weight: 500 !important;
+}
+
+/* Hero Pill Badges & Outlined Buttons in Light Theme */
+html.light .hero-section .bg-obsidian-800\/90,
+html.light .hero-section .bg-obsidian-800\/80 {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: rgba(184, 134, 11, 0.4) !important;
+  box-shadow: 0 4px 15px rgba(184, 134, 11, 0.1), 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light .hero-section .bg-obsidian-800\/80 span,
+html.light .hero-section .bg-obsidian-800\/90 span {
+  color: #0F172A !important;
+}
+
+/* 2 · Header & Navbar in Light Theme */
+html.light header.header-transparent {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+html.light header.header-scrolled {
+  background: rgba(255, 255, 255, 0.92) !important;
+  background-image: none !important;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(184, 134, 11, 0.25) !important;
+  box-shadow: 0 4px 20px rgba(184, 134, 11, 0.08) !important;
+}
+
+html.light header .brand-name {
+  color: #0F172A !important;
+}
+
+html.light header .brand-sub {
+  color: #334155 !important;
+}
+
+html.light header nav {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(184, 134, 11, 0.3) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+html.light header nav button {
+  color: #0F172A !important;
+}
+
+html.light header nav button:hover {
+  background: rgba(212, 175, 55, 0.18) !important;
+  color: #8B6914 !important;
+}
+
+/* 3 · Card Boxes & Philosophy Surface Override in Light Theme */
+html.light .bg-obsidian-900,
+html.light .bg-obsidian-900\/90,
+html.light .bg-obsidian-900\/80,
+html.light .bg-obsidian-900\/70,
+html.light .bg-obsidian-900\/60,
+html.light .bg-obsidian-900\/50 {
+  background-color: #FAF8F5 !important;
+}
+
+html.light .bg-obsidian-800,
+html.light .bg-obsidian-800\/90,
+html.light .bg-obsidian-800\/80,
+html.light .bg-obsidian-800\/70,
+html.light .bg-obsidian-800\/60,
+html.light .bg-obsidian-800\/50 {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 10px 30px -5px rgba(212, 175, 55, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(184, 134, 11, 0.3) !important;
+}
+
+html.light .bg-obsidian-700,
+html.light .bg-obsidian-700\/90,
+html.light .bg-obsidian-700\/80,
+html.light .bg-obsidian-700\/70,
+html.light .bg-obsidian-700\/60,
+html.light .bg-obsidian-700\/50 {
+  background-color: #F5EFE6 !important;
+}
+
+html.light .bg-brown-900,
+html.light .bg-brown-800,
+html.light .bg-brown-800\/80,
+html.light .bg-brown-800\/90 {
+  background-color: #F8F3EA !important;
+  border-color: rgba(184, 134, 11, 0.35) !important;
+  box-shadow: 0 4px 20px rgba(184, 134, 11, 0.08) !important;
+}
+
+/* Filter Tab Inactive Styling for Light & Dark Themes */
+.filter-tab-inactive {
+  background-color: rgba(17, 18, 22, 0.85) !important;
+  color: #cbd5e1 !important;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
+}
+
+.filter-tab-inactive:hover {
+  border-color: rgba(212, 175, 55, 0.5) !important;
+  color: #f3e5ab !important;
+  background-color: rgba(30, 32, 40, 0.9) !important;
+}
+
+html.light .filter-tab-inactive {
+  background-color: #FFFFFF !important;
+  color: #334155 !important;
+  border: 1px solid rgba(184, 134, 11, 0.35) !important;
+  box-shadow: 0 2px 8px rgba(184, 134, 11, 0.08) !important;
+}
+
+html.light .filter-tab-inactive:hover {
+  background-color: #F8F3EA !important;
+  border-color: rgba(184, 134, 11, 0.6) !important;
+  color: #8B6914 !important;
+  box-shadow: 0 4px 12px rgba(184, 134, 11, 0.15) !important;
+}
+
+/* Fix Tailwind Card Gradients in Light Mode */
+html.light .bg-gradient-to-b:not(header):not(.whatsapp-trigger-btn),
+html.light .bg-gradient-to-br:not(header):not(.whatsapp-trigger-btn),
+html.light .bg-gradient-to-r:not(header):not(.whatsapp-trigger-btn):not(.whatsapp-action-btn) {
+  background-image: linear-gradient(180deg, #FFFFFF 0%, #FBF7F0 100%) !important;
+  border-color: rgba(184, 134, 11, 0.3) !important;
+  box-shadow: 0 10px 30px -5px rgba(212, 175, 55, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Modal Buttons Override in Light Theme */
+html.light .modal-close-btn {
+  background-color: #F3ECE0 !important;
+  color: #0F172A !important;
+  border: 1px solid rgba(184, 134, 11, 0.35) !important;
+}
+html.light .modal-close-btn:hover {
+  background-color: #EBDCB9 !important;
+  color: #8B6914 !important;
+}
+
+html.light .modal-tab-inactive {
+  background-color: #F3ECE0 !important;
+  color: #334155 !important;
+  border: 1px solid rgba(184, 134, 11, 0.35) !important;
+}
+html.light .modal-tab-inactive:hover {
+  background-color: #EBDCB9 !important;
+  color: #0F172A !important;
+}
+
+/* Exceptions for Primary Action Gold Buttons & Header Gradient */
+html.light header.header-transparent {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+html.light button.bg-gradient-to-r:not(header):not(.whatsapp-trigger-btn):not(.whatsapp-action-btn),
+html.light a.bg-gradient-to-r:not(header):not(.whatsapp-trigger-btn):not(.whatsapp-action-btn) {
+  background-image: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #B8860B 100%) !important;
+  color: #0F172A !important;
+}
+
+/* Icon Container Badges inside Cards in Light Mode */
+html.light .bg-gold-400\/10 {
+  background-color: rgba(212, 175, 55, 0.18) !important;
+  border-color: rgba(184, 134, 11, 0.4) !important;
+}
+
+/* Brand Logo Mark Overrides for Light Theme */
+html.light .logo-mark-circle,
+html.light .brand-logo-icon {
+  background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 100%) !important;
+  border-color: rgba(184, 134, 11, 0.7) !important;
+  box-shadow: 0 4px 14px rgba(184, 134, 11, 0.25) !important;
+}
+
+html.light .logo-mark-circle span,
+html.light .brand-logo-icon span {
+  color: #0F172A !important;
+  font-weight: 900 !important;
+}
+
+/* 4 · Scoped Text Colors in Light Mode (excluding gallery card text) */
+html.light h1:not(.gallery-card-text h1),
+html.light h2:not(.gallery-card-text h2),
+html.light h3:not(.gallery-card-text h3),
+html.light h4:not(.gallery-card-text h4),
+html.light .text-slate-100:not(.gallery-card-text *),
+html.light .text-slate-200:not(.gallery-card-text *),
+html.light .text-gold-100:not(.gallery-card-text *) {
+  color: #0F172A !important;
+}
+
+html.light p:not(.gallery-card-text p),
+html.light span:not(.whatsapp-trigger-btn span):not(.gallery-card-text span),
+html.light .text-slate-300:not(.gallery-card-text *),
+html.light .text-slate-400:not(.gallery-card-text *) {
+  color: #334155 !important;
+}
+
+html.light .text-gold-200:not(.gallery-card-text *),
+html.light .text-gold-300:not(.gallery-card-text *) {
+  color: #8B6914 !important;
+}
+
+html.light .text-gold-400:not(.gallery-card-text *) {
+  color: #B8860B !important;
+}
+
+/* 5 · Borders & Dividers in Light Mode */
+html.light .border-gold-500\/10,
+html.light .border-gold-500\/15,
+html.light .border-gold-500\/20,
+html.light .border-gold-500\/25,
+html.light .border-gold-500\/30 {
+  border-color: rgba(184, 134, 11, 0.3) !important;
+}
+
+/* 6 · Modals & Glass Overlays in Light Theme */
+html.light .gold-glass {
+  background: rgba(255, 253, 248, 0.92) !important;
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(184, 134, 11, 0.35);
+}
+
+html.light .dark-glass {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+html.light input,
+html.light select,
+html.light textarea {
+  background-color: #FAF8F5 !important;
+  color: #0F172A !important;
+  border-color: rgba(184, 134, 11, 0.35) !important;
+}
+
+/* ========================================================================= */
+/* GRADIENTS & ANIMATIONS                                                    */
+/* ========================================================================= */
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF5D6 0%, #D4AF37 50%, #AA820A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.light .gold-gradient-text {
+  background: linear-gradient(135deg, #B8860B 0%, #D4AF37 50%, #8B6914 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-shimmer-gold {
+  background: linear-gradient(
+    90deg,
+    #D4AF37 0%,
+    #FFF5D6 25%,
+    #D4AF37 50%,
+    #AA820A 75%,
+    #D4AF37 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 4s linear infinite;
+}
+
+html.light .text-shimmer-gold {
+  background: linear-gradient(
+    90deg,
+    #B8860B 0%,
+    #D4AF37 25%,
+    #B8860B 50%,
+    #8B6914 75%,
+    #B8860B 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 4s linear infinite;
+}
+
+@keyframes textShimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.gold-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.gold-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 30%,
+    rgba(255, 245, 214, 0.35) 50%,
+    transparent 70%
+  );
+  transform: rotate(30deg);
+  animation: shimmer 4s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translate(-100%, -100%) rotate(30deg); }
+  20% { transform: translate(100%, 100%) rotate(30deg); }
+  100% { transform: translate(100%, 100%) rotate(30deg); }
+}
+
+@keyframes radar-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+  100% { shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+.radar-ring {
+  animation: radar-pulse 2s infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #08080a;
+}
+html.light ::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A2016;
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
