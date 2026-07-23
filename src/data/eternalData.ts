@@ -1,8 +1,13 @@
-import hearseExteriorImg from '../assets/images/eternal_hearse_exterior.png';
-import hearseLightThemeImg from '../assets/images/eternal_hearse_light_theme.png';
-import bierSanctuaryImg from '../assets/images/eternal_bier_sanctuary.png';
-import floralProcessionImg from '../assets/images/eternal_floral_procession.png';
-import glassSanctuaryImg from '../assets/images/eternal_glass_sanctuary.png';
+// Real vehicle images (from Eternal by Azimuth design documents)
+import vehicle360DarkImg from '../assets/images/eternal_vehicle_360_dark.jpg';
+import vehicle360LightImg from '../assets/images/eternal_vehicle_360_light.jpg';
+import vehicleDarkViewsImg from '../assets/images/eternal_vehicle_dark_views.jpg';
+import vehicleRearGlassImg from '../assets/images/eternal_vehicle_rear_glass.jpg';
+import vehicleGoldTrimImg from '../assets/images/eternal_vehicle_gold_trim.jpg';
+import vehicleSageViewsImg from '../assets/images/eternal_vehicle_sage_views.jpg';
+import overviewSheetImg from '../assets/images/eternal_overview_sheet.jpg';
+import colourOptionsIvoryImg from '../assets/images/eternal_colour_options_ivory.jpg';
+import colourVariantsImg from '../assets/images/eternal_colour_variants.jpg';
 
 export interface VehicleHotspot {
   id: string;
@@ -71,8 +76,8 @@ export const ETERNAL_DATA = {
     subtagline: 'From Utility to Legacy. From Transport to Tribute.',
     primaryCta: 'View Our Vehicle',
     secondaryCta: 'Partner With Us',
-    heroImage: hearseExteriorImg,
-    heroImageLight: hearseLightThemeImg
+    heroImage: vehicle360DarkImg,
+    heroImageLight: vehicle360LightImg
   },
 
   whyEternal: {
@@ -106,7 +111,7 @@ export const ETERNAL_DATA = {
     heading: 'The Silent Journey, the Glass Sanctuary',
     leadParagraph: 'Not two variants, not a range — a single, fully-loaded ceremonial hearse built from the ground up on a wide-body chassis, engineered for comfort, dignity, and grace.',
     chassis: 'Force Urbania XL Wide-Body Architecture',
-    mainImage: glassSanctuaryImg,
+    mainImage: vehicleDarkViewsImg,
     features: [
       'Panoramic side glass — 360° ceremonial viewing',
       'Precision hydraulic bier platform',
@@ -322,45 +327,66 @@ export const ETERNAL_DATA = {
   gallery: [
     {
       id: 'g1',
-      title: 'The Eternal Hearse Exterior',
+      title: 'Eternal — 360° Exterior View',
       category: 'exterior',
-      image: hearseExteriorImg,
-      caption: 'Force Urbania XL wide-body chassis with panoramic glass and champagne gold accents.'
+      image: vehicle360DarkImg,
+      caption: 'India\'s first ultra-premium ceremonial hearse — ivory & maroon with panoramic glass and gold accents.'
     },
     {
       id: 'g2',
-      title: 'Glass Sanctuary Viewing Area',
+      title: 'Full Design Overview — All Angles',
       category: 'exterior',
-      image: glassSanctuaryImg,
-      caption: 'Reinforced panoramic double glass designed for 360-degree ceremonial viewing.'
+      image: overviewSheetImg,
+      caption: 'Complete vehicle design sheet — front, side, rear, 3/4 views and interior of the Eternal ceremonial hearse.'
     },
     {
       id: 'g3',
-      title: 'Hydraulic Bier & Soft Interior Lighting',
-      category: 'interior',
-      image: bierSanctuaryImg,
-      caption: 'Smooth motorized hydraulic bier platform illuminated by warm ambient lighting.'
+      title: 'Dark Theme — Multi-Angle Views',
+      category: 'exterior',
+      image: vehicleDarkViewsImg,
+      caption: '3/4 front view with detailed interior visible through panoramic glass in premium ambient lighting.'
     },
     {
       id: 'g4',
-      title: 'Acoustic Insulated Family Cabin',
+      title: 'Glass Sanctuary — Interior View',
       category: 'interior',
-      image: bierSanctuaryImg,
-      caption: 'A quiet, serene environment free of road noise, featuring premium hospitality upholstery.'
+      image: vehicleRearGlassImg,
+      caption: 'Panoramic gold-trimmed glass viewing area with ceremonial bier and family seating.'
     },
     {
       id: 'g5',
-      title: 'Delhi NCR Procession Service',
+      title: 'Gold Trim Ceremonial Variant',
       category: 'in_service',
-      image: floralProcessionImg,
-      caption: 'Ceremonial procession in Delhi NCR delivering quiet, dignified mobility.'
+      image: vehicleGoldTrimImg,
+      caption: 'Premium gold ornate trim ceremonial hearse with crystal glass and LED memorial lighting.'
     },
     {
       id: 'g6',
-      title: 'Integrated Floral Mounting System',
+      title: 'Exterior Colour Variants',
       category: 'ceremonial',
-      image: floralProcessionImg,
-      caption: 'Custom floral arrangements mounted securely along champagne gold exterior rails.'
+      image: colourVariantsImg,
+      caption: 'Five custom colour options — Midnight Pearl, Sandstone Beige, Sage Green, Navy Blue, Pearl Grey Silver.'
+    },
+    {
+      id: 'g7',
+      title: 'Ivory + Champagne Bronze — 360° View',
+      category: 'exterior',
+      image: vehicle360LightImg,
+      caption: 'Ivory white with satin champagne bronze accents — warm, timeless and institutional luxury.'
+    },
+    {
+      id: 'g8',
+      title: 'Sage Green Colour Option',
+      category: 'exterior',
+      image: vehicleSageViewsImg,
+      caption: 'Natural calm sage green — earthy dignity and contemporary serenity in every angle.'
+    },
+    {
+      id: 'g9',
+      title: 'Premium Colour Options Catalogue',
+      category: 'ceremonial',
+      image: colourOptionsIvoryImg,
+      caption: 'Five curated exterior finishes — ivory beige, brushed titanium, pearl white, champagne gold, deep ivory brown.'
     }
   ] as GalleryItem[],
 
