@@ -71,7 +71,7 @@ const ParallaxStars: React.FC = () => {
       // Stars
       for (const s of stars) {
         const py = ((s.oy - sy * s.speed) % (H * 5) + H * 5) % (H * 5);
-        if (py > H + 4) { rafId.current = requestAnimationFrame(draw); continue; }
+        if (py > H + 4 || py < -4) continue;
 
         const twinkle = s.alpha + Math.sin(tick * 0.03 + s.phase) * 0.12;
         ctx.globalAlpha = Math.max(0, Math.min(1, twinkle));
