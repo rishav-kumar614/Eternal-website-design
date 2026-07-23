@@ -63,6 +63,7 @@ export const TextReveal: React.FC<TextRevealProps> = ({
     <motion.span
       variants={containerVariants}
       initial="hidden"
+      animate="visible"
       whileInView="visible"
       viewport={{ once, amount: 0.15 }}
       className={`inline-flex flex-wrap items-center justify-center gap-x-[0.28em] will-change-transform ${className}`}

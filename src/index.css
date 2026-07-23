@@ -107,21 +107,21 @@ html.light main {
   background-color: #FAF8F5;
 }
 
-/* Hero Dark Mode Overlay Gradients & Side Shadows (Rich & Dramatic) */
+/* Hero Dark Mode Overlay Gradients & Side Shadows (Balanced & Atmospheric) */
 .hero-radial-overlay {
-  background: radial-gradient(ellipse at center, transparent 30%, rgba(10, 10, 14, 0.65) 75%, rgba(8, 8, 10, 0.95) 100%);
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(10, 10, 14, 0.4) 70%, rgba(8, 8, 10, 0.75) 100%);
 }
 
 .hero-side-overlay-left {
-  background: linear-gradient(to right, rgba(8, 8, 10, 0.95) 0%, rgba(8, 8, 10, 0.6) 45%, transparent 100%);
+  background: linear-gradient(to right, rgba(8, 8, 10, 0.7) 0%, rgba(8, 8, 10, 0.3) 50%, transparent 100%);
 }
 
 .hero-side-overlay-right {
-  background: linear-gradient(to left, rgba(8, 8, 10, 0.95) 0%, rgba(8, 8, 10, 0.6) 45%, transparent 100%);
+  background: linear-gradient(to left, rgba(8, 8, 10, 0.7) 0%, rgba(8, 8, 10, 0.3) 50%, transparent 100%);
 }
 
 .hero-bg-overlay {
-  background: linear-gradient(180deg, rgba(8, 8, 10, 0.85) 0%, rgba(8, 8, 10, 0.25) 45%, rgba(8, 8, 10, 0.8) 85%, #08080a 100%);
+  background: linear-gradient(180deg, rgba(8, 8, 10, 0.6) 0%, transparent 40%, rgba(8, 8, 10, 0.7) 85%, #08080a 100%);
 }
 
 /* 1 · Hero Section Typography & Contrast in Light Theme */
@@ -149,6 +149,7 @@ html.light .hero-section h1 span {
 
 html.light .hero-section h1 span.gold-gradient-text {
   background: linear-gradient(135deg, #B8860B 0%, #D4AF37 50%, #8B6914 100%) !important;
+  background-clip: text !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   filter: none !important;
@@ -408,12 +409,14 @@ html.light textarea {
 
 .gold-gradient-text {
   background: linear-gradient(135deg, #FFF5D6 0%, #D4AF37 50%, #AA820A 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 html.light .gold-gradient-text {
   background: linear-gradient(135deg, #B8860B 0%, #D4AF37 50%, #8B6914 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -428,6 +431,7 @@ html.light .gold-gradient-text {
     #D4AF37 100%
   );
   background-size: 200% auto;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textShimmer 4s linear infinite;
@@ -443,6 +447,7 @@ html.light .text-shimmer-gold {
     #B8860B 100%
   );
   background-size: 200% auto;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textShimmer 4s linear infinite;

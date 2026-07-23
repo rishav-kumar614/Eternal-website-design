@@ -8,6 +8,7 @@ import { BrochureModal } from './components/BrochureModal';
 import { LightboxModal } from './components/LightboxModal';
 import { ScrollProgress } from './components/ScrollProgress';
 import { GoldParticles } from './components/GoldParticles';
+import { ScrollBackground } from './components/ScrollBackground';
 
 import { Home } from './pages/Home';
 import { About } from './pages/About';
@@ -108,6 +109,9 @@ export default function App() {
     <div className="min-h-screen flex flex-col bg-obsidian-900 text-slate-100 selection:bg-gold-500/30 selection:text-gold-200 relative transition-colors duration-300">
       {/* Top Animated Gold Scroll Progress Line */}
       <ScrollProgress />
+
+      {/* Scroll-driven Parallax Background (stars, orbs, grid) */}
+      <ScrollBackground />
 
       {/* Floating Gold Dust Background Ambient Particles */}
       <GoldParticles />

@@ -27,7 +27,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
             initial={{ scale: 1.15, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.8, ease: 'easeOut' }}
-            className="hero-img-dark w-full h-full bg-cover bg-center filter brightness-60 contrast-110"
+            className="hero-img-dark w-full h-full bg-cover bg-center filter brightness-75 contrast-105"
             style={{
               backgroundImage: `url(${ETERNAL_DATA.hero.heroImage})`
             }}
