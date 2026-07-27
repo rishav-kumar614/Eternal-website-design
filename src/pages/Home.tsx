@@ -29,24 +29,24 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
 
             {/* ─── LEFT: Content Column ─── */}
             <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.15, ease: 'easeOut' }}
-              className="space-y-7 text-left"
+              className="space-y-6 text-center lg:text-left"
             >
               {/* Eyebrow Badge */}
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full hero-eyebrow-badge text-xs uppercase font-mono tracking-widest"
+                className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full hero-eyebrow-badge text-[11px] uppercase font-sans font-medium tracking-[0.15em]"
               >
                 <span className="w-2 h-2 rounded-full bg-gold-400 animate-pulse" />
                 <span>{ETERNAL_DATA.hero.eyebrow}</span>
               </motion.div>
 
               {/* Main Headline */}
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1]">
+              <h1 className="hero-headline text-4xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-bold tracking-tight leading-[1.12]">
                 <TextReveal
                   text={ETERNAL_DATA.hero.headline}
                   highlightWords={["Luxury", "Funeral", "Mobility"]}
@@ -55,7 +55,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
               </h1>
 
               {/* Sub-Tagline */}
-              <p className="hero-subtagline font-serif italic text-lg sm:text-xl lg:text-2xl max-w-xl tracking-wide leading-relaxed">
+              <p className="hero-subtagline font-sans italic text-base sm:text-lg lg:text-xl max-w-xl mx-auto lg:mx-0 tracking-wide leading-relaxed font-light">
                 "{ETERNAL_DATA.hero.subtagline}"
               </p>
 
@@ -64,11 +64,11 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.7 }}
-                className="h-px w-24 origin-left bg-gradient-to-r from-gold-400 to-gold-400/0"
+                className="h-px w-24 mx-auto lg:mx-0 origin-left bg-gradient-to-r from-gold-400 to-gold-400/0"
               />
 
               {/* Action CTAs */}
-              <div className="flex flex-col sm:flex-row items-start gap-4">
+              <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">
                 {/* Primary Gold CTA */}
                 <motion.button
                   whileHover={{ scale: 1.04 }}
@@ -96,7 +96,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
               </div>
 
               {/* Trust Metrics */}
-              <div className="pt-4 grid grid-cols-3 gap-6 text-left max-w-md hero-trust-bar">
+              <div className="pt-4 grid grid-cols-3 gap-6 text-center lg:text-left max-w-md mx-auto lg:mx-0 hero-trust-bar">
                 <div>
                   <Counter to={360} suffix="°" className="hero-metric-value font-bold text-lg block" />
                   <span className="hero-metric-label text-[10px] uppercase tracking-wider font-mono">Glass Sanctuary</span>
