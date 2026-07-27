@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Raw uploaded files (keep assets/images/ but ignore temp folders)
+*.zip
+src/assets/images/vehicle_real/

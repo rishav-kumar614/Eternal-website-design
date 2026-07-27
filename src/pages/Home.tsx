@@ -17,118 +17,129 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
     <div className="space-y-0 overflow-hidden">
       
       {/* ========================================================================= */}
-      {/* 1 · HERO SECTION */}
+      {/* 1 · HERO SECTION — Template 3: Editorial Split Layout */}
       {/* ========================================================================= */}
-      <section className="hero-section relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-obsidian-900">
+      <section className="hero-section relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden bg-obsidian-900">
         
-        {/* Background Visual Overlay */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <motion.div 
-            initial={{ scale: 1.15, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.8, ease: 'easeOut' }}
-            className="hero-img-dark w-full h-full bg-cover bg-center filter brightness-75 contrast-105"
-            style={{
-              backgroundImage: `url(${ETERNAL_DATA.hero.heroImage})`
-            }}
-          />
-          <motion.div 
-            initial={{ scale: 1.15, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1.8, ease: 'easeOut' }}
-            className="hero-img-light w-full h-full bg-cover bg-center filter brightness-100 contrast-105"
-            style={{
-              backgroundImage: `url(${ETERNAL_DATA.hero.heroImageLight})`
-            }}
-          />
+        {/* Subtle ambient background glow (dark mode only) */}
+        <div className="hero-ambient-glow absolute inset-0 pointer-events-none z-0" />
 
-          {/* Dark Mode Side & Radial Shadows (Cinematic Vignette) */}
-          <div className="hero-radial-overlay absolute inset-0 pointer-events-none z-1" />
-          <div className="hero-side-overlay-left absolute inset-y-0 left-0 w-2/5 pointer-events-none z-1" />
-          <div className="hero-side-overlay-right absolute inset-y-0 right-0 w-2/5 pointer-events-none z-1" />
-          <div className="hero-bg-overlay absolute inset-0 pointer-events-none z-1" />
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+
+            {/* ─── LEFT: Content Column ─── */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.15, ease: 'easeOut' }}
+              className="space-y-7 text-left"
+            >
+              {/* Eyebrow Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full hero-eyebrow-badge text-xs uppercase font-mono tracking-widest"
+              >
+                <span className="w-2 h-2 rounded-full bg-gold-400 animate-pulse" />
+                <span>{ETERNAL_DATA.hero.eyebrow}</span>
+              </motion.div>
+
+              {/* Main Headline */}
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1]">
+                <TextReveal
+                  text={ETERNAL_DATA.hero.headline}
+                  highlightWords={["Luxury", "Funeral", "Mobility"]}
+                  once={true}
+                />
+              </h1>
+
+              {/* Sub-Tagline */}
+              <p className="hero-subtagline font-serif italic text-lg sm:text-xl lg:text-2xl max-w-xl tracking-wide leading-relaxed">
+                "{ETERNAL_DATA.hero.subtagline}"
+              </p>
+
+              {/* Thin Gold Divider */}
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+                className="h-px w-24 origin-left bg-gradient-to-r from-gold-400 to-gold-400/0"
+              />
+
+              {/* Action CTAs */}
+              <div className="flex flex-col sm:flex-row items-start gap-4">
+                {/* Primary Gold CTA */}
+                <motion.button
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.97 }}
+                  onClick={() => {
+                    setActiveTab('vehicle');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="px-8 py-3.5 rounded-full bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 text-obsidian-900 font-bold text-sm tracking-wider uppercase shadow-gold-glow gold-shimmer flex items-center gap-3"
+                >
+                  <span className="relative z-10">{ETERNAL_DATA.hero.primaryCta}</span>
+                  <ChevronRight className="w-4 h-4 relative z-10" />
+                </motion.button>
+
+                {/* Secondary Outlined CTA */}
+                <motion.button
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.97 }}
+                  onClick={() => onOpenB2BModal('Institutional Partner')}
+                  className="hero-secondary-btn px-8 py-3.5 rounded-full font-semibold text-sm tracking-wider uppercase transition-all flex items-center gap-3 backdrop-blur-md"
+                >
+                  <Shield className="w-4 h-4" />
+                  <span>{ETERNAL_DATA.hero.secondaryCta}</span>
+                </motion.button>
+              </div>
+
+              {/* Trust Metrics */}
+              <div className="pt-4 grid grid-cols-3 gap-6 text-left max-w-md hero-trust-bar">
+                <div>
+                  <Counter to={360} suffix="°" className="hero-metric-value font-bold text-lg block" />
+                  <span className="hero-metric-label text-[10px] uppercase tracking-wider font-mono">Glass Sanctuary</span>
+                </div>
+                <div>
+                  <Counter to={24} suffix="hr" className="hero-metric-value font-bold text-lg block" />
+                  <span className="hero-metric-label text-[10px] uppercase tracking-wider font-mono">Response SLA</span>
+                </div>
+                <div>
+                  <Counter to={100} suffix="%" className="hero-metric-value font-bold text-lg block" />
+                  <span className="hero-metric-label text-[10px] uppercase tracking-wider font-mono">Purpose Built</span>
+                </div>
+              </div>
+
+            </motion.div>
+
+            {/* ─── RIGHT: Vehicle Image Panel ─── */}
+            <motion.div
+              initial={{ opacity: 0, x: 50, scale: 0.95 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 1.2, delay: 0.4, ease: 'easeOut' }}
+              className="hero-image-panel relative"
+            >
+              {/* Decorative corner accents */}
+              <div className="hero-corner-accent hero-corner-tl" />
+              <div className="hero-corner-accent hero-corner-br" />
+
+              {/* Dark Mode Image */}
+              <img
+                src={ETERNAL_DATA.hero.heroImage}
+                alt="Eternal by Azimuth — India's First Ultra-Premium Luxury Funeral Vehicle"
+                className="hero-img-dark w-full h-auto rounded-2xl object-cover"
+              />
+              {/* Light Mode Image */}
+              <img
+                src={ETERNAL_DATA.hero.heroImageLight}
+                alt="Eternal by Azimuth — Premium Ceremonial Vehicle"
+                className="hero-img-light w-full h-auto rounded-2xl object-cover"
+              />
+            </motion.div>
+
+          </div>
         </div>
-
-        {/* Hero Content Box */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8"
-        >
-          
-          {/* Eyebrow */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-obsidian-800/90 border border-gold-500/30 text-gold-300 text-xs uppercase font-mono tracking-widest shadow-gold-glow"
-          >
-            <span className="w-2 h-2 rounded-full bg-gold-400 animate-pulse" />
-            <span>{ETERNAL_DATA.hero.eyebrow}</span>
-          </motion.div>
-
-          {/* Main Headline (H1) with TextReveal */}
-          <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-slate-100 leading-[1.15] min-h-[1.2em]">
-            <TextReveal
-              text={ETERNAL_DATA.hero.headline}
-              highlightWords={["Luxury", "Funeral", "Mobility"]}
-              once={true}
-            />
-          </h1>
-
-          {/* Sub-Tagline */}
-          <p className="font-serif italic text-xl sm:text-2xl text-gold-200/90 max-w-3xl mx-auto tracking-wide">
-            "{ETERNAL_DATA.hero.subtagline}"
-          </p>
-
-          {/* Action CTAs */}
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-            
-            {/* Primary Gold CTA */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => {
-                setActiveTab('vehicle');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 text-obsidian-900 font-bold text-sm tracking-wider uppercase shadow-gold-glow gold-shimmer flex items-center justify-center gap-3"
-            >
-              <span className="relative z-10">{ETERNAL_DATA.hero.primaryCta}</span>
-              <ChevronRight className="w-4 h-4 relative z-10" />
-            </motion.button>
-
-            {/* Secondary Outlined CTA */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => onOpenB2BModal('Institutional Partner')}
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-obsidian-800/80 border border-gold-500/40 text-gold-200 font-semibold text-sm tracking-wider uppercase hover:border-gold-300 hover:bg-gold-500/10 transition-all flex items-center justify-center gap-3 backdrop-blur-md"
-            >
-              <Shield className="w-4 h-4 text-gold-400" />
-              <span>{ETERNAL_DATA.hero.secondaryCta}</span>
-            </motion.button>
-
-          </div>
-
-          {/* Trust Metrics Bar with Counter */}
-          <div className="pt-8 grid grid-cols-3 gap-4 text-xs text-slate-400 font-mono border-t border-gold-500/15 max-w-lg mx-auto">
-            <div>
-              <Counter to={360} suffix="°" className="text-gold-300 font-bold text-base block" />
-              <span className="text-[10px]">Glass Sanctuary</span>
-            </div>
-            <div>
-              <Counter to={24} suffix=" Hours" className="text-gold-300 font-bold text-base block" />
-              <span className="text-[10px]">Response SLA</span>
-            </div>
-            <div>
-              <Counter to={100} suffix="%" className="text-gold-300 font-bold text-base block" />
-              <span className="text-[10px]">Purpose Built</span>
-            </div>
-          </div>
-
-        </motion.div>
 
       </section>
 
