@@ -17,7 +17,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 
-// Real Vehicle Assets
+// Pure Clean Truck Render Assets (No Baked-in Text/Buttons)
 import front34Img from '../assets/images/vehicle_view_front_34.png';
 import sideLeftImg from '../assets/images/vehicle_view_side_left.png';
 import rear34Img from '../assets/images/vehicle_view_rear_34.png';
@@ -26,11 +26,6 @@ import topImg from '../assets/images/vehicle_view_top.png';
 import sideRightImg from '../assets/images/vehicle_view_side_right.png';
 import featuresRoofImg from '../assets/images/vehicle_features_roof.png';
 import sideOppositeImg from '../assets/images/vehicle_view_side_opposite.png';
-
-// Dark / Light 360 overview backups
-import dark360Img from '../assets/images/eternal_vehicle_360_dark.jpg';
-import darkViewsImg from '../assets/images/eternal_vehicle_dark_views.jpg';
-import rearGlassImg from '../assets/images/eternal_vehicle_rear_glass.jpg';
 
 export interface VehicleViewItem {
   id: string;
@@ -47,7 +42,7 @@ const VEHICLE_VIEWS: VehicleViewItem[] = [
     label: 'FRONT 3/4',
     category: 'exterior',
     dayImage: front34Img,
-    nightImage: dark360Img,
+    nightImage: front34Img,
     description: '3/4 Front profile showing wide-body urbania chassis with champagne gold trim and panoramic glass.'
   },
   {
@@ -63,7 +58,7 @@ const VEHICLE_VIEWS: VehicleViewItem[] = [
     label: 'REAR 3/4',
     category: 'exterior',
     dayImage: rear34Img,
-    nightImage: darkViewsImg,
+    nightImage: rear34Img,
     description: 'Rear 3/4 angle showing continuous panoramic glass and custom floral rail mounting system.'
   },
   {
@@ -71,7 +66,7 @@ const VEHICLE_VIEWS: VehicleViewItem[] = [
     label: 'REAR',
     category: 'exterior',
     dayImage: rearImg,
-    nightImage: rearGlassImg,
+    nightImage: rearImg,
     description: 'Direct rear view featuring ceremonial drapes and gold-embossed Eternal logo.'
   },
   {
@@ -87,15 +82,15 @@ const VEHICLE_VIEWS: VehicleViewItem[] = [
     label: 'FRONT',
     category: 'exterior',
     dayImage: sideOppositeImg,
-    nightImage: dark360Img,
+    nightImage: sideOppositeImg,
     description: 'Opposite front side angle showcasing symmetric LED memorial lighting and gold bumper trim.'
   },
   {
     id: 'sanctuary',
     label: 'GLASS SANCTUARY',
     category: 'interior',
-    dayImage: rearGlassImg,
-    nightImage: darkViewsImg,
+    dayImage: sideLeftImg,
+    nightImage: rear34Img,
     description: 'Climate-controlled glass sanctuary with warm ambient cove lighting and motorized hydraulic bier.'
   },
   {
