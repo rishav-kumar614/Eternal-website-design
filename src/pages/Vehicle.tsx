@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ETERNAL_DATA, VehicleHotspot } from '../data/eternalData';
 import { TiltCard } from '../components/TiltCard';
+import { VehicleInteractiveViewer } from '../components/VehicleInteractiveViewer';
 import { Sliders, Eye, Wind, Music, Shield, Tv, Sparkles, Check, ChevronRight, FileText } from 'lucide-react';
 
 interface VehicleProps {
@@ -45,6 +46,20 @@ export const Vehicle: React.FC<VehicleProps> = ({ onOpenBrochureModal, onOpenB2B
           {ETERNAL_DATA.vehicle.leadParagraph}
         </p>
       </motion.section>
+
+      {/* 360-Degree Interactive Vehicle Showcase Viewer */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <div className="text-center space-y-2">
+          <span className="text-xs font-mono uppercase text-gold-400 tracking-widest">
+            360° INTERACTIVE VEHICLE SHOWCASE
+          </span>
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-100">
+            Explore Every Angle, Interior & Feature
+          </h2>
+        </div>
+
+        <VehicleInteractiveViewer />
+      </section>
 
       {/* Interactive 360 / Hotspot Vehicle Inspector */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">

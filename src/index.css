@@ -125,15 +125,22 @@ html.light main {
 }
 
 .hero-headline {
-  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
-  color: #f1f5f9;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-family: 'Bodoni Moda', 'Cinzel', 'Playfair Display', serif;
+  letter-spacing: -0.01em;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FDE68A 0%, #D4AF37 40%, #B48A1E 80%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
 }
 
 .hero-subtagline {
-  color: rgba(243, 229, 171, 0.85);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  letter-spacing: 0.01em;
+  color: rgba(243, 229, 171, 0.9);
 }
 
 .hero-secondary-btn {
@@ -234,8 +241,12 @@ html.light .hero-headline span.gold-gradient-text {
 }
 
 html.light .hero-subtagline {
-  color: #334155 !important;
-  font-weight: 500;
+  color: #1E293B !important;
+}
+
+html.light .hero-subtagline-card {
+  border-left-color: #B8860B;
+  background: rgba(184, 134, 11, 0.06);
 }
 
 html.light .hero-secondary-btn {

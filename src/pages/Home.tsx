@@ -4,6 +4,7 @@ import { ETERNAL_DATA } from '../data/eternalData';
 import { TextReveal } from '../components/TextReveal';
 import { TiltCard } from '../components/TiltCard';
 import { Counter } from '../components/Counter';
+import { VehicleInteractiveViewer } from '../components/VehicleInteractiveViewer';
 import { Shield, Sparkles, VolumeX, ShieldCheck, ChevronRight, ArrowRight } from 'lucide-react';
 
 interface HomeProps {
@@ -46,17 +47,22 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
               </motion.div>
 
               {/* Main Headline */}
-              <h1 className="hero-headline text-4xl sm:text-5xl lg:text-6xl xl:text-[4.25rem] font-bold tracking-tight leading-[1.12]">
-                <TextReveal
-                  text={ETERNAL_DATA.hero.headline}
-                  highlightWords={["Luxury", "Funeral", "Mobility"]}
-                  once={true}
-                />
+              <h1 className="hero-headline text-4xl sm:text-5xl lg:text-6xl xl:text-[4.15rem] leading-[1.16]">
+                <span className="text-slate-100 dark:text-slate-100 font-normal">
+                  India's First{' '}
+                </span>
+                <span className="gold-gradient-text italic font-bold">
+                  Ultra-Premium
+                </span>
+                <br />
+                <span className="text-slate-200 dark:text-slate-200 font-semibold tracking-normal">
+                  Luxury Funeral Mobility
+                </span>
               </h1>
 
               {/* Sub-Tagline */}
-              <p className="hero-subtagline font-sans italic text-base sm:text-lg lg:text-xl max-w-xl mx-auto lg:mx-0 tracking-wide leading-relaxed font-light">
-                "{ETERNAL_DATA.hero.subtagline}"
+              <p className="hero-subtagline text-base sm:text-lg lg:text-xl max-w-xl mx-auto lg:mx-0 tracking-wide leading-relaxed font-light text-slate-300 dark:text-slate-300">
+                "From Utility to Legacy. <span className="gold-gradient-text font-medium not-italic">From Transport to Tribute.</span>"
               </p>
 
               {/* Thin Gold Divider */}
@@ -96,7 +102,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
               </div>
 
               {/* Trust Metrics */}
-              <div className="pt-4 grid grid-cols-3 gap-6 text-center lg:text-left max-w-md mx-auto lg:mx-0 hero-trust-bar">
+              <div className="pt-4 grid grid-cols-3 gap-6 text-center lg:text-left w-full mx-auto lg:mx-0 hero-trust-bar">
                 <div>
                   <Counter to={360} suffix="°" className="hero-metric-value font-bold text-lg block" />
                   <span className="hero-metric-label text-[10px] uppercase tracking-wider font-mono">Glass Sanctuary</span>
@@ -113,29 +119,14 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
 
             </motion.div>
 
-            {/* ─── RIGHT: Vehicle Image Panel ─── */}
+            {/* ─── RIGHT: Interactive Vehicle Showcase Viewer ─── */}
             <motion.div
               initial={{ opacity: 0, x: 50, scale: 0.95 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 1.2, delay: 0.4, ease: 'easeOut' }}
-              className="hero-image-panel relative"
+              className="w-full relative z-20"
             >
-              {/* Decorative corner accents */}
-              <div className="hero-corner-accent hero-corner-tl" />
-              <div className="hero-corner-accent hero-corner-br" />
-
-              {/* Dark Mode Image */}
-              <img
-                src={ETERNAL_DATA.hero.heroImage}
-                alt="Eternal by Azimuth — India's First Ultra-Premium Luxury Funeral Vehicle"
-                className="hero-img-dark w-full h-auto rounded-2xl object-cover"
-              />
-              {/* Light Mode Image */}
-              <img
-                src={ETERNAL_DATA.hero.heroImageLight}
-                alt="Eternal by Azimuth — Premium Ceremonial Vehicle"
-                className="hero-img-light w-full h-auto rounded-2xl object-cover"
-              />
+              <VehicleInteractiveViewer />
             </motion.div>
 
           </div>

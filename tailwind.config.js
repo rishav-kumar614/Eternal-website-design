@@ -32,8 +32,10 @@ export default {
         blush: '#F5EFE6',
       },
       fontFamily: {
-        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['"Bodoni Moda"', 'Georgia', 'serif'],
+        cinzel: ['"Cinzel"', 'serif'],
+        syne: ['"Syne"', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         'gold-glow': '0 0 25px rgba(212, 175, 55, 0.15)',
