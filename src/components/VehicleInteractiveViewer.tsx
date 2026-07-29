@@ -1,11 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Sun, 
-  Moon, 
-  RotateCw, 
-  Maximize2, 
-  Minimize2, 
   Truck, 
   Armchair, 
   Grid, 
@@ -14,7 +9,8 @@ import {
   Eye, 
   Layers,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Sparkles
 } from 'lucide-react';
 
 // Pure Clean Truck Render Assets (No Baked-in Text/Buttons)
@@ -31,8 +27,7 @@ export interface VehicleViewItem {
   id: string;
   label: string;
   category: 'exterior' | 'interior' | 'features';
-  dayImage: string;
-  nightImage: string;
+  image: string;
   description: string;
 }
 
@@ -41,64 +36,56 @@ const VEHICLE_VIEWS: VehicleViewItem[] = [
     id: 'front-34',
     label: 'FRONT 3/4',
     category: 'exterior',
-    dayImage: front34Img,
-    nightImage: front34Img,
+    image: front34Img,
     description: '3/4 Front profile showing wide-body urbania chassis with champagne gold trim and panoramic glass.'
   },
   {
     id: 'side',
     label: 'SIDE',
     category: 'exterior',
-    dayImage: sideLeftImg,
-    nightImage: sideRightImg,
+    image: sideLeftImg,
     description: 'Full lateral profile highlighting 360° viewing window and ornate gold ceremonial door.'
   },
   {
     id: 'rear-34',
     label: 'REAR 3/4',
     category: 'exterior',
-    dayImage: rear34Img,
-    nightImage: rear34Img,
+    image: rear34Img,
     description: 'Rear 3/4 angle showing continuous panoramic glass and custom floral rail mounting system.'
   },
   {
     id: 'rear',
     label: 'REAR',
     category: 'exterior',
-    dayImage: rearImg,
-    nightImage: rearImg,
+    image: rearImg,
     description: 'Direct rear view featuring ceremonial drapes and gold-embossed Eternal logo.'
   },
   {
     id: 'top',
     label: 'TOP',
     category: 'exterior',
-    dayImage: topImg,
-    nightImage: topImg,
+    image: topImg,
     description: 'Bird-eye top perspective revealing toughened panoramic glass ceiling and gold roof rails.'
   },
   {
     id: 'side-opp',
     label: 'FRONT',
     category: 'exterior',
-    dayImage: sideOppositeImg,
-    nightImage: sideOppositeImg,
+    image: sideOppositeImg,
     description: 'Opposite front side angle showcasing symmetric LED memorial lighting and gold bumper trim.'
   },
   {
     id: 'sanctuary',
     label: 'GLASS SANCTUARY',
     category: 'interior',
-    dayImage: sideLeftImg,
-    nightImage: rear34Img,
+    image: sideLeftImg,
     description: 'Climate-controlled glass sanctuary with warm ambient cove lighting and motorized hydraulic bier.'
   },
   {
     id: 'roof-features',
     label: 'ROOF SPECS',
     category: 'features',
-    dayImage: featuresRoofImg,
-    nightImage: featuresRoofImg,
+    image: featuresRoofImg,
     description: 'Interactive breakdown of roof features including ventilation hatch, shark-fin antenna & LED light strip.'
   }
 ];
@@ -108,12 +95,6 @@ const EXTERIOR_ANGLE_SEQUENCE = ['front-34', 'side', 'rear-34', 'rear', 'top', '
 export const VehicleInteractiveViewer: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<'exterior' | 'interior' | 'features'>('exterior');
   const [activeViewId, setActiveViewId] = useState<string>('front-34');
-  const [isNightMode, setIsNightMode] = useState<boolean>(true);
-  const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
-  const [isDragging, setIsDragging] = useState<boolean>(false);
-  const [dragStartX, setDragStartX] = useState<number>(0);
-
-  const containerRef = useRef<HTMLDivElement>(null);
 
   // Filter views for active category
   const categoryViews = VEHICLE_VIEWS.filter(v => v.category === activeCategory);
@@ -132,43 +113,13 @@ export const VehicleInteractiveViewer: React.FC = () => {
     setActiveViewId(EXTERIOR_ANGLE_SEQUENCE[nextIndex]);
   };
 
-  // Drag start
-  const handleMouseDown = (e: React.MouseEvent | React.TouchEvent) => {
-    setIsDragging(true);
-    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-    setDragStartX(clientX);
-  };
-
-  // Drag end
-  const handleMouseUp = (e: React.MouseEvent | React.TouchEvent) => {
-    if (!isDragging) return;
-    setIsDragging(false);
-    const clientX = 'changedTouches' in e ? e.changedTouches[0].clientX : (e as React.MouseEvent).clientX;
-    const diff = clientX - dragStartX;
-    if (Math.abs(diff) > 40) {
-      if (diff > 0) {
-        handleRotate('prev');
-      } else {
-        handleRotate('next');
-      }
-    }
-  };
-
   return (
-    <div 
-      ref={containerRef}
-      className={`relative w-full transition-all duration-500 rounded-3xl overflow-hidden shadow-2xl border ${
-        isFullscreen 
-          ? 'fixed inset-0 z-50 rounded-none bg-obsidian-900 flex flex-col justify-center' 
-          : 'bg-[#111216] border-gold-500/30'
-      }`}
-    >
+    <div className="relative w-full transition-all duration-500 rounded-3xl overflow-hidden shadow-2xl border bg-[#111216] border-gold-500/30">
       {/* Container Box */}
-      <div className="relative w-full p-4 sm:p-6 flex flex-col justify-between min-h-[550px] lg:min-h-[640px] select-none">
+      <div className="relative w-full p-4 sm:p-6 flex flex-col justify-between select-none">
         
         {/* ─── TOP BAR ─── */}
         <div className="relative z-20 flex items-center justify-between gap-4 pb-3 border-b border-gold-500/20">
-          
           {/* Logo & Subtitle */}
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-300 font-serif font-bold text-sm">
@@ -183,52 +134,28 @@ export const VehicleInteractiveViewer: React.FC = () => {
               </span>
             </div>
           </div>
-
-          {/* Center Interactive Hint */}
-          <div className="hidden md:flex items-center gap-2 px-4 py-1.5 rounded-full bg-obsidian-900/80 border border-gold-500/30 text-gold-300 text-xs font-mono tracking-widest shadow-gold-glow">
-            <ChevronLeft className="w-3.5 h-3.5 animate-pulse" />
-            <RotateCw className="w-3.5 h-3.5 text-gold-400" />
-            <span>DRAG OR CLICK TO ROTATE</span>
-            <ChevronRight className="w-3.5 h-3.5 animate-pulse" />
-          </div>
-
-          {/* Right Action Controls */}
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => handleRotate('next')}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gold-500/10 hover:bg-gold-500/20 border border-gold-500/40 text-gold-300 text-xs font-mono font-semibold transition-all"
-            >
-              <RotateCw className="w-3.5 h-3.5" />
-              <span>360° VIEW</span>
-            </button>
-          </div>
         </div>
 
-        {/* ─── MAIN VIEW CANVAS WITH SIDEBAR OVERLAYS ─── */}
-        <div 
-          className="relative flex-1 my-4 flex items-center justify-center cursor-grab active:cursor-grabbing overflow-hidden rounded-2xl bg-obsidian-950/60"
-          onMouseDown={handleMouseDown}
-          onMouseUp={handleMouseUp}
-          onTouchStart={handleMouseDown}
-          onTouchEnd={handleMouseUp}
-        >
-          {/* Main Image Render */}
+        {/* ─── MAIN VIEW CANVAS (FIXED SIZE ASPECT RATIO - NO LAYOUT SHIFT) ─── */}
+        <div className="relative w-full h-[360px] sm:h-[420px] lg:h-[460px] my-4 flex items-center justify-center overflow-hidden rounded-2xl bg-obsidian-950/60 border border-gold-500/20">
+          
+          {/* Main Image Render (Fixed Container Fit) */}
           <AnimatePresence mode="wait">
             <motion.img
-              key={`${activeViewId}-${isNightMode ? 'night' : 'day'}`}
-              src={isNightMode ? currentView.nightImage : currentView.dayImage}
+              key={activeViewId}
+              src={currentView.image}
               alt={currentView.label}
-              initial={{ opacity: 0, scale: 0.97 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.02 }}
-              transition={{ duration: 0.4, ease: 'easeOut' }}
-              className="w-full h-full max-h-[480px] object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] filter brightness-105 contrast-105"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
+              className="w-full h-full object-contain p-2 filter brightness-105 contrast-105"
             />
           </AnimatePresence>
 
           {/* Interactive Navigation Left Arrow */}
           <button
-            onClick={(e) => { e.stopPropagation(); handleRotate('prev'); }}
+            onClick={() => handleRotate('prev')}
             className="absolute left-3 top-1/2 -translate-y-1/2 z-20 p-2.5 rounded-full bg-obsidian-900/80 border border-gold-500/30 text-gold-300 hover:bg-gold-500/20 hover:scale-110 transition-all shadow-lg backdrop-blur-sm"
             title="Previous Angle"
           >
@@ -237,7 +164,7 @@ export const VehicleInteractiveViewer: React.FC = () => {
 
           {/* Interactive Navigation Right Arrow */}
           <button
-            onClick={(e) => { e.stopPropagation(); handleRotate('next'); }}
+            onClick={() => handleRotate('next')}
             className="absolute right-3 top-1/2 -translate-y-1/2 z-20 p-2.5 rounded-full bg-obsidian-900/80 border border-gold-500/30 text-gold-300 hover:bg-gold-500/20 hover:scale-110 transition-all shadow-lg backdrop-blur-sm"
             title="Next Angle"
           >
@@ -245,86 +172,51 @@ export const VehicleInteractiveViewer: React.FC = () => {
           </button>
 
           {/* ─── LEFT CATEGORY NAV BUTTONS (Floating Overlay) ─── */}
-          <div className="absolute left-4 top-4 z-20 flex flex-col gap-2.5">
+          <div className="absolute left-4 top-4 z-20 flex flex-col gap-2">
             <button
               onClick={() => { setActiveCategory('exterior'); setActiveViewId('front-34'); }}
-              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono uppercase tracking-wider transition-all border ${
+              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-[11px] font-mono uppercase tracking-wider transition-all border ${
                 activeCategory === 'exterior'
                   ? 'bg-gradient-to-r from-gold-400 to-gold-500 text-obsidian-900 font-bold border-gold-300 shadow-gold-glow'
                   : 'bg-obsidian-900/85 text-slate-300 border-gold-500/20 hover:border-gold-500/50 hover:bg-obsidian-800'
               }`}
             >
-              <Truck className="w-4 h-4" />
+              <Truck className="w-3.5 h-3.5" />
               <span>EXTERIOR</span>
             </button>
 
             <button
               onClick={() => { setActiveCategory('interior'); setActiveViewId('sanctuary'); }}
-              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono uppercase tracking-wider transition-all border ${
+              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-[11px] font-mono uppercase tracking-wider transition-all border ${
                 activeCategory === 'interior'
                   ? 'bg-gradient-to-r from-gold-400 to-gold-500 text-obsidian-900 font-bold border-gold-300 shadow-gold-glow'
                   : 'bg-obsidian-900/85 text-slate-300 border-gold-500/20 hover:border-gold-500/50 hover:bg-obsidian-800'
               }`}
             >
-              <Armchair className="w-4 h-4" />
+              <Armchair className="w-3.5 h-3.5" />
               <span>INTERIOR</span>
             </button>
 
             <button
               onClick={() => { setActiveCategory('features'); setActiveViewId('roof-features'); }}
-              className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-mono uppercase tracking-wider transition-all border ${
+              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-[11px] font-mono uppercase tracking-wider transition-all border ${
                 activeCategory === 'features'
                   ? 'bg-gradient-to-r from-gold-400 to-gold-500 text-obsidian-900 font-bold border-gold-300 shadow-gold-glow'
                   : 'bg-obsidian-900/85 text-slate-300 border-gold-500/20 hover:border-gold-500/50 hover:bg-obsidian-800'
               }`}
             >
-              <Grid className="w-4 h-4" />
+              <Grid className="w-3.5 h-3.5" />
               <span>FEATURES</span>
             </button>
           </div>
 
-          {/* ─── RIGHT LIGHTING CONTROLS (Floating Overlay) ─── */}
-          <div className="absolute right-4 top-4 z-20 flex flex-col gap-2.5">
-            <button
-              onClick={() => setIsNightMode(false)}
-              className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-[11px] font-mono tracking-wider transition-all border ${
-                !isNightMode
-                  ? 'bg-gold-400 text-obsidian-900 font-bold border-gold-300 shadow-gold-glow'
-                  : 'bg-obsidian-900/85 text-slate-300 border-gold-500/20 hover:border-gold-500/50'
-              }`}
-            >
-              <Sun className="w-3.5 h-3.5 text-gold-400" />
-              <span>DAY VIEW</span>
-            </button>
-
-            <button
-              onClick={() => setIsNightMode(true)}
-              className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-[11px] font-mono tracking-wider transition-all border ${
-                isNightMode
-                  ? 'bg-gold-400 text-obsidian-900 font-bold border-gold-300 shadow-gold-glow'
-                  : 'bg-obsidian-900/85 text-slate-300 border-gold-500/20 hover:border-gold-500/50'
-              }`}
-            >
-              <Moon className="w-3.5 h-3.5 text-gold-400" />
-              <span>NIGHT VIEW</span>
-            </button>
-
-            <button
-              onClick={() => setIsFullscreen(!isFullscreen)}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-obsidian-900/85 text-slate-300 border border-gold-500/20 hover:border-gold-500/50 text-[11px] font-mono tracking-wider transition-all"
-            >
-              {isFullscreen ? <Minimize2 className="w-3.5 h-3.5 text-gold-400" /> : <Maximize2 className="w-3.5 h-3.5 text-gold-400" />}
-              <span>FULLSCREEN</span>
-            </button>
-          </div>
-
           {/* Active View Caption Card */}
-          <div className="absolute bottom-4 left-4 right-4 z-20 bg-obsidian-900/90 border border-gold-500/30 p-3 rounded-2xl backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-3 text-left">
+          <div className="absolute bottom-3 left-3 right-3 z-20 bg-obsidian-900/90 border border-gold-500/30 p-3 rounded-xl backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-2 text-left">
             <div>
               <span className="text-xs font-mono font-bold text-gold-300 tracking-wider block">
                 VIEW: {currentView.label}
               </span>
-              <p className="text-xs text-slate-300 font-light leading-snug">
+              <p className="text-[11px] text-slate-300 font-light leading-snug">
                 {currentView.description}
               </p>
             </div>
@@ -354,7 +246,7 @@ export const VehicleInteractiveViewer: React.FC = () => {
                 >
                   <div className="w-16 h-12 sm:w-20 sm:h-14 rounded-lg overflow-hidden relative bg-obsidian-950">
                     <img
-                      src={isNightMode ? item.nightImage : item.dayImage}
+                      src={item.image}
                       alt={item.label}
                       className="w-full h-full object-cover filter contrast-105 group-hover:scale-110 transition-transform duration-300"
                     />
@@ -384,7 +276,7 @@ export const VehicleInteractiveViewer: React.FC = () => {
             <span>HYDRAULIC BIER</span>
           </div>
           <div className="p-2 rounded-xl bg-obsidian-900/70 border border-gold-500/15 flex items-center justify-center gap-1.5 hover:border-gold-400/40 transition-colors">
-            <RotateCw className="w-3.5 h-3.5 text-gold-400" />
+            <Sparkles className="w-3.5 h-3.5 text-gold-400" />
             <span>360° VIEWING</span>
           </div>
           <div className="p-2 rounded-xl bg-obsidian-900/70 border border-gold-500/15 flex items-center justify-center gap-1.5 hover:border-gold-400/40 transition-colors">
