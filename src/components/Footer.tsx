@@ -153,14 +153,48 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenB2BModal, is
 
         </div>
 
-        {/* Bottom Legal Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        {/* Bottom Legal Copyright & Site Credits */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500 border-t border-gold-500/15">
           <p>{ETERNAL_DATA.brand.copyright}</p>
-          <div className="flex items-center gap-6">
+          
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <button onClick={() => handleLink('contact')} className="hover:text-slate-400 transition-colors">Privacy Policy</button>
             <button onClick={() => handleLink('contact')} className="hover:text-slate-400 transition-colors">Terms of Use</button>
             <span className="text-gold-500/50">•</span>
             <span className="text-slate-400 font-medium">Azimuth Business on Wheels</span>
+
+            {/* Site Credits */}
+            <div className="flex items-center gap-[8px] md:gap-[10px] p-[6px_10px] md:p-[8px_12px] border border-gold-500/20 dark:border-white/10 rounded-[10px] w-fit bg-obsidian-800/80 dark:bg-white/5 backdrop-blur-[10px]">
+              <a
+                href="https://play.fabulousmedia.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="FabulousMedia"
+                className="flex items-center justify-center bg-[#fff] p-[4px] rounded-[6px] opacity-70 transition-all duration-300 ease-out hover:opacity-100 hover:-translate-y-[2px] hover:shadow-[0_0_15px_rgba(253,181,20,0.5)]"
+              >
+                <img
+                  src="https://play.fabulousmedia.in/sitecredit/images/fabulousmedia.svg"
+                  alt="FabulousMedia"
+                  className="h-[10px] md:h-[12px] w-auto block"
+                />
+              </a>
+
+              <div className="w-[1px] h-[12px] bg-gold-500/20 dark:bg-white/10"></div>
+
+              <a
+                href="https://gocommercially.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GoCommercially"
+                className="flex items-center justify-center bg-[#fff] p-[4px] rounded-[6px] opacity-70 transition-all duration-300 ease-out hover:opacity-100 hover:-translate-y-[2px] hover:shadow-[0_0_15px_rgba(253,181,20,0.5)]"
+              >
+                <img
+                  src="https://play.fabulousmedia.in/sitecredit/images/gocommercially.svg"
+                  alt="GoCommercially"
+                  className="h-[10px] md:h-[12px] w-auto block"
+                />
+              </a>
+            </div>
           </div>
         </div>
 
