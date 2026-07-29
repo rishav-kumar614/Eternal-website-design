@@ -28,24 +28,114 @@ export const Vehicle: React.FC<VehicleProps> = ({ onOpenBrochureModal, onOpenB2B
   return (
     <div className="pt-28 pb-20 space-y-20 bg-obsidian-900 overflow-hidden">
       
-      {/* Page Title */}
-      <motion.section 
-        initial={{ opacity: 0, y: 20 }}
+      {/* ═══ PREMIUM HERO HEADER SECTION ═══ */}
+      <motion.section
+        initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="max-w-5xl mx-auto px-4 text-center space-y-4"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <span className="text-xs uppercase font-mono tracking-widest text-gold-400 bg-gold-400/10 px-3 py-1 rounded-full border border-gold-500/20">
-          {ETERNAL_DATA.vehicle.eyebrow}
-        </span>
-        <h1 className="font-serif text-4xl sm:text-6xl font-bold text-slate-100">
-          The Silent Journey, <br />
-          <span className="gold-gradient-text">the Glass Sanctuary</span>
-        </h1>
-        <p className="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto font-light leading-relaxed">
-          {ETERNAL_DATA.vehicle.leadParagraph}
-        </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+          {/* LEFT: Headline + Description + CTAs */}
+          <div className="space-y-6">
+            {/* Eyebrow Badge */}
+            <div className="inline-flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />
+              <span className="text-[11px] uppercase font-mono tracking-widest text-gold-400 bg-gold-400/10 px-3 py-1 rounded-full border border-gold-500/20">
+                {ETERNAL_DATA.vehicle.eyebrow}
+              </span>
+            </div>
+
+            {/* Main Heading */}
+            <div className="space-y-2">
+              <h1 className="font-serif text-4xl sm:text-5xl xl:text-[3.25rem] font-bold text-slate-100 leading-[1.1]">
+                The Silent Journey,{' '}
+                <br />
+                <span className="gold-gradient-text">the Glass Sanctuary</span>
+              </h1>
+              {/* Gold accent line */}
+              <div className="w-16 h-0.5 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full mt-3" />
+            </div>
+
+            {/* Lead Paragraph */}
+            <p className="text-sm sm:text-base text-slate-300 font-light leading-relaxed max-w-xl">
+              {ETERNAL_DATA.vehicle.leadParagraph}
+            </p>
+
+            {/* Chassis Badge */}
+            <div className="flex items-center gap-2 text-xs font-mono text-gold-300 bg-obsidian-800/80 border border-gold-500/20 rounded-xl px-4 py-2.5 w-fit">
+              <span className="text-gold-500">◈</span>
+              <span>CHASSIS:</span>
+              <span className="text-slate-200 font-semibold">{ETERNAL_DATA.vehicle.chassis}</span>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-start gap-3 pt-2">
+              <button
+                onClick={onOpenBrochureModal}
+                className="group flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 text-obsidian-900 font-bold text-xs uppercase tracking-wider shadow-gold-glow gold-shimmer hover:scale-105 transition-transform"
+              >
+                <FileText className="w-4 h-4" />
+                Explore Interactive Vehicle Sanctuary
+                <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+              </button>
+              <button
+                onClick={onOpenBrochureModal}
+                className="flex items-center gap-2 px-6 py-3 rounded-full border border-gold-500/30 text-gold-300 text-xs font-semibold hover:border-gold-400/60 hover:bg-obsidian-800 transition-all"
+              >
+                Download Vehicle Specs PDF
+              </button>
+            </div>
+          </div>
+
+          {/* RIGHT: Feature Grid Card */}
+          <div className="relative">
+            {/* Glow blob */}
+            <div className="absolute -top-8 -right-8 w-48 h-48 bg-gold-500/10 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="relative rounded-3xl border border-gold-500/25 bg-obsidian-800/60 backdrop-blur-xl p-6 shadow-2xl space-y-4">
+              {/* Card Header */}
+              <div className="flex items-center justify-between border-b border-gold-500/15 pb-4">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-gold-400">
+                  Standard Equipment — All Inclusive
+                </span>
+                <span className="text-[10px] font-mono text-slate-500">10 FEATURES</span>
+              </div>
+
+              {/* Features Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {ETERNAL_DATA.vehicle.features.map((feature, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: idx * 0.05 }}
+                    className="flex items-start gap-2.5 p-2.5 rounded-xl bg-obsidian-900/60 border border-gold-500/10 hover:border-gold-500/30 hover:bg-obsidian-800/80 transition-all group"
+                  >
+                    <span className="mt-0.5 w-4 h-4 rounded-full bg-gold-400/15 border border-gold-500/30 flex items-center justify-center shrink-0">
+                      <Check className="w-2.5 h-2.5 text-gold-400" />
+                    </span>
+                    <span className="text-[11px] text-slate-300 leading-snug group-hover:text-slate-100 transition-colors">
+                      {feature}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Bottom accent */}
+              <div className="flex items-center gap-2 pt-2 border-t border-gold-500/15">
+                <div className="w-1.5 h-1.5 rounded-full bg-gold-400" />
+                <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">
+                  Every unit fully equipped. No variants. No compromise.
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </motion.section>
+
 
       {/* 360-Degree Interactive Vehicle Showcase Viewer */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">

@@ -267,6 +267,104 @@ html.light .hero-trust-bar {
   border-top-color: rgba(184, 134, 11, 0.2);
 }
 
+/* ── Vehicle Interactive Viewer Light Theme Overrides ── */
+html.light .vehicle-viewer-box {
+  background-color: #FFFFFF !important;
+  border-color: rgba(184, 134, 11, 0.3) !important;
+  box-shadow: 0 20px 50px -10px rgba(184, 134, 11, 0.15), 0 10px 20px -5px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light .vehicle-viewer-topbar {
+  border-bottom-color: rgba(184, 134, 11, 0.2) !important;
+}
+
+html.light .vehicle-viewer-title {
+  color: #0F172A !important;
+}
+
+html.light .vehicle-viewer-subtitle {
+  color: #475569 !important;
+}
+
+html.light .vehicle-viewer-tab-inactive {
+  background-color: rgba(248, 245, 238, 0.9) !important;
+  color: #334155 !important;
+  border-color: rgba(184, 134, 11, 0.3) !important;
+}
+
+html.light .vehicle-viewer-tab-inactive:hover {
+  background-color: rgba(212, 175, 55, 0.12) !important;
+  border-color: rgba(184, 134, 11, 0.5) !important;
+  color: #0F172A !important;
+}
+
+html.light .vehicle-viewer-canvas {
+  background-color: #FAF8F5 !important;
+  border-color: rgba(184, 134, 11, 0.25) !important;
+}
+
+html.light .vehicle-viewer-nav-btn {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  color: #8B6914 !important;
+  border-color: rgba(184, 134, 11, 0.4) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1) !important;
+}
+
+html.light .vehicle-viewer-nav-btn:hover {
+  background-color: #F8F3EA !important;
+  color: #B8860B !important;
+}
+
+html.light .vehicle-viewer-caption {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  border-color: rgba(184, 134, 11, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+}
+
+html.light .vehicle-viewer-caption-title {
+  color: #8B6914 !important;
+}
+
+html.light .vehicle-viewer-caption-desc {
+  color: #334155 !important;
+}
+
+html.light .vehicle-viewer-caption-badge {
+  color: #64748B !important;
+}
+
+html.light .vehicle-viewer-thumb-strip {
+  border-top-color: rgba(184, 134, 11, 0.2) !important;
+}
+
+html.light .vehicle-viewer-thumb-inactive {
+  background-color: #FAF8F5 !important;
+  border-color: rgba(184, 134, 11, 0.25) !important;
+}
+
+html.light .vehicle-viewer-thumb-inactive:hover {
+  background-color: rgba(212, 175, 55, 0.12) !important;
+  border-color: rgba(184, 134, 11, 0.5) !important;
+}
+
+html.light .vehicle-viewer-thumb-imgframe {
+  background-color: #FFFFFF !important;
+  border-color: rgba(184, 134, 11, 0.18) !important;
+}
+
+html.light .vehicle-viewer-thumb-label-inactive {
+  color: #475569 !important;
+}
+
+html.light .vehicle-viewer-thumb-active {
+  background-color: rgba(212, 175, 55, 0.15) !important;
+  border-color: #B8860B !important;
+}
+
+html.light .vehicle-viewer-thumb-label-active {
+  color: #8B6914 !important;
+}
+
 html.light .hero-metric-value {
   color: #B8860B !important;
 }

@@ -5,7 +5,7 @@ import { TextReveal } from '../components/TextReveal';
 import { TiltCard } from '../components/TiltCard';
 import { Counter } from '../components/Counter';
 import { VehicleInteractiveViewer } from '../components/VehicleInteractiveViewer';
-import { Shield, Sparkles, VolumeX, ShieldCheck, ChevronRight, ArrowRight } from 'lucide-react';
+import { Shield, Sparkles, VolumeX, ShieldCheck, ChevronRight, ArrowRight, Check, Building2, HeartHandshake, Landmark, Users } from 'lucide-react';
 
 interface HomeProps {
   setActiveTab: (tab: string) => void;
@@ -265,36 +265,48 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
               transition={{ duration: 0.8 }}
               className="lg:col-span-6 space-y-6"
             >
-              <span className="text-xs uppercase font-mono tracking-widest text-gold-400 bg-gold-400/10 px-3 py-1 rounded-full border border-gold-500/20">
-                {ETERNAL_DATA.vehicle.eyebrow}
-              </span>
+              {/* Eyebrow Badge */}
+              <div className="inline-flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />
+                <span className="text-[11px] uppercase font-mono tracking-widest text-gold-400 bg-gold-400/10 px-3.5 py-1 rounded-full border border-gold-500/20">
+                  {ETERNAL_DATA.vehicle.eyebrow}
+                </span>
+              </div>
 
-              <h2 className="font-serif text-3xl sm:text-5xl font-bold text-slate-100 leading-tight">
-                {ETERNAL_DATA.vehicle.heading}
+              <h2 className="font-serif text-3xl sm:text-4xl xl:text-5xl font-bold text-slate-100 leading-tight">
+                The Silent Journey, <br />
+                <span className="gold-gradient-text">the Glass Sanctuary</span>
               </h2>
 
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
                 {ETERNAL_DATA.vehicle.leadParagraph}
               </p>
 
-              {/* 8 Feature List Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              {/* 10 Feature List Cards Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
                 {ETERNAL_DATA.vehicle.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-200">
-                    <span className="w-2 h-2 rounded-full bg-gold-400 rotate-45 shrink-0 mt-1.5" />
-                    <span>{feature}</span>
+                  <div
+                    key={idx}
+                    className="flex items-start gap-2.5 p-2.5 rounded-xl bg-obsidian-800/80 border border-gold-500/15 hover:border-gold-400/40 hover:bg-obsidian-700/80 transition-all duration-300 group"
+                  >
+                    <span className="mt-0.5 w-4 h-4 rounded-full bg-gold-400/15 border border-gold-500/30 flex items-center justify-center shrink-0 group-hover:bg-gold-400 group-hover:text-obsidian-950 transition-colors">
+                      <Check className="w-2.5 h-2.5 text-gold-400 group-hover:text-obsidian-950" />
+                    </span>
+                    <span className="text-xs text-slate-300 group-hover:text-slate-100 leading-snug font-medium transition-colors">
+                      {feature}
+                    </span>
                   </div>
                 ))}
               </div>
 
               {/* CTA Row */}
-              <div className="pt-6 flex flex-wrap gap-4">
+              <div className="pt-4 flex flex-wrap items-center gap-3">
                 <button
                   onClick={() => {
                     setActiveTab('vehicle');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="px-6 py-3 rounded-full bg-gold-500 hover:bg-gold-400 text-obsidian-900 font-bold text-xs uppercase tracking-wider shadow-gold-glow transition-all flex items-center gap-2 gold-shimmer"
+                  className="px-6 py-3 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 hover:from-gold-300 hover:to-gold-500 text-obsidian-900 font-bold text-xs uppercase tracking-wider shadow-gold-glow transition-all flex items-center gap-2 gold-shimmer"
                 >
                   <span className="relative z-10">Explore Interactive Vehicle Sanctuary</span>
                   <ArrowRight className="w-4 h-4 relative z-10" />
@@ -302,7 +314,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
 
                 <button
                   onClick={onOpenBrochureModal}
-                  className="px-6 py-3 rounded-full bg-obsidian-800 border border-gold-500/30 text-gold-300 text-xs font-semibold hover:border-gold-400 transition-colors"
+                  className="px-6 py-3 rounded-full bg-obsidian-900 border border-gold-500/30 text-gold-300 text-xs font-semibold hover:border-gold-400 hover:bg-obsidian-800 transition-all"
                 >
                   Download Vehicle Specs PDF
                 </button>
@@ -316,30 +328,66 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
       </section>
 
       {/* ========================================================================= */}
-      {/* 5 · INSTITUTIONAL TRUST BAR */}
+      {/* 5 · INSTITUTIONAL TRUST BAR — Redesigned Luxury Showcase */}
       {/* ========================================================================= */}
-      <section className="bg-brown-800 py-12 px-4 border-y border-gold-500/20">
-        <div className="max-w-7xl mx-auto text-center space-y-6">
-          <span className="text-xs uppercase font-mono tracking-widest text-gold-400">
-            {ETERNAL_DATA.trustBar.eyebrow}
-          </span>
-          
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-slate-100">
-            {ETERNAL_DATA.trustBar.heading}
-          </h3>
+      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-obsidian-900 via-brown-900/60 to-obsidian-900 border-y border-gold-500/25 overflow-hidden">
+        {/* Subtle Ambient Gold Glow in Background */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-12 pt-4">
-            {ETERNAL_DATA.trustBar.categories.map((cat, index) => (
-              <React.Fragment key={index}>
-                <span className="font-serif text-lg font-semibold text-gold-200 tracking-wide">
-                  {cat}
-                </span>
-                {index < ETERNAL_DATA.trustBar.categories.length - 1 && (
-                  <span className="hidden sm:inline text-gold-500/40 text-xl font-light">|</span>
-                )}
-              </React.Fragment>
-            ))}
+        <div className="max-w-7xl mx-auto text-center space-y-8 relative z-10">
+          
+          {/* Section Header & Eyebrow */}
+          <div className="space-y-3 max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />
+              <span className="text-[11px] uppercase font-mono tracking-widest text-gold-400 bg-gold-400/10 px-3.5 py-1 rounded-full border border-gold-500/20">
+                {ETERNAL_DATA.trustBar.eyebrow}
+              </span>
+            </div>
+
+            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-slate-100 tracking-tight">
+              {ETERNAL_DATA.trustBar.heading}
+            </h3>
           </div>
+
+          {/* Institutional Partner Categories Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto pt-2">
+            {[
+              { label: 'Premium Hospitals', icon: Building2, desc: 'NABH & JCI Accredited Medical Centers' },
+              { label: 'Funeral Management', icon: HeartHandshake, desc: 'Turnkey Protocol Operators & Providers' },
+              { label: 'Municipal Corporations', icon: Landmark, desc: 'Civic Mobility & Urban Health Bodies' },
+              { label: 'Religious Trusts & NGOs', icon: Users, desc: 'Faith Foundations & Community Alliances' },
+            ].map((item, index) => {
+              const IconComp = item.icon;
+              return (
+                <div
+                  key={index}
+                  className="group relative p-6 rounded-2xl bg-obsidian-800/70 border border-gold-500/20 hover:border-gold-400/50 hover:bg-obsidian-800/90 transition-all duration-300 shadow-xl text-left flex flex-col justify-between"
+                >
+                  <div className="space-y-4">
+                    <div className="w-12 h-12 rounded-xl bg-gold-400/10 border border-gold-500/30 flex items-center justify-center text-gold-300 group-hover:scale-110 group-hover:bg-gold-400 group-hover:text-obsidian-950 transition-all duration-300">
+                      <IconComp className="w-6 h-6" />
+                    </div>
+
+                    <div className="space-y-1">
+                      <h4 className="font-serif text-lg font-bold text-slate-100 group-hover:text-gold-200 transition-colors">
+                        {item.label}
+                      </h4>
+                      <p className="text-xs text-slate-400 font-light leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 mt-4 border-t border-gold-500/10 flex items-center justify-between text-[10px] font-mono text-gold-400">
+                    <span>STANDARD COMPLIANCE</span>
+                    <span className="group-hover:translate-x-1 transition-transform">➔</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
         </div>
       </section>
 

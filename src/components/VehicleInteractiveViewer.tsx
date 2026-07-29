@@ -112,32 +112,68 @@ export const VehicleInteractiveViewer: React.FC = () => {
     if (nextIndex < 0) nextIndex = EXTERIOR_ANGLE_SEQUENCE.length - 1;
     setActiveViewId(EXTERIOR_ANGLE_SEQUENCE[nextIndex]);
   };
-
   return (
-    <div className="relative w-full transition-all duration-500 rounded-3xl overflow-hidden shadow-2xl border bg-[#111216] border-gold-500/30">
+    <div className="vehicle-viewer-box relative w-full max-w-4xl mx-auto transition-all duration-500 rounded-3xl overflow-hidden shadow-2xl border bg-[#111216] border-gold-500/30">
       {/* Container Box */}
       <div className="relative w-full p-4 sm:p-6 flex flex-col justify-between select-none">
         
         {/* ─── TOP BAR ─── */}
-        <div className="relative z-20 flex items-center justify-between gap-4 pb-3 border-b border-gold-500/20">
+        <div className="vehicle-viewer-topbar relative z-20 flex items-center justify-between gap-4 pb-3 border-b border-gold-500/20">
           {/* Logo & Subtitle */}
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-full bg-gold-500/10 border border-gold-500/40 flex items-center justify-center text-gold-300 font-serif font-bold text-sm">
               E
             </div>
             <div>
-              <span className="font-serif font-bold tracking-wider text-xs sm:text-sm text-slate-100 block">
+              <span className="vehicle-viewer-title font-serif font-bold tracking-wider text-xs sm:text-sm text-slate-100 block">
                 ETERNAL <span className="text-[10px] text-gold-400 font-sans font-normal ml-1">BY AZIMUTH</span>
               </span>
-              <span className="text-[10px] font-sans text-slate-400 block tracking-wide">
+              <span className="vehicle-viewer-subtitle text-[10px] font-sans text-slate-400 block tracking-wide">
                 India's First Ultra-Premium Funeral Mobility
               </span>
             </div>
           </div>
+
+          {/* ─── CATEGORY TABS (moved to top bar right) ─── */}
+          <div className="flex items-center gap-1.5">
+            <button
+              onClick={() => { setActiveCategory('exterior'); setActiveViewId('front-34'); }}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[10px] font-mono uppercase tracking-wider transition-all border ${
+                activeCategory === 'exterior'
+                  ? 'bg-gradient-to-r from-gold-400 to-gold-500 text-obsidian-900 font-bold border-gold-300 shadow-gold-glow'
+                  : 'vehicle-viewer-tab-inactive bg-obsidian-900/85 text-slate-300 border-gold-500/20 hover:border-gold-500/50'
+              }`}
+            >
+              <Truck className="w-3 h-3" />
+              <span className="hidden sm:inline">EXTERIOR</span>
+            </button>
+            <button
+              onClick={() => { setActiveCategory('interior'); setActiveViewId('sanctuary'); }}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[10px] font-mono uppercase tracking-wider transition-all border ${
+                activeCategory === 'interior'
+                  ? 'bg-gradient-to-r from-gold-400 to-gold-500 text-obsidian-900 font-bold border-gold-300 shadow-gold-glow'
+                  : 'vehicle-viewer-tab-inactive bg-obsidian-900/85 text-slate-300 border-gold-500/20 hover:border-gold-500/50'
+              }`}
+            >
+              <Armchair className="w-3 h-3" />
+              <span className="hidden sm:inline">INTERIOR</span>
+            </button>
+            <button
+              onClick={() => { setActiveCategory('features'); setActiveViewId('roof-features'); }}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[10px] font-mono uppercase tracking-wider transition-all border ${
+                activeCategory === 'features'
+                  ? 'bg-gradient-to-r from-gold-400 to-gold-500 text-obsidian-900 font-bold border-gold-300 shadow-gold-glow'
+                  : 'vehicle-viewer-tab-inactive bg-obsidian-900/85 text-slate-300 border-gold-500/20 hover:border-gold-500/50'
+              }`}
+            >
+              <Grid className="w-3 h-3" />
+              <span className="hidden sm:inline">FEATURES</span>
+            </button>
+          </div>
         </div>
 
-        {/* ─── MAIN VIEW CANVAS (FIXED SIZE ASPECT RATIO - NO LAYOUT SHIFT) ─── */}
-        <div className="relative w-full h-[360px] sm:h-[420px] lg:h-[460px] my-4 flex items-center justify-center overflow-hidden rounded-2xl bg-obsidian-950/60 border border-gold-500/20">
+        {/* ─── MAIN VIEW CANVAS (16:9 ASPECT RATIO) ─── */}
+        <div className="vehicle-viewer-canvas relative w-full aspect-video my-3 flex items-center justify-center overflow-hidden rounded-2xl bg-obsidian-950/60 border border-gold-500/20">
           
           {/* Main Image Render (Fixed Container Fit) */}
           <AnimatePresence mode="wait">
@@ -156,7 +192,7 @@ export const VehicleInteractiveViewer: React.FC = () => {
           {/* Interactive Navigation Left Arrow */}
           <button
             onClick={() => handleRotate('prev')}
-            className="absolute left-3 top-1/2 -translate-y-1/2 z-20 p-2.5 rounded-full bg-obsidian-900/80 border border-gold-500/30 text-gold-300 hover:bg-gold-500/20 hover:scale-110 transition-all shadow-lg backdrop-blur-sm"
+            className="vehicle-viewer-nav-btn absolute left-3 top-1/2 -translate-y-1/2 z-20 p-2.5 rounded-full bg-obsidian-900/80 border border-gold-500/30 text-gold-300 hover:bg-gold-500/20 hover:scale-110 transition-all shadow-lg backdrop-blur-sm"
             title="Previous Angle"
           >
             <ChevronLeft className="w-5 h-5" />
@@ -165,63 +201,24 @@ export const VehicleInteractiveViewer: React.FC = () => {
           {/* Interactive Navigation Right Arrow */}
           <button
             onClick={() => handleRotate('next')}
-            className="absolute right-3 top-1/2 -translate-y-1/2 z-20 p-2.5 rounded-full bg-obsidian-900/80 border border-gold-500/30 text-gold-300 hover:bg-gold-500/20 hover:scale-110 transition-all shadow-lg backdrop-blur-sm"
+            className="vehicle-viewer-nav-btn absolute right-3 top-1/2 -translate-y-1/2 z-20 p-2.5 rounded-full bg-obsidian-900/80 border border-gold-500/30 text-gold-300 hover:bg-gold-500/20 hover:scale-110 transition-all shadow-lg backdrop-blur-sm"
             title="Next Angle"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
 
-          {/* ─── LEFT CATEGORY NAV BUTTONS (Floating Overlay) ─── */}
-          <div className="absolute left-4 top-4 z-20 flex flex-col gap-2">
-            <button
-              onClick={() => { setActiveCategory('exterior'); setActiveViewId('front-34'); }}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-[11px] font-mono uppercase tracking-wider transition-all border ${
-                activeCategory === 'exterior'
-                  ? 'bg-gradient-to-r from-gold-400 to-gold-500 text-obsidian-900 font-bold border-gold-300 shadow-gold-glow'
-                  : 'bg-obsidian-900/85 text-slate-300 border-gold-500/20 hover:border-gold-500/50 hover:bg-obsidian-800'
-              }`}
-            >
-              <Truck className="w-3.5 h-3.5" />
-              <span>EXTERIOR</span>
-            </button>
-
-            <button
-              onClick={() => { setActiveCategory('interior'); setActiveViewId('sanctuary'); }}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-[11px] font-mono uppercase tracking-wider transition-all border ${
-                activeCategory === 'interior'
-                  ? 'bg-gradient-to-r from-gold-400 to-gold-500 text-obsidian-900 font-bold border-gold-300 shadow-gold-glow'
-                  : 'bg-obsidian-900/85 text-slate-300 border-gold-500/20 hover:border-gold-500/50 hover:bg-obsidian-800'
-              }`}
-            >
-              <Armchair className="w-3.5 h-3.5" />
-              <span>INTERIOR</span>
-            </button>
-
-            <button
-              onClick={() => { setActiveCategory('features'); setActiveViewId('roof-features'); }}
-              className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-[11px] font-mono uppercase tracking-wider transition-all border ${
-                activeCategory === 'features'
-                  ? 'bg-gradient-to-r from-gold-400 to-gold-500 text-obsidian-900 font-bold border-gold-300 shadow-gold-glow'
-                  : 'bg-obsidian-900/85 text-slate-300 border-gold-500/20 hover:border-gold-500/50 hover:bg-obsidian-800'
-              }`}
-            >
-              <Grid className="w-3.5 h-3.5" />
-              <span>FEATURES</span>
-            </button>
-          </div>
-
           {/* Active View Caption Card */}
-          <div className="absolute bottom-3 left-3 right-3 z-20 bg-obsidian-900/90 border border-gold-500/30 p-3 rounded-xl backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-2 text-left">
+          <div className="vehicle-viewer-caption absolute bottom-3 left-3 right-3 z-20 bg-obsidian-900/90 border border-gold-500/30 p-3 rounded-xl backdrop-blur-md flex flex-col sm:flex-row items-center justify-between gap-2 text-left">
             <div>
-              <span className="text-xs font-mono font-bold text-gold-300 tracking-wider block">
+              <span className="vehicle-viewer-caption-title text-xs font-mono font-bold text-gold-300 tracking-wider block">
                 VIEW: {currentView.label}
               </span>
-              <p className="text-[11px] text-slate-300 font-light leading-snug">
+              <p className="vehicle-viewer-caption-desc text-[11px] text-slate-300 font-light leading-snug">
                 {currentView.description}
               </p>
             </div>
             <div className="flex items-center gap-2 shrink-0">
-              <span className="text-[10px] font-mono text-slate-400 uppercase">
+              <span className="vehicle-viewer-caption-badge text-[10px] font-mono text-slate-400 uppercase">
                 {activeCategory} mode
               </span>
             </div>
@@ -229,63 +226,39 @@ export const VehicleInteractiveViewer: React.FC = () => {
 
         </div>
 
-        {/* ─── BOTTOM THUMBNAIL STRIP ─── */}
-        <div className="relative z-20 pt-2 pb-1">
-          <div className="flex items-center justify-center gap-3 overflow-x-auto py-2 scrollbar-none">
+        {/* ─── BOTTOM THUMBNAIL STRIP (HORIZONTAL SCROLLABLE WITH NO CLIPPING) ─── */}
+        <div className="vehicle-viewer-thumb-strip relative z-20 pt-3 pb-1 border-t border-gold-500/15 mt-2">
+          <div className="flex items-center justify-start gap-3 overflow-x-auto px-4 py-2 scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
             {categoryViews.map((item) => {
               const isSelected = activeViewId === item.id;
               return (
                 <button
                   key={item.id}
                   onClick={() => setActiveViewId(item.id)}
-                  className={`group relative flex flex-col items-center gap-1.5 p-1.5 rounded-xl border transition-all duration-300 shrink-0 ${
+                  className={`group relative flex flex-col items-center justify-between p-2 rounded-xl border transition-all duration-300 shrink-0 w-24 sm:w-28 ${
                     isSelected
-                      ? 'border-gold-400 bg-gold-500/15 shadow-gold-glow scale-105'
-                      : 'border-gold-500/20 bg-obsidian-900/60 hover:border-gold-500/50 hover:bg-obsidian-800'
+                      ? 'vehicle-viewer-thumb-active border-gold-400 bg-gold-500/20 shadow-gold-glow scale-105'
+                      : 'vehicle-viewer-thumb-inactive border-gold-500/20 bg-obsidian-900/80 hover:border-gold-500/50 hover:bg-obsidian-800'
                   }`}
                 >
-                  <div className="w-16 h-12 sm:w-20 sm:h-14 rounded-lg overflow-hidden relative bg-obsidian-950">
+                  <div className="vehicle-viewer-thumb-imgframe w-full h-12 sm:h-14 rounded-lg overflow-hidden relative bg-obsidian-950/90 border border-gold-500/10 flex items-center justify-center p-1">
                     <img
                       src={item.image}
                       alt={item.label}
-                      className="w-full h-full object-cover filter contrast-105 group-hover:scale-110 transition-transform duration-300"
+                      className="w-full h-full object-contain filter contrast-105 group-hover:scale-105 transition-transform duration-300"
                     />
                     {isSelected && (
                       <div className="absolute inset-0 border-2 border-gold-400 rounded-lg pointer-events-none" />
                     )}
                   </div>
-                  <span className={`text-[10px] font-mono tracking-wider uppercase ${
-                    isSelected ? 'text-gold-300 font-bold' : 'text-slate-400 group-hover:text-slate-200'
+                  <span className={`text-[10px] font-mono tracking-wider uppercase text-center leading-tight mt-1.5 ${
+                    isSelected ? 'vehicle-viewer-thumb-label-active text-gold-300 font-bold' : 'vehicle-viewer-thumb-label-inactive text-slate-400 group-hover:text-slate-200'
                   }`}>
                     {item.label}
                   </span>
                 </button>
               );
             })}
-          </div>
-        </div>
-
-        {/* ─── BOTTOM FEATURE HIGHLIGHTS BAR ─── */}
-        <div className="relative z-20 pt-3 border-t border-gold-500/15 grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-[10px] font-mono text-slate-300">
-          <div className="p-2 rounded-xl bg-obsidian-900/70 border border-gold-500/15 flex items-center justify-center gap-1.5 hover:border-gold-400/40 transition-colors">
-            <Eye className="w-3.5 h-3.5 text-gold-400" />
-            <span>PANORAMIC GLASS</span>
-          </div>
-          <div className="p-2 rounded-xl bg-obsidian-900/70 border border-gold-500/15 flex items-center justify-center gap-1.5 hover:border-gold-400/40 transition-colors">
-            <Layers className="w-3.5 h-3.5 text-gold-400" />
-            <span>HYDRAULIC BIER</span>
-          </div>
-          <div className="p-2 rounded-xl bg-obsidian-900/70 border border-gold-500/15 flex items-center justify-center gap-1.5 hover:border-gold-400/40 transition-colors">
-            <Sparkles className="w-3.5 h-3.5 text-gold-400" />
-            <span>360° VIEWING</span>
-          </div>
-          <div className="p-2 rounded-xl bg-obsidian-900/70 border border-gold-500/15 flex items-center justify-center gap-1.5 hover:border-gold-400/40 transition-colors">
-            <ShieldCheck className="w-3.5 h-3.5 text-gold-400" />
-            <span>HOSPITAL GRADE</span>
-          </div>
-          <div className="p-2 rounded-xl bg-obsidian-900/70 border border-gold-500/15 flex items-center justify-center gap-1.5 hover:border-gold-400/40 transition-colors col-span-2 sm:col-span-1">
-            <Wind className="w-3.5 h-3.5 text-gold-400" />
-            <span>AIR PURIFICATION</span>
           </div>
         </div>
 
