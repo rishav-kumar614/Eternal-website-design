@@ -32,7 +32,7 @@ export default {
         blush: '#F5EFE6',
       },
       fontFamily: {
-        serif: ['"Bodoni Moda"', 'Georgia', 'serif'],
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         cinzel: ['"Cinzel"', 'serif'],
         syne: ['"Syne"', 'sans-serif'],
         sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],

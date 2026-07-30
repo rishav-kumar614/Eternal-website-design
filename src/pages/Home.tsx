@@ -4,7 +4,7 @@ import { ETERNAL_DATA } from '../data/eternalData';
 import { TextReveal } from '../components/TextReveal';
 import { TiltCard } from '../components/TiltCard';
 import { Counter } from '../components/Counter';
-import { VehicleInteractiveViewer } from '../components/VehicleInteractiveViewer';
+import heroTruckImg from '../assets/images/ChatGPT Image Jul 30, 2026, 04_57_42 PM.png';
 import { Shield, Sparkles, VolumeX, ShieldCheck, ChevronRight, ArrowRight, Check, Building2, HeartHandshake, Landmark, Users } from 'lucide-react';
 
 interface HomeProps {
@@ -119,14 +119,77 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
 
             </motion.div>
 
-            {/* ─── RIGHT: Interactive Vehicle Showcase Viewer ─── */}
+            {/* ─── RIGHT: Hero Truck Image with Premium Effects ─── */}
             <motion.div
               initial={{ opacity: 0, x: 50, scale: 0.95 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 1.2, delay: 0.4, ease: 'easeOut' }}
-              className="w-full relative z-20"
+              className="w-full relative z-20 flex items-end justify-center"
             >
-              <VehicleInteractiveViewer />
+              {/* ── Outer deep gold radial glow ── */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[70%] rounded-full pointer-events-none"
+                style={{ background: 'radial-gradient(ellipse at center, rgba(212,175,55,0.18) 0%, rgba(212,175,55,0.06) 45%, transparent 75%)', filter: 'blur(40px)' }}
+              />
+
+              {/* ── Inner bright highlight ring ── */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[50%] rounded-full pointer-events-none"
+                style={{ background: 'radial-gradient(ellipse at center, rgba(255,220,100,0.12) 0%, transparent 70%)', filter: 'blur(20px)' }}
+              />
+
+              {/* ── Floating animated truck image ── */}
+              <motion.div
+                animate={{ y: [0, -12, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                className="relative z-10 w-full max-w-2xl"
+                style={{ filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.55)) drop-shadow(0 0 50px rgba(212,175,55,0.12))' }}
+              >
+                {/* Shimmer sweep overlay */}
+                <div className="absolute inset-0 z-20 overflow-hidden rounded-xl pointer-events-none">
+                  <div
+                    className="absolute top-0 -left-full h-full w-1/3 opacity-30"
+                    style={{
+                      background: 'linear-gradient(105deg, transparent 40%, rgba(255,220,100,0.6) 50%, transparent 60%)',
+                      animation: 'shimmerSweep 5s ease-in-out infinite',
+                    }}
+                  />
+                </div>
+
+                <img
+                  src={heroTruckImg}
+                  alt="Eternal Luxury Hearse — India's First Ultra-Premium Funeral Vehicle"
+                  className="w-full"
+                />
+              </motion.div>
+
+              {/* ── Ground reflection strip ── */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[30px] pointer-events-none"
+                style={{ background: 'radial-gradient(ellipse at center, rgba(212,175,55,0.25) 0%, transparent 75%)', filter: 'blur(8px)' }}
+              />
+
+              {/* ── Decorative gold particle dots ── */}
+              {[
+                { top: '15%', left: '8%', size: 3, delay: '0s' },
+                { top: '25%', right: '6%', size: 2, delay: '0.8s' },
+                { top: '60%', left: '4%', size: 2, delay: '1.6s' },
+                { top: '75%', right: '10%', size: 3, delay: '0.4s' },
+                { top: '40%', right: '2%', size: 1.5, delay: '2s' },
+                { top: '10%', right: '18%', size: 1.5, delay: '1.2s' },
+              ].map((p, i) => (
+                <div
+                  key={i}
+                  className="absolute rounded-full bg-gold-400 pointer-events-none"
+                  style={{
+                    top: p.top,
+                    left: (p as any).left,
+                    right: (p as any).right,
+                    width: p.size,
+                    height: p.size,
+                    opacity: 0.6,
+                    animation: `particlePulse 3s ease-in-out ${p.delay} infinite`,
+                  }}
+                />
+              ))}
+
             </motion.div>
 
           </div>
