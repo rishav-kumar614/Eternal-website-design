@@ -51,7 +51,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenB2BModal, is
             </p>
 
             <p className={`text-xs leading-relaxed max-w-md ${isLightMode ? 'text-slate-700' : 'text-slate-400'}`}>
-              Eternal by Azimuth Business on Wheels is Delhi NCR’s premier luxury ceremonial mobility provider. We partner with healthcare institutions, funeral directors, municipal bodies, and families to honor life with uncompromised dignity.
+              Eternal Repos is a purpose-built ceremonial mobility brand focused on bringing dignity, care, reliability, and professionalism to the final journey. We partner with hospitals, funeral service providers, municipal organisations, religious trusts, NGOs, and families across Delhi NCR.
             </p>
 
             <div className="pt-2 flex items-center gap-4 text-slate-400">

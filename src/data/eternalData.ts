@@ -283,16 +283,16 @@ export const ETERNAL_DATA = {
   },
 
   insightsPage: {
-    eyebrow: 'Insights',
+    eyebrow: 'Eternal Insights',
     heading: 'Conversations That Matter',
-    intro: 'The subject of death is often avoided, even though every family eventually has to face it. Through Eternal Insights, we aim to create more open and useful conversations.',
+    intro: 'The subject of death is often avoided, even though every family eventually has to face it. Through Eternal Insights, we aim to create more open and useful conversations around:',
     topics: [
-      'Dignity in the final journey',
+      'Dignity in end-of-life care',
       'Funeral planning and preparedness',
       'Support for grieving families',
-      'Institutional end-of-life protocols',
-      'Funeral service standards',
-      'Religious and cultural practices',
+      'Institutional protocols and standards',
+      'Funeral service quality and standards',
+      'Religious and community practices',
       'The future of ceremonial mobility in India'
     ],
     closing: 'Our purpose is to help families and institutions make informed, respectful, and thoughtful decisions.'

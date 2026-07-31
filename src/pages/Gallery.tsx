@@ -35,15 +35,15 @@ export const Gallery: React.FC<GalleryProps> = ({ onSelectItem }) => {
           className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-400/10 border border-gold-500/30 text-gold-300 text-xs uppercase font-mono tracking-widest"
         >
           <Sparkles className="w-3.5 h-3.5" />
-          <span>Visual Architecture Showcase</span>
+          <span>Gallery</span>
         </motion.div>
 
         <h1 className="font-serif text-4xl sm:text-5xl font-bold text-slate-100">
-          <TextReveal text="Purpose-Built Ceremonial Mobility Gallery" highlightWords={["Ceremonial", "Mobility"]} />
+          <TextReveal text="Designed with Purpose. Presented with Dignity." highlightWords={["Purpose", "Dignity"]} />
         </h1>
 
         <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          <TextReveal mode="fade-up" text="Explore high-definition imagery of India's first purpose-built funeral hearse—from the panoramic glass sanctuary to the velvet-lined hydraulic bier platform." />
+          <TextReveal mode="fade-up" text="Explore the Eternal Repos vehicle, its ceremonial interiors, design details, institutional demonstrations, and moments from our journey." />
         </p>
       </section>
 

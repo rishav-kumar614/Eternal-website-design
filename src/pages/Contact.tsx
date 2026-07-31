@@ -33,13 +33,13 @@ export const Contact: React.FC = () => {
         className="max-w-5xl mx-auto px-4 text-center space-y-4"
       >
         <span className="text-xs uppercase font-mono tracking-widest text-gold-400 bg-gold-400/10 px-3 py-1 rounded-full border border-gold-500/20">
-          24/7 Response Guaranteed
+          Contact Us
         </span>
         <h1 className="font-serif text-4xl sm:text-6xl font-bold text-slate-100">
-          <TextReveal text="Connect With Eternal" highlightWords={["Eternal"]} />
+          <TextReveal text="Speak With Our Team" highlightWords={["Team"]} />
         </h1>
         <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
-          <TextReveal mode="fade-up" text="We partner with healthcare systems, funeral companies, municipal bodies, and families across Delhi NCR." />
+          <TextReveal mode="fade-up" text="Whether you represent an institution, manage funeral services, support a community, or wish to understand the Eternal Repos experience, our team is available to assist you." />
         </p>
       </motion.section>
 

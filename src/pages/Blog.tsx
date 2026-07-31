@@ -16,16 +16,29 @@ export const Blog: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="max-w-5xl mx-auto px-4 text-center space-y-4"
+        className="max-w-5xl mx-auto px-4 text-center space-y-6"
       >
         <span className="text-xs uppercase font-mono tracking-widest text-gold-400 bg-gold-400/10 px-3 py-1 rounded-full border border-gold-500/20">
-          Thought Leadership & Industry Insights
+          {ETERNAL_DATA.insightsPage.eyebrow}
         </span>
         <h1 className="font-serif text-4xl sm:text-6xl font-bold text-slate-100">
-          <TextReveal text="Eternal Journal" highlightWords={["Eternal", "Journal"]} />
+          <TextReveal text={ETERNAL_DATA.insightsPage.heading} highlightWords={["Conversations", "Matter"]} />
         </h1>
         <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
-          <TextReveal mode="fade-up" text="Perspectives on end-of-life care standards, institutional continuum care, and dignified funeral mobility in India." />
+          {ETERNAL_DATA.insightsPage.intro}
+        </p>
+
+        {/* 7 Topics from PDF */}
+        <div className="flex flex-wrap justify-center gap-2 pt-2">
+          {ETERNAL_DATA.insightsPage.topics.map((topic, idx) => (
+            <span key={idx} className="px-3 py-1 rounded-full bg-gold-400/10 border border-gold-500/20 text-xs text-gold-300 font-mono">
+              {topic}
+            </span>
+          ))}
+        </div>
+
+        <p className="text-xs text-slate-400 font-light italic">
+          {ETERNAL_DATA.insightsPage.closing}
         </p>
       </motion.section>
 
