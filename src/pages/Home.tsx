@@ -5,7 +5,7 @@ import { TextReveal } from '../components/TextReveal';
 import { TiltCard } from '../components/TiltCard';
 import { Counter } from '../components/Counter';
 import heroTruckImg from '../assets/images/ChatGPT Image Jul 30, 2026, 04_57_42 PM.png';
-import { Shield, Sparkles, VolumeX, ShieldCheck, ChevronRight, ArrowRight, Check, Building2, HeartHandshake, Landmark, Users } from 'lucide-react';
+import { Shield, Sparkles, VolumeX, ShieldCheck, ChevronRight, ArrowRight, Check, Building2, HeartHandshake, Landmark, Users, Heart, Award, Eye, Clock } from 'lucide-react';
 
 interface HomeProps {
   setActiveTab: (tab: string) => void;
@@ -18,17 +18,17 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
     <div className="space-y-0 overflow-hidden">
       
       {/* ========================================================================= */}
-      {/* 1 · HERO SECTION — Template 3: Editorial Split Layout */}
+      {/* 1 · HERO SECTION — Editorial Split Layout */}
       {/* ========================================================================= */}
       <section className="hero-section relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden bg-obsidian-900">
         
-        {/* Subtle ambient background glow (dark mode only) */}
+        {/* Subtle ambient background glow */}
         <div className="hero-ambient-glow absolute inset-0 pointer-events-none z-0" />
 
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
-            {/* ─── LEFT: Content Column ─── */}
+            {/* LEFT: Content Column */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -49,21 +49,22 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
               {/* Main Headline */}
               <h1 className="hero-headline text-4xl sm:text-5xl lg:text-6xl xl:text-[4.15rem] leading-[1.16]">
                 <span className="text-slate-100 dark:text-slate-100 font-normal">
-                  India's First{' '}
-                </span>
-                <span className="gold-gradient-text italic font-bold">
-                  Ultra-Premium
+                  Every Final Journey{' '}
                 </span>
                 <br />
-                <span className="text-slate-200 dark:text-slate-200 font-semibold tracking-normal">
-                  Luxury Funeral Mobility
+                <span className="gold-gradient-text italic font-bold">
+                  Deserves Dignity.
                 </span>
               </h1>
 
               {/* Sub-Tagline */}
               <p className="hero-subtagline text-base sm:text-lg lg:text-xl max-w-xl mx-auto lg:mx-0 tracking-wide leading-relaxed font-light text-slate-300 dark:text-slate-300">
-                "From Utility to Legacy. <span className="gold-gradient-text font-medium not-italic">From Transport to Tribute.</span>"
+                {ETERNAL_DATA.hero.subtagline}
               </p>
+
+              <div className="inline-block px-4 py-1.5 rounded-full bg-gold-400/10 border border-gold-500/30 text-xs font-mono uppercase tracking-widest text-gold-300">
+                {ETERNAL_DATA.hero.badge}
+              </div>
 
               {/* Thin Gold Divider */}
               <motion.div
@@ -75,7 +76,6 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
 
               {/* Action CTAs */}
               <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">
-                {/* Primary Gold CTA */}
                 <motion.button
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.97 }}
@@ -89,7 +89,6 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
                   <ChevronRight className="w-4 h-4 relative z-10" />
                 </motion.button>
 
-                {/* Secondary Outlined CTA */}
                 <motion.button
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.97 }}
@@ -101,47 +100,37 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
                 </motion.button>
               </div>
 
-              {/* Trust Metrics */}
-              <div className="pt-4 grid grid-cols-3 gap-6 text-center lg:text-left w-full mx-auto lg:mx-0 hero-trust-bar">
-                <div>
-                  <Counter to={360} suffix="°" className="hero-metric-value font-bold text-lg block" />
-                  <span className="hero-metric-label text-[10px] uppercase tracking-wider font-mono">Glass Sanctuary</span>
-                </div>
-                <div>
-                  <Counter to={24} suffix="hr" className="hero-metric-value font-bold text-lg block" />
-                  <span className="hero-metric-label text-[10px] uppercase tracking-wider font-mono">Response SLA</span>
-                </div>
-                <div>
-                  <Counter to={100} suffix="%" className="hero-metric-value font-bold text-lg block" />
-                  <span className="hero-metric-label text-[10px] uppercase tracking-wider font-mono">Purpose Built</span>
-                </div>
+              {/* Trust Metrics / Highlights */}
+              <div className="pt-4 grid grid-cols-3 gap-4 sm:gap-6 text-center lg:text-left w-full mx-auto lg:mx-0 hero-trust-bar">
+                {ETERNAL_DATA.hero.highlights.map((item, idx) => (
+                  <div key={idx}>
+                    <span className="hero-metric-value font-bold text-base sm:text-lg block text-gold-300 font-mono">
+                      {item.stat}
+                    </span>
+                    <span className="hero-metric-label text-[10px] uppercase tracking-wider font-mono text-slate-400 leading-tight block">
+                      {item.label}
+                    </span>
+                  </div>
+                ))}
               </div>
 
             </motion.div>
 
-            {/* ─── RIGHT: Hero Truck Image with Premium Effects ─── */}
+            {/* RIGHT: Hero Truck Image */}
             <motion.div
               initial={{ opacity: 0, x: 50, scale: 0.95 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 1.2, delay: 0.4, ease: 'easeOut' }}
               className="w-full relative z-20 flex items-end justify-center"
             >
-              {/* ── Outer deep gold radial glow ── */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[70%] rounded-full pointer-events-none"
                 style={{ background: 'radial-gradient(ellipse at center, rgba(212,175,55,0.18) 0%, rgba(212,175,55,0.06) 45%, transparent 75%)', filter: 'blur(40px)' }}
               />
 
-              {/* ── Inner bright highlight ring ── */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[50%] rounded-full pointer-events-none"
-                style={{ background: 'radial-gradient(ellipse at center, rgba(255,220,100,0.12) 0%, transparent 70%)', filter: 'blur(20px)' }}
-              />
-
-              {/* ── Floating animated truck image ── */}
               <div
                 className="relative z-10 w-full max-w-2xl"
                 style={{ filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.55)) drop-shadow(0 0 50px rgba(212,175,55,0.12))' }}
               >
-                {/* Shimmer sweep overlay */}
                 <div className="absolute inset-0 z-20 overflow-hidden rounded-xl pointer-events-none">
                   <div
                     className="absolute top-0 -left-full h-full w-1/3 opacity-30"
@@ -154,40 +143,14 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
 
                 <img
                   src={heroTruckImg}
-                  alt="Eternal Luxury Hearse — India's First Ultra-Premium Funeral Vehicle"
+                  alt="Eternal Repos Ceremonial Hearse"
                   className="w-full"
                 />
               </div>
 
-              {/* ── Ground reflection strip ── */}
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[30px] pointer-events-none"
                 style={{ background: 'radial-gradient(ellipse at center, rgba(212,175,55,0.25) 0%, transparent 75%)', filter: 'blur(8px)' }}
               />
-
-              {/* ── Decorative gold particle dots ── */}
-              {[
-                { top: '15%', left: '8%', size: 3, delay: '0s' },
-                { top: '25%', right: '6%', size: 2, delay: '0.8s' },
-                { top: '60%', left: '4%', size: 2, delay: '1.6s' },
-                { top: '75%', right: '10%', size: 3, delay: '0.4s' },
-                { top: '40%', right: '2%', size: 1.5, delay: '2s' },
-                { top: '10%', right: '18%', size: 1.5, delay: '1.2s' },
-              ].map((p, i) => (
-                <div
-                  key={i}
-                  className="absolute rounded-full bg-gold-400 pointer-events-none"
-                  style={{
-                    top: p.top,
-                    left: (p as any).left,
-                    right: (p as any).right,
-                    width: p.size,
-                    height: p.size,
-                    opacity: 0.6,
-                    animation: `particlePulse 3s ease-in-out ${p.delay} infinite`,
-                  }}
-                />
-              ))}
-
             </motion.div>
 
           </div>
@@ -196,7 +159,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
       </section>
 
       {/* ========================================================================= */}
-      {/* 2 · BRAND INTRODUCTION STRIP */}
+      {/* 2 · BRAND PHILOSOPHY STRIP */}
       {/* ========================================================================= */}
       <section className="bg-brown-800 border-y border-gold-500/20 py-12 px-4 relative overflow-hidden">
         <motion.div 
@@ -218,15 +181,13 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
       </section>
 
       {/* ========================================================================= */}
-      {/* 3 · WHY ETERNAL SECTION — Ultra-Luxury Redesign */}
+      {/* 3 · THE ETERNAL PROMISE — WHY ETERNAL REPOS EXISTS */}
       {/* ========================================================================= */}
       <section className="why-eternal-section py-24 bg-gradient-to-b from-obsidian-900 via-brown-900/40 to-obsidian-900 relative overflow-hidden">
-        {/* Subtle Ambient Radial Gold Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-500/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
           
-          {/* Section Header */}
           <motion.div 
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -236,19 +197,18 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
           >
             <div className="inline-flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />
-              <span className="why-eternal-eyebrow text-xs uppercase font-mono tracking-widest text-gold-400 bg-gold-400/10 px-3.5 py-1 rounded-full border border-gold-500/20">
+              <span className="text-xs uppercase font-mono tracking-widest text-gold-400 bg-gold-400/10 px-3.5 py-1 rounded-full border border-gold-500/20">
                 {ETERNAL_DATA.whyEternal.eyebrow}
               </span>
             </div>
 
-            <h2 className="why-eternal-heading font-serif text-3xl sm:text-5xl font-bold text-slate-100 leading-tight">
+            <h2 className="font-serif text-3xl sm:text-5xl font-bold text-slate-100 leading-tight">
               {ETERNAL_DATA.whyEternal.heading}
             </h2>
 
-            {/* Gold Divider Line */}
             <div className="w-16 h-0.5 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full mx-auto" />
 
-            <p className="why-eternal-intro text-sm sm:text-base text-slate-300 leading-relaxed font-light pt-1">
+            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light pt-1 whitespace-pre-line text-left sm:text-center">
               {ETERNAL_DATA.whyEternal.intro}
             </p>
           </motion.div>
@@ -269,33 +229,32 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: idx * 0.2 }}
-                    className="why-eternal-card group relative p-8 rounded-2xl bg-obsidian-800/80 border border-gold-500/20 hover:border-gold-400/60 transition-all duration-500 shadow-xl hover:shadow-gold-glow h-full flex flex-col justify-between overflow-hidden"
+                    className="group relative p-8 rounded-2xl bg-obsidian-800/80 border border-gold-500/20 hover:border-gold-400/60 transition-all duration-500 shadow-xl hover:shadow-gold-glow h-full flex flex-col justify-between overflow-hidden"
                   >
-                    {/* Top Gold Gradient Line */}
                     <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold-400/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                     <div>
-                      {/* Card Header: Icon + Number Badge */}
                       <div className="flex items-center justify-between mb-6">
-                        <div className="why-eternal-icon-box p-3.5 rounded-xl bg-gold-400/10 border border-gold-500/25 group-hover:bg-gold-400 group-hover:scale-110 transition-all duration-300 shadow-inner">
+                        <div className="p-3.5 rounded-xl bg-gold-400/10 border border-gold-500/25 group-hover:bg-gold-400 group-hover:scale-110 transition-all duration-300 shadow-inner">
                           {renderIcon()}
                         </div>
-                        <span className="why-eternal-num font-mono text-2xl font-bold text-gold-400/25 group-hover:text-gold-400/50 transition-colors">
+                        <span className="font-mono text-2xl font-bold text-gold-400/25 group-hover:text-gold-400/50 transition-colors">
                           0{idx + 1}
                         </span>
                       </div>
 
-                      <h3 className="why-eternal-card-title font-serif text-xl font-bold text-slate-100 mb-3 tracking-wider group-hover:text-gold-200 transition-colors">
+                      <h3 className="font-serif text-xl font-bold text-slate-100 mb-1 tracking-wider group-hover:text-gold-200 transition-colors">
                         {card.title}
                       </h3>
+                      <span className="text-[11px] font-mono text-gold-400 block mb-3">{card.subtitle}</span>
 
-                      <p className="why-eternal-card-desc text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
                         {card.description}
                       </p>
                     </div>
 
-                    <div className="why-eternal-card-footer mt-8 pt-4 border-t border-gold-500/15 flex items-center justify-between text-xs font-semibold text-gold-400 group-hover:text-gold-300">
-                      <span className="font-mono text-[11px] uppercase tracking-wider">Azimuth Standard</span>
+                    <div className="mt-8 pt-4 border-t border-gold-500/15 flex items-center justify-between text-xs font-semibold text-gold-400 group-hover:text-gold-300">
+                      <span className="font-mono text-[11px] uppercase tracking-wider">Eternal Repos Standard</span>
                       <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </motion.div>
@@ -326,7 +285,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
               <div className="relative rounded-2xl overflow-hidden border border-gold-500/30 shadow-2xl group">
                 <img
                   src={ETERNAL_DATA.vehicle.mainImage}
-                  alt="The Eternal Luxury Hearse"
+                  alt="The Eternal Ceremonial Vehicle"
                   className="w-full h-[450px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian-900/40 via-transparent to-transparent opacity-80" />
@@ -341,7 +300,6 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
               transition={{ duration: 0.8 }}
               className="lg:col-span-6 space-y-6"
             >
-              {/* Eyebrow Badge */}
               <div className="inline-flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />
                 <span className="text-[11px] uppercase font-mono tracking-widest text-gold-400 bg-gold-400/10 px-3.5 py-1 rounded-full border border-gold-500/20">
@@ -350,15 +308,14 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
               </div>
 
               <h2 className="font-serif text-3xl sm:text-4xl xl:text-5xl font-bold text-slate-100 leading-tight">
-                The Silent Journey, <br />
-                <span className="gold-gradient-text">the Glass Sanctuary</span>
+                {ETERNAL_DATA.vehicle.heading}
               </h2>
 
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light whitespace-pre-line">
                 {ETERNAL_DATA.vehicle.leadParagraph}
               </p>
 
-              {/* 10 Feature List Cards Grid */}
+              {/* 12 Feature List Cards Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
                 {ETERNAL_DATA.vehicle.features.map((feature, idx) => (
                   <div
@@ -392,7 +349,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
                   onClick={onOpenBrochureModal}
                   className="px-6 py-3 rounded-full bg-obsidian-900 border border-gold-500/30 text-gold-300 text-xs font-semibold hover:border-gold-400 hover:bg-obsidian-800 transition-all"
                 >
-                  Download Vehicle Specs PDF
+                  {ETERNAL_DATA.vehicle.downloadCta}
                 </button>
               </div>
 
@@ -404,71 +361,137 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
       </section>
 
       {/* ========================================================================= */}
-      {/* 5 · INSTITUTIONAL TRUST BAR — Redesigned Luxury Showcase */}
+      {/* 5 · FOR FAMILIES — Peaceful & Respectful Journey */}
       {/* ========================================================================= */}
-      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-obsidian-900 via-brown-900/60 to-obsidian-900 border-y border-gold-500/25 overflow-hidden">
-        {/* Subtle Ambient Gold Glow in Background */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl pointer-events-none" />
+      <section className="py-20 bg-obsidian-900 border-t border-gold-500/20 relative">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="p-10 sm:p-14 rounded-3xl bg-gradient-to-br from-brown-900/60 via-obsidian-800 to-brown-900/40 border border-gold-500/30 text-center space-y-6 shadow-2xl relative overflow-hidden">
+            <div className="w-12 h-12 rounded-full bg-gold-400/10 border border-gold-500/30 flex items-center justify-center text-gold-300 mx-auto">
+              <Heart className="w-6 h-6" />
+            </div>
 
-        <div className="max-w-7xl mx-auto text-center space-y-8 relative z-10">
+            <span className="text-xs uppercase font-mono tracking-widest text-gold-400 block">
+              {ETERNAL_DATA.forFamilies.eyebrow}
+            </span>
+
+            <h2 className="font-serif text-3xl sm:text-5xl font-bold text-slate-100">
+              {ETERNAL_DATA.forFamilies.heading}
+            </h2>
+
+            <p className="font-serif italic text-xl text-gold-200 max-w-2xl mx-auto">
+              "{ETERNAL_DATA.forFamilies.lead}"
+            </p>
+
+            <p className="text-xs sm:text-sm text-slate-300 max-w-3xl mx-auto leading-relaxed font-light whitespace-pre-line">
+              {ETERNAL_DATA.forFamilies.body}
+            </p>
+
+            <div className="pt-4">
+              <button
+                onClick={() => {
+                  setActiveTab('contact');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="px-8 py-3.5 rounded-full bg-gold-500 hover:bg-gold-400 text-obsidian-900 font-bold text-xs uppercase tracking-wider shadow-gold-glow gold-shimmer"
+              >
+                Speak With Our Care Team
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 6 · FOR INSTITUTIONS */}
+      {/* ========================================================================= */}
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-obsidian-900 via-brown-900/60 to-obsidian-900 border-y border-gold-500/25 overflow-hidden">
+        <div className="max-w-7xl mx-auto text-center space-y-12 relative z-10">
           
-          {/* Section Header & Eyebrow */}
           <div className="space-y-3 max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />
               <span className="text-[11px] uppercase font-mono tracking-widest text-gold-400 bg-gold-400/10 px-3.5 py-1 rounded-full border border-gold-500/20">
-                {ETERNAL_DATA.trustBar.eyebrow}
+                {ETERNAL_DATA.institutions.eyebrow}
               </span>
             </div>
 
             <h3 className="font-serif text-3xl sm:text-4xl font-bold text-slate-100 tracking-tight">
-              {ETERNAL_DATA.trustBar.heading}
+              {ETERNAL_DATA.institutions.heading}
             </h3>
+
+            <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+              {ETERNAL_DATA.institutions.subheading}
+            </p>
           </div>
 
-          {/* Institutional Partner Categories Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto pt-2">
-            {[
-              { label: 'Premium Hospitals', icon: Building2, desc: 'NABH & JCI Accredited Medical Centers' },
-              { label: 'Funeral Management', icon: HeartHandshake, desc: 'Turnkey Protocol Operators & Providers' },
-              { label: 'Municipal Corporations', icon: Landmark, desc: 'Civic Mobility & Urban Health Bodies' },
-              { label: 'Religious Trusts & NGOs', icon: Users, desc: 'Faith Foundations & Community Alliances' },
-            ].map((item, index) => {
-              const IconComp = item.icon;
-              return (
-                <div
-                  key={index}
-                  className="group relative p-6 rounded-2xl bg-obsidian-800/70 border border-gold-500/20 hover:border-gold-400/50 hover:bg-obsidian-800/90 transition-all duration-300 shadow-xl text-left flex flex-col justify-between"
-                >
-                  <div className="space-y-4">
-                    <div className="w-12 h-12 rounded-xl bg-gold-400/10 border border-gold-500/30 flex items-center justify-center text-gold-300 group-hover:scale-110 group-hover:bg-gold-400 group-hover:text-obsidian-950 transition-all duration-300">
-                      <IconComp className="w-6 h-6" />
-                    </div>
-
-                    <div className="space-y-1">
-                      <h4 className="font-serif text-lg font-bold text-slate-100 group-hover:text-gold-200 transition-colors">
-                        {item.label}
-                      </h4>
-                      <p className="text-xs text-slate-400 font-light leading-relaxed">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="pt-4 mt-4 border-t border-gold-500/10 flex items-center justify-between text-[10px] font-mono text-gold-400">
-                    <span>STANDARD COMPLIANCE</span>
-                    <span className="group-hover:translate-x-1 transition-transform">➔</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto pt-2">
+            {ETERNAL_DATA.institutions.segments.map((segment, idx) => (
+              <div
+                key={segment.id}
+                className="group relative p-6 rounded-2xl bg-obsidian-800/80 border border-gold-500/20 hover:border-gold-400/50 transition-all duration-300 shadow-xl text-left flex flex-col justify-between"
+              >
+                <div className="space-y-4">
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-mono text-gold-400 uppercase tracking-wider font-bold">0{idx + 1} · {segment.subtitle}</span>
+                    <h4 className="font-serif text-lg font-bold text-slate-100 group-hover:text-gold-200 transition-colors">
+                      {segment.title}
+                    </h4>
+                    <p className="text-xs text-slate-300 font-light leading-relaxed pt-1">
+                      {segment.description}
+                    </p>
                   </div>
                 </div>
-              );
-            })}
+
+                <button
+                  onClick={() => onOpenB2BModal(segment.title)}
+                  className="mt-6 pt-4 border-t border-gold-500/15 flex items-center justify-between text-[11px] font-mono font-bold text-gold-400 group-hover:text-gold-300 w-full text-left"
+                >
+                  <span>{segment.ctaText}</span>
+                  <span className="group-hover:translate-x-1 transition-transform">➔</span>
+                </button>
+              </div>
+            ))}
           </div>
 
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 6 · TESTIMONIAL / PULL-QUOTES */}
+      {/* 7 · THE ETERNAL STANDARD — OPERATING PRINCIPLES */}
+      {/* ========================================================================= */}
+      <section className="py-24 bg-obsidian-900 border-b border-gold-500/20 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+          
+          <div className="text-center space-y-4 max-w-3xl mx-auto">
+            <span className="text-xs uppercase font-mono tracking-widest text-gold-400 bg-gold-400/10 px-3 py-1 rounded-full border border-gold-500/20">
+              {ETERNAL_DATA.operatingPrinciples.eyebrow}
+            </span>
+            <h2 className="font-serif text-3xl sm:text-5xl font-bold text-slate-100">
+              {ETERNAL_DATA.operatingPrinciples.heading}
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+              {ETERNAL_DATA.operatingPrinciples.subheading}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {ETERNAL_DATA.operatingPrinciples.principles.map((p, idx) => (
+              <div
+                key={idx}
+                className="p-6 rounded-2xl bg-obsidian-800/80 border border-gold-500/20 hover:border-gold-400/50 transition-all space-y-3 shadow-lg"
+              >
+                <span className="text-xs font-mono text-gold-400 font-bold block">0{idx + 1}</span>
+                <h3 className="font-serif text-xl font-bold text-slate-100">{p.title}</h3>
+                <p className="text-xs text-slate-300 font-light leading-relaxed">{p.description}</p>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 8 · TESTIMONIAL / PULL-QUOTES */}
       {/* ========================================================================= */}
       <section className="py-24 bg-obsidian-900 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
@@ -513,7 +536,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
       </section>
 
       {/* ========================================================================= */}
-      {/* 7 · CLOSING CALL-TO-ACTION */}
+      {/* 9 · CLOSING PARTNERSHIP CALL-TO-ACTION */}
       {/* ========================================================================= */}
       <section className="py-20 bg-gradient-to-r from-brown-900 via-obsidian-900 to-brown-900 border-t border-gold-500/30 text-center px-4 relative overflow-hidden">
         <motion.div 
@@ -531,7 +554,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
             {ETERNAL_DATA.closingCta.heading}
           </h2>
 
-          <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed whitespace-pre-line font-light">
             {ETERNAL_DATA.closingCta.subtext}
           </p>
 
