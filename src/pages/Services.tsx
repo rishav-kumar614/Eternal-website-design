@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ETERNAL_DATA } from '../data/eternalData';
 import { TiltCard } from '../components/TiltCard';
-import { Wrench, KeyRound, Activity, ThermometerSnowflake, Palette, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Truck, Building2, Handshake, ShieldCheck, HeartHandshake, Landmark, CheckCircle2, ArrowRight } from 'lucide-react';
 
 interface ServicesProps {
   onOpenB2BModal: (serviceName?: string) => void;
@@ -11,19 +11,20 @@ interface ServicesProps {
 export const Services: React.FC<ServicesProps> = ({ onOpenB2BModal }) => {
   const getIcon = (iconName: string) => {
     switch (iconName) {
-      case 'Wrench': return <Wrench className="w-6 h-6 text-gold-400" />;
-      case 'KeyRound': return <KeyRound className="w-6 h-6 text-gold-400" />;
-      case 'Activity': return <Activity className="w-6 h-6 text-gold-400" />;
-      case 'ThermometerSnowflake': return <ThermometerSnowflake className="w-6 h-6 text-gold-400" />;
-      case 'Palette': return <Palette className="w-6 h-6 text-gold-400" />;
-      default: return <Wrench className="w-6 h-6 text-gold-400" />;
+      case 'Truck': return <Truck className="w-6 h-6 text-gold-400" />;
+      case 'Building2': return <Building2 className="w-6 h-6 text-gold-400" />;
+      case 'Handshake': return <Handshake className="w-6 h-6 text-gold-400" />;
+      case 'ShieldCheck': return <ShieldCheck className="w-6 h-6 text-gold-400" />;
+      case 'HeartHandshake': return <HeartHandshake className="w-6 h-6 text-gold-400" />;
+      case 'Landmark': return <Landmark className="w-6 h-6 text-gold-400" />;
+      default: return <Truck className="w-6 h-6 text-gold-400" />;
     }
   };
 
   return (
     <div className="pt-28 pb-20 space-y-20 bg-obsidian-900 overflow-hidden">
       
-      {/* Title */}
+      {/* Title Header */}
       <motion.section 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -31,14 +32,14 @@ export const Services: React.FC<ServicesProps> = ({ onOpenB2BModal }) => {
         className="max-w-5xl mx-auto px-4 text-center space-y-4"
       >
         <span className="text-xs uppercase font-mono tracking-widest text-gold-400 bg-gold-400/10 px-3 py-1 rounded-full border border-gold-500/20">
-          Institutional & Fleet Solutions
+          Services
         </span>
         <h1 className="font-serif text-4xl sm:text-6xl font-bold text-slate-100">
-          Comprehensive <br />
-          <span className="gold-gradient-text">Ceremonial Mobility Services</span>
+          Ceremonial Mobility <br />
+          <span className="gold-gradient-text">Services Across Delhi NCR</span>
         </h1>
         <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
-          Azimuth Business on Wheels provides end-to-end vehicle engineering, fleet leasing, AMC maintenance contracts, and mortuary refrigeration integration.
+          Eternal Repos provides structured and professionally managed funeral mobility support across Delhi NCR. Our services are designed for families as well as institutional partners.
         </p>
       </motion.section>
 
@@ -60,7 +61,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenB2BModal }) => {
                       {getIcon(service.icon)}
                     </div>
                     <span className="text-[10px] font-mono text-gold-400 uppercase tracking-widest bg-obsidian-900 px-2.5 py-1 rounded-full border border-gold-500/20">
-                      AZIMUTH SERVICE
+                      ETERNAL SERVICE
                     </span>
                   </div>
 
@@ -69,7 +70,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenB2BModal }) => {
                     <span className="text-xs text-gold-300 font-mono">{service.subtitle}</span>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
                     {service.description}
                   </p>
 
