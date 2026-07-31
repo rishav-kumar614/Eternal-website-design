@@ -9,6 +9,27 @@ import overviewSheetImg from '../assets/images/eternal_overview_sheet.jpg';
 import colourOptionsIvoryImg from '../assets/images/eternal_colour_options_ivory.jpg';
 import colourVariantsImg from '../assets/images/eternal_colour_variants.jpg';
 
+import bierSanctuaryImg from '../assets/images/eternal_bier_sanctuary.png';
+import floralProcessionImg from '../assets/images/eternal_floral_procession.png';
+import glassSanctuaryImg from '../assets/images/eternal_glass_sanctuary.png';
+import hearseExteriorImg from '../assets/images/eternal_hearse_exterior.png';
+import hearseLightThemeImg from '../assets/images/eternal_hearse_light_theme.png';
+import featuresRoofImg from '../assets/images/vehicle_features_roof.png';
+import viewFront34Img from '../assets/images/vehicle_view_front_34.png';
+import viewRearImg from '../assets/images/vehicle_view_rear.png';
+import viewRear34Img from '../assets/images/vehicle_view_rear_34.png';
+import viewSideLeftImg from '../assets/images/vehicle_view_side_left.png';
+import viewSideOppositeImg from '../assets/images/vehicle_view_side_opposite.png';
+import viewSideRightImg from '../assets/images/vehicle_view_side_right.png';
+import viewTopImg from '../assets/images/vehicle_view_top.png';
+import ceremonialExt1Img from '../assets/images/eternal_ceremonial_exterior_1.png';
+import ceremonialExt2Img from '../assets/images/eternal_ceremonial_exterior_2.png';
+import luxuryInt1Img from '../assets/images/eternal_luxury_interior_1.png';
+import luxuryInt2Img from '../assets/images/eternal_luxury_interior_2.png';
+import ceremonialHearse3Img from '../assets/images/eternal_ceremonial_hearse_3.png';
+import ceremonialHearse4Img from '../assets/images/eternal_ceremonial_hearse_4.png';
+import ceremonialHearse5Img from '../assets/images/eternal_ceremonial_hearse_5.png';
+
 export interface VehicleHotspot {
   id: string;
   title: string;
@@ -56,7 +77,7 @@ export interface BlogArticle {
 
 export const ETERNAL_DATA = {
   brand: {
-    name: 'Eternal',
+    name: 'Eternal Repos',
     tagline: 'From Utility to Legacy. From Transport to Tribute.',
     company: 'Azimuth Business on Wheels',
     promise: 'Every farewell deserves dignity.',
@@ -67,7 +88,7 @@ export const ETERNAL_DATA = {
     phone: '+91 98765 43210',
     email: 'contact@eternalazimuth.com',
     address: 'Azimuth Design Studio, Sector 62, Noida, Delhi NCR, India',
-    whatsapp: 'https://wa.me/919876543210?text=Hello%20Eternal%20Team,%20I%20would%20like%20to%20inquire%20about%20your%20luxury%20ceremonial%20vehicle%20services.'
+    whatsapp: 'https://wa.me/919876543210?text=Hello%20Eternal%20Repos%20Team,%20I%20would%20like%20to%20inquire%20about%20your%20luxury%20ceremonial%20vehicle%20services.'
   },
 
   hero: {
@@ -81,9 +102,9 @@ export const ETERNAL_DATA = {
   },
 
   whyEternal: {
-    eyebrow: 'Why Eternal',
+    eyebrow: 'Why Eternal Repos',
     heading: 'A farewell worthy of every life',
-    intro: "India's funeral mobility has long meant modified utility vehicles — cold, unbranded, purely functional. Eternal was created to change that, with one purpose-built ceremonial hearse designed to the standard families and institutions deserve.",
+    intro: "India's funeral mobility has long meant modified utility vehicles — cold, unbranded, purely functional. Eternal Repos was created to change that, with one purpose-built ceremonial hearse designed to the standard families and institutions deserve.",
     cards: [
       {
         id: 'silent-luxury',
@@ -213,7 +234,7 @@ export const ETERNAL_DATA = {
   },
 
   closingCta: {
-    eyebrow: 'Partner With Eternal',
+    eyebrow: 'Partner With Eternal Repos',
     heading: 'Bring dignified farewell mobility to those you serve',
     subtext: 'We work with hospitals, funeral firms, municipal bodies, and religious trusts across Delhi NCR. Let\'s discuss a partnership built on trust and tribute.',
     primaryBtn: 'Request a Partnership',
@@ -327,7 +348,7 @@ export const ETERNAL_DATA = {
   gallery: [
     {
       id: 'g1',
-      title: 'Eternal — 360° Exterior View',
+      title: 'Eternal Repos — 360° Exterior View',
       category: 'exterior',
       image: vehicle360DarkImg,
       caption: 'India\'s first ultra-premium ceremonial hearse — ivory & maroon with panoramic glass and gold accents.'
@@ -387,6 +408,146 @@ export const ETERNAL_DATA = {
       category: 'ceremonial',
       image: colourOptionsIvoryImg,
       caption: 'Five curated exterior finishes — ivory beige, brushed titanium, pearl white, champagne gold, deep ivory brown.'
+    },
+    {
+      id: 'g10',
+      title: 'Precision Hydraulic Bier Sanctuary',
+      category: 'interior',
+      image: bierSanctuaryImg,
+      caption: 'Motorized hydraulic bier platform with ambient golden cove lighting and hospital-grade antimicrobial surfaces.'
+    },
+    {
+      id: 'g11',
+      title: 'Floral Procession & Mounts',
+      category: 'ceremonial',
+      image: floralProcessionImg,
+      caption: 'Integrated floral mounting systems with ceremonial drapes and respectful tribute lighting.'
+    },
+    {
+      id: 'g12',
+      title: 'Glass Sanctuary — Panoramic View',
+      category: 'interior',
+      image: glassSanctuaryImg,
+      caption: 'Reinforced 360° glass viewing chamber with climate control and acoustic noise reduction.'
+    },
+    {
+      id: 'g13',
+      title: 'Eternal Hearse Exterior Profile',
+      category: 'exterior',
+      image: hearseExteriorImg,
+      caption: 'Wide-body Urbania XL chassis with champagne gold trim and panoramic ceremonial viewing glass.'
+    },
+    {
+      id: 'g14',
+      title: 'Ivory Pearl — Light Theme Render',
+      category: 'exterior',
+      image: hearseLightThemeImg,
+      caption: 'Ivory pearl finish with warm gold detailing for day-time ceremonial processions.'
+    },
+    {
+      id: 'g15',
+      title: 'Panoramic Glass Roof & Rails',
+      category: 'exterior',
+      image: featuresRoofImg,
+      caption: 'Toughened glass roof ceiling with champagne gold roof rails and external memorial lighting.'
+    },
+    {
+      id: 'g16',
+      title: 'Front 3/4 Perspective Profile',
+      category: 'exterior',
+      image: viewFront34Img,
+      caption: 'Commanding front 3/4 profile featuring gold-embossed Eternal crest and LED headlights.'
+    },
+    {
+      id: 'g17',
+      title: 'Direct Rear View — Glass Chamber',
+      category: 'exterior',
+      image: viewRearImg,
+      caption: 'Rear viewing window showcasing internal ceremonial drapes and gold logo branding.'
+    },
+    {
+      id: 'g18',
+      title: 'Rear 3/4 Perspective View',
+      category: 'exterior',
+      image: viewRear34Img,
+      caption: 'Rear quarter angle highlighting wide-body stance, step ladder access, and side panoramic glass.'
+    },
+    {
+      id: 'g19',
+      title: 'Side Profile View — Full Length',
+      category: 'exterior',
+      image: viewSideLeftImg,
+      caption: 'Full-length side profile displaying seamless glass sanctuary and gold coachlines.'
+    },
+    {
+      id: 'g20',
+      title: 'Opposite Side Profile View',
+      category: 'exterior',
+      image: viewSideOppositeImg,
+      caption: 'Complete driver side profile with integrated side entrance door and gold metallic trim.'
+    },
+    {
+      id: 'g21',
+      title: 'Right Side Elevation Angle',
+      category: 'exterior',
+      image: viewSideRightImg,
+      caption: 'Right elevation showing passenger side panoramic window and gold wheel arches.'
+    },
+    {
+      id: 'g22',
+      title: 'Bird\'s Eye Top Perspective',
+      category: 'exterior',
+      image: viewTopImg,
+      caption: 'Top-down aerial view revealing full panoramic roof glass structure and chassis width.'
+    },
+    {
+      id: 'g23',
+      title: 'Ceremonial Hearse — Studio Render 1',
+      category: 'ceremonial',
+      image: ceremonialExt1Img,
+      caption: 'High-detail studio ceremonial render with gold ornamentation and crystal glass.'
+    },
+    {
+      id: 'g24',
+      title: 'Ceremonial Hearse — Studio Render 2',
+      category: 'ceremonial',
+      image: ceremonialExt2Img,
+      caption: 'Custom luxury hearse variant with warm interior illumination.'
+    },
+    {
+      id: 'g25',
+      title: 'Luxury Interior Sanctuary — Angle 1',
+      category: 'interior',
+      image: luxuryInt1Img,
+      caption: 'Spacious interior cabin with hospitality-grade seating and acoustic dampening.'
+    },
+    {
+      id: 'g26',
+      title: 'Luxury Interior Sanctuary — Angle 2',
+      category: 'interior',
+      image: luxuryInt2Img,
+      caption: 'Calm ambient lit interior chamber with motorized bier platform.'
+    },
+    {
+      id: 'g27',
+      title: 'Ceremonial Hearse — Special Edition 1',
+      category: 'in_service',
+      image: ceremonialHearse3Img,
+      caption: 'Bespoke ceremonial hearse designed for institutional B2B fleets.'
+    },
+    {
+      id: 'g28',
+      title: 'Ceremonial Hearse — Special Edition 2',
+      category: 'in_service',
+      image: ceremonialHearse4Img,
+      caption: 'Ornate gold trim ceremonial hearse in evening lighting.'
+    },
+    {
+      id: 'g29',
+      title: 'Ceremonial Hearse — Special Edition 3',
+      category: 'in_service',
+      image: ceremonialHearse5Img,
+      caption: 'Full-spec ceremonial mobility vehicle crafted for high-profile tributes.'
     }
   ] as GalleryItem[],
 

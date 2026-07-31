@@ -30,7 +30,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navLinks = [
     { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About Eternal' },
+    { id: 'about', label: 'About Us' },
     { id: 'vehicle', label: 'Our Vehicle' },
     { id: 'services', label: 'Services' },
     { id: 'institutions', label: 'For Institutions' },
@@ -51,35 +51,35 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? `header-scrolled py-3 shadow-xl backdrop-blur-md border-b ${
+          ? `header-scrolled py-2.5 shadow-xl backdrop-blur-md border-b ${
               isLightMode
                 ? 'bg-white/95 border-gold-500/30'
                 : 'bg-obsidian-900/90 border-gold-500/20'
             }`
-          : `header-transparent py-5 bg-gradient-to-b ${
+          : `header-transparent py-4 bg-gradient-to-b ${
               isLightMode
                 ? 'from-amber-100/40 via-amber-50/20 to-transparent'
                 : 'from-obsidian-900/90 via-obsidian-900/60 to-transparent'
             }`
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-6 xl:gap-8">
+      <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-3 lg:gap-4 xl:gap-6">
           
           {/* Brand Logo */}
           <button 
             onClick={() => handleNavClick('home')}
-            className="flex items-center gap-3 group text-left focus:outline-none shrink-0 mr-2 xl:mr-4"
+            className="flex items-center gap-2.5 group text-left focus:outline-none shrink-0"
           >
             <div
-              className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
+              className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${
                 isLightMode
                   ? 'bg-gradient-to-tr from-amber-200 via-amber-100 to-gold-300 border border-gold-500/60 shadow-md group-hover:border-gold-600'
                   : 'bg-gradient-to-tr from-brown-800 via-gold-500/40 to-gold-400/20 border border-gold-400/50 shadow-gold-glow group-hover:border-gold-300'
               }`}
             >
               <span
-                className={`font-serif font-bold text-xl tracking-widest ${
+                className={`font-serif font-bold text-lg tracking-widest ${
                   isLightMode ? 'text-obsidian-900' : 'text-gold-300'
                 }`}
               >
@@ -87,26 +87,17 @@ export const Navbar: React.FC<NavbarProps> = ({
               </span>
             </div>
             <div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5 sm:gap-2">
                 <span
-                  className={`font-serif text-2xl font-bold tracking-wider transition-colors ${
+                  className={`font-serif text-lg sm:text-xl font-bold tracking-wider transition-colors ${
                     isLightMode ? 'text-slate-900' : 'text-slate-100'
                   }`}
                 >
-                  ETERNAL
-                </span>
-                <span
-                  className={`text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded-md border ${
-                    isLightMode
-                      ? 'bg-amber-100/90 border-gold-500/40 text-gold-700'
-                      : 'bg-gold-400/10 border-gold-500/30 text-gold-400'
-                  }`}
-                >
-                  BY AZIMUTH
+                  ETERNAL REPOS
                 </span>
               </div>
               <p
-                className={`text-[10px] tracking-widest uppercase font-mono ${
+                className={`text-[9px] tracking-widest uppercase font-mono ${
                   isLightMode ? 'text-slate-700 font-semibold' : 'text-slate-300'
                 }`}
               >
@@ -117,7 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Desktop Navigation */}
           <nav
-            className={`hidden lg:flex items-center gap-1 xl:gap-2 p-1.5 rounded-full border backdrop-blur-md transition-all shrink-0 ${
+            className={`hidden lg:flex items-center gap-0.5 xl:gap-1.5 p-1 rounded-full border backdrop-blur-md transition-all shrink-0 ${
               isLightMode
                 ? 'bg-white/80 border-gold-500/35 shadow-sm'
                 : 'bg-obsidian-800/70 border-gold-500/20'
@@ -129,7 +120,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <button
                   key={link.id}
                   onClick={() => handleNavClick(link.id)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide transition-all ${
+                  className={`px-2.5 xl:px-3 py-1.5 rounded-full text-[11px] xl:text-xs font-semibold tracking-wide transition-all ${
                     isActive
                       ? 'bg-gradient-to-r from-gold-500 to-gold-600 text-obsidian-900 font-bold shadow-gold-glow'
                       : isLightMode
@@ -144,12 +135,12 @@ export const Navbar: React.FC<NavbarProps> = ({
           </nav>
 
           {/* Right Action CTA & Theme Switcher */}
-          <div className="hidden sm:flex items-center gap-3 shrink-0">
+          <div className="hidden sm:flex items-center gap-2 sm:gap-3 shrink-0">
             
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className={`p-2.5 rounded-full border transition-all flex items-center justify-center shadow-md ${
+              className={`p-2 rounded-full border transition-all flex items-center justify-center shadow-md ${
                 isLightMode
                   ? 'bg-white/90 border-gold-500/40 text-gold-700 hover:bg-amber-50'
                   : 'bg-obsidian-800 border-gold-500/30 text-gold-300 hover:bg-gold-500/10'
@@ -166,10 +157,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => onOpenB2BModal('Institutional Partner')}
-              className="relative group px-4 py-2 rounded-full overflow-hidden text-xs font-bold tracking-wider text-obsidian-900 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 shadow-gold-glow hover:shadow-gold-500/40 transition-all flex items-center gap-2 gold-shimmer"
+              className="relative group px-3.5 py-2 rounded-full overflow-hidden text-xs font-bold tracking-wider text-obsidian-900 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 shadow-gold-glow hover:shadow-gold-500/40 transition-all flex items-center gap-1.5 gold-shimmer shrink-0"
             >
               <Shield className="w-3.5 h-3.5 text-obsidian-900 relative z-10" />
-              <span className="relative z-10">PARTNER WITH US</span>
+              <span className="relative z-10 whitespace-nowrap">PARTNER WITH US</span>
               <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform relative z-10" />
             </button>
           </div>

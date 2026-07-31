@@ -280,6 +280,66 @@ html.light .hero-trust-bar {
   border-top-color: rgba(184, 134, 11, 0.2);
 }
 
+/* ── Why Eternal Section Light Theme Overrides ── */
+html.light .why-eternal-section {
+  background: #FAF8F5 !important;
+}
+
+html.light .why-eternal-eyebrow {
+  background-color: #FFFFFF !important;
+  border-color: rgba(184, 134, 11, 0.35) !important;
+  color: #8B6914 !important;
+}
+
+html.light .why-eternal-heading {
+  color: #0F172A !important;
+}
+
+html.light .why-eternal-intro {
+  color: #334155 !important;
+}
+
+html.light .why-eternal-card {
+  background-color: #FFFFFF !important;
+  border-color: rgba(184, 134, 11, 0.25) !important;
+  box-shadow: 0 10px 30px -5px rgba(184, 134, 11, 0.1), 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light .why-eternal-card:hover {
+  border-color: rgba(184, 134, 11, 0.5) !important;
+  box-shadow: 0 20px 40px -10px rgba(184, 134, 11, 0.2), 0 8px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+html.light .why-eternal-icon-box {
+  background-color: rgba(248, 245, 238, 0.9) !important;
+  border-color: rgba(184, 134, 11, 0.3) !important;
+}
+
+html.light .why-eternal-card:hover .why-eternal-icon-box {
+  background-color: #C5A059 !important;
+}
+
+html.light .why-eternal-num {
+  color: rgba(184, 134, 11, 0.3) !important;
+}
+
+html.light .why-eternal-card-title {
+  color: #0F172A !important;
+}
+
+html.light .why-eternal-card:hover .why-eternal-card-title {
+  color: #8B6914 !important;
+}
+
+html.light .why-eternal-card-desc {
+  color: #475569 !important;
+}
+
+html.light .why-eternal-card-footer {
+  border-top-color: rgba(184, 134, 11, 0.2) !important;
+  color: #8B6914 !important;
+}
+
 /* ── Vehicle Interactive Viewer Light Theme Overrides ── */
 html.light .vehicle-viewer-box {
   background-color: #FFFFFF !important;

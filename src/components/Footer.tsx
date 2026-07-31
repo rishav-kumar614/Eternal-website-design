@@ -11,7 +11,7 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenB2BModal, isLightMode = false }) => {
   const quickLinks = [
     { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About Eternal' },
+    { id: 'about', label: 'About Eternal Repos' },
     { id: 'vehicle', label: 'Our Vehicle' },
     { id: 'services', label: 'Services' },
     { id: 'institutions', label: 'For Institutions' },
@@ -60,16 +60,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenB2BModal, is
                       isLightMode ? 'text-slate-900' : 'text-slate-100'
                     }`}
                   >
-                    ETERNAL
-                  </span>
-                  <span
-                    className={`text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded-md border ${
-                      isLightMode
-                        ? 'bg-amber-100 border-gold-500/50 text-gold-800 font-extrabold'
-                        : 'bg-gold-400/10 border-gold-500/30 text-gold-400'
-                    }`}
-                  >
-                    BY AZIMUTH
+                    ETERNAL REPOS
                   </span>
                 </div>
               </div>

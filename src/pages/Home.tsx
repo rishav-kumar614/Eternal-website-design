@@ -137,9 +137,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
               />
 
               {/* ── Floating animated truck image ── */}
-              <motion.div
-                animate={{ y: [0, -12, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              <div
                 className="relative z-10 w-full max-w-2xl"
                 style={{ filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.55)) drop-shadow(0 0 50px rgba(212,175,55,0.12))' }}
               >
@@ -159,7 +157,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
                   alt="Eternal Luxury Hearse — India's First Ultra-Premium Funeral Vehicle"
                   className="w-full"
                 />
-              </motion.div>
+              </div>
 
               {/* ── Ground reflection strip ── */}
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[30px] pointer-events-none"
@@ -220,37 +218,48 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
       </section>
 
       {/* ========================================================================= */}
-      {/* 3 · WHY ETERNAL SECTION */}
+      {/* 3 · WHY ETERNAL SECTION — Ultra-Luxury Redesign */}
       {/* ========================================================================= */}
-      <section className="py-24 bg-obsidian-900 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <section className="why-eternal-section py-24 bg-gradient-to-b from-obsidian-900 via-brown-900/40 to-obsidian-900 relative overflow-hidden">
+        {/* Subtle Ambient Radial Gold Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-500/5 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
           
           {/* Section Header */}
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="text-center space-y-4 max-w-3xl mx-auto"
           >
-            <span className="text-xs uppercase font-mono tracking-widest text-gold-400 bg-gold-400/10 px-3 py-1 rounded-full border border-gold-500/20">
-              {ETERNAL_DATA.whyEternal.eyebrow}
-            </span>
-            <h2 className="font-serif text-3xl sm:text-5xl font-bold text-slate-100">
+            <div className="inline-flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />
+              <span className="why-eternal-eyebrow text-xs uppercase font-mono tracking-widest text-gold-400 bg-gold-400/10 px-3.5 py-1 rounded-full border border-gold-500/20">
+                {ETERNAL_DATA.whyEternal.eyebrow}
+              </span>
+            </div>
+
+            <h2 className="why-eternal-heading font-serif text-3xl sm:text-5xl font-bold text-slate-100 leading-tight">
               {ETERNAL_DATA.whyEternal.heading}
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
+
+            {/* Gold Divider Line */}
+            <div className="w-16 h-0.5 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full mx-auto" />
+
+            <p className="why-eternal-intro text-sm sm:text-base text-slate-300 leading-relaxed font-light pt-1">
               {ETERNAL_DATA.whyEternal.intro}
             </p>
           </motion.div>
 
-          {/* 3 Key Differentiator Cards with 3D TiltCard */}
+          {/* 3 Key Differentiator Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {ETERNAL_DATA.whyEternal.cards.map((card, idx) => {
               const renderIcon = () => {
-                if (card.icon === 'VolumeX') return <VolumeX className="w-8 h-8 text-gold-400" />;
-                if (card.icon === 'Sparkles') return <Sparkles className="w-8 h-8 text-gold-400" />;
-                return <ShieldCheck className="w-8 h-8 text-gold-400" />;
+                if (card.icon === 'VolumeX') return <VolumeX className="w-7 h-7 text-gold-400 group-hover:text-obsidian-950 transition-colors" />;
+                if (card.icon === 'Sparkles') return <Sparkles className="w-7 h-7 text-gold-400 group-hover:text-obsidian-950 transition-colors" />;
+                return <ShieldCheck className="w-7 h-7 text-gold-400 group-hover:text-obsidian-950 transition-colors" />;
               };
 
               return (
@@ -260,25 +269,34 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: idx * 0.2 }}
-                    className="group relative p-8 rounded-2xl bg-gradient-to-b from-obsidian-800 to-brown-900/40 border border-gold-500/20 hover:border-gold-400 transition-all duration-300 shadow-xl hover:shadow-gold-glow h-full flex flex-col justify-between"
+                    className="why-eternal-card group relative p-8 rounded-2xl bg-obsidian-800/80 border border-gold-500/20 hover:border-gold-400/60 transition-all duration-500 shadow-xl hover:shadow-gold-glow h-full flex flex-col justify-between overflow-hidden"
                   >
+                    {/* Top Gold Gradient Line */}
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold-400/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
                     <div>
-                      <div className="mb-6 p-4 rounded-xl bg-gold-400/10 border border-gold-500/20 w-fit group-hover:scale-110 transition-transform">
-                        {renderIcon()}
+                      {/* Card Header: Icon + Number Badge */}
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="why-eternal-icon-box p-3.5 rounded-xl bg-gold-400/10 border border-gold-500/25 group-hover:bg-gold-400 group-hover:scale-110 transition-all duration-300 shadow-inner">
+                          {renderIcon()}
+                        </div>
+                        <span className="why-eternal-num font-mono text-2xl font-bold text-gold-400/25 group-hover:text-gold-400/50 transition-colors">
+                          0{idx + 1}
+                        </span>
                       </div>
 
-                      <h3 className="font-serif text-xl font-bold text-slate-100 mb-3 tracking-wide">
+                      <h3 className="why-eternal-card-title font-serif text-xl font-bold text-slate-100 mb-3 tracking-wider group-hover:text-gold-200 transition-colors">
                         {card.title}
                       </h3>
 
-                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                      <p className="why-eternal-card-desc text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
                         {card.description}
                       </p>
                     </div>
 
-                    <div className="mt-6 pt-4 border-t border-gold-500/10 flex items-center gap-2 text-xs font-semibold text-gold-400 group-hover:text-gold-300">
-                      <span>Azimuth Standard</span>
-                      <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    <div className="why-eternal-card-footer mt-8 pt-4 border-t border-gold-500/15 flex items-center justify-between text-xs font-semibold text-gold-400 group-hover:text-gold-300">
+                      <span className="font-mono text-[11px] uppercase tracking-wider">Azimuth Standard</span>
+                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </motion.div>
                 </TiltCard>

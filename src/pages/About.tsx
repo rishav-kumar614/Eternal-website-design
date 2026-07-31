@@ -24,7 +24,7 @@ export const About: React.FC<AboutProps> = ({ onOpenB2BModal }) => {
           Established in Dignity · Delhi NCR
         </span>
         <h1 className="font-serif text-4xl sm:text-6xl font-bold text-slate-100">
-          <TextReveal text="About Eternal by Azimuth" highlightWords={["Eternal", "Azimuth"]} />
+          <TextReveal text="About Eternal Repos by Azimuth" highlightWords={["Eternal", "Repos", "Azimuth"]} />
         </h1>
         <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
           <TextReveal mode="fade-up" text="Pioneering India's first ultra-premium luxury funeral mobility standard with purpose-built engineering and compassionate design." />
@@ -43,7 +43,7 @@ export const About: React.FC<AboutProps> = ({ onOpenB2BModal }) => {
             className="lg:col-span-6 space-y-6"
           >
             <h2 className="font-serif text-3xl font-bold text-slate-100">
-              <TextReveal text="The Origin of Eternal" highlightWords={["Origin"]} />
+              <TextReveal text="The Origin of Eternal Repos" highlightWords={["Origin"]} />
             </h2>
             
             <p className="text-sm text-slate-300 leading-relaxed">
@@ -51,7 +51,7 @@ export const About: React.FC<AboutProps> = ({ onOpenB2BModal }) => {
             </p>
 
             <p className="text-sm text-slate-300 leading-relaxed">
-              <strong>Azimuth Business on Wheels</strong>, a premier vehicular design and customization unit, recognized the urgent need for change. We established <strong>Eternal</strong> with a singular mission: to design and engineer a purpose-built ceremonial hearse that elevates every farewell into a peaceful, honored tribute.
+              <strong>Azimuth Business on Wheels</strong>, a premier vehicular design and customization unit, recognized the urgent need for change. We established <strong>Eternal Repos</strong> with a singular mission: to design and engineer a purpose-built ceremonial hearse that elevates every farewell into a peaceful, honored tribute.
             </p>
 
             <div className="p-6 rounded-2xl bg-brown-800/80 border border-gold-500/30 space-y-2">
