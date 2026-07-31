@@ -138,7 +138,7 @@ html.light main {
 }
 
 .hero-headline {
-  font-family: 'Bodoni Moda', 'Cinzel', 'Playfair Display', serif;
+  font-family: 'Cormorant Garamond', 'Cinzel', 'Playfair Display', serif;
   letter-spacing: -0.01em;
 }
 
@@ -151,7 +151,7 @@ html.light main {
 }
 
 .hero-subtagline {
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   letter-spacing: 0.01em;
   color: rgba(243, 229, 171, 0.9);
 }

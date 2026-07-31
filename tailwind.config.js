@@ -35,7 +35,7 @@ export default {
         serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         cinzel: ['"Cinzel"', 'serif'],
         syne: ['"Syne"', 'sans-serif'],
-        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['"Inter"', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
         'gold-glow': '0 0 25px rgba(212, 175, 55, 0.15)',
