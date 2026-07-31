@@ -51,6 +51,7 @@ export interface ServiceItem {
 export interface PartnerSegment {
   id: string;
   title: string;
+  subtitle: string;
   description: string;
   benefits: string[];
   ctaText: string;
@@ -80,70 +81,87 @@ export const ETERNAL_DATA = {
     name: 'Eternal Repos',
     tagline: 'From Utility to Legacy. From Transport to Tribute.',
     company: 'Azimuth Business on Wheels',
-    promise: 'Every farewell deserves dignity.',
-    philosophy: '“We don\'t build vehicles. We create experiences that honour life and respect every goodbye.”',
-    location: 'Established in Dignity · Delhi NCR',
-    copyright: '© 2026 Azimuth Business on Wheels. All Rights Reserved.',
-    sla: 'We respond within 24 business hours',
-    phone: '+91 98765 43210',
-    email: 'contact@eternalazimuth.com',
+    promise: 'To bring dignity, care, and professionalism to every final journey.',
+    philosophy: '“Dignity should not be an upgrade. It should be the standard.”',
+    location: 'Delhi NCR Operations · Azimuth Design Studio',
+    copyright: '© 2026 Eternal Repos, an initiative of Azimuth Business on Wheels. All Rights Reserved.',
+    sla: 'We respond within one business day.',
+    phone: '+91 XXXXX XXXXX',
+    email: 'contact@eternalrepos.in',
     address: 'Azimuth Design Studio, Sector 62, Noida, Delhi NCR, India',
-    whatsapp: 'https://wa.me/919876543210?text=Hello%20Eternal%20Repos%20Team,%20I%20would%20like%20to%20inquire%20about%20your%20luxury%20ceremonial%20vehicle%20services.'
+    whatsapp: 'https://wa.me/919876543210?text=Hello%20Eternal%20Repos%20Team,%20I%20would%20like%20to%20inquire%20about%20your%20ceremonial%20vehicle%20services.'
   },
 
   hero: {
-    eyebrow: 'Established in Dignity · Delhi NCR',
-    headline: "India's First Ultra-Premium Luxury Funeral Mobility",
-    subtagline: 'From Utility to Legacy. From Transport to Tribute.',
-    primaryCta: 'View Our Vehicle',
+    eyebrow: 'Eternal Repos — Tribute in Motion',
+    headline: 'Every Final Journey Deserves Dignity.',
+    subtagline: 'Eternal Repos is creating a new standard for funeral mobility in India through a purpose-built ceremonial vehicle designed for dignity, comfort, reliability, and respect.',
+    badge: 'From Utility to Legacy. From Transport to Tribute.',
+    primaryCta: 'Explore Our Vehicle',
     secondaryCta: 'Partner With Us',
     heroImage: vehicle360DarkImg,
-    heroImageLight: vehicle360LightImg
+    heroImageLight: vehicle360LightImg,
+    highlights: [
+      { stat: '360°', label: 'Panoramic Ceremonial Viewing' },
+      { stat: '24-Hour', label: 'Institutional Response Commitment' },
+      { stat: '100%', label: 'Purpose-Built for Final Journeys' }
+    ]
   },
 
   whyEternal: {
-    eyebrow: 'Why Eternal Repos',
-    heading: 'A farewell worthy of every life',
-    intro: "India's funeral mobility has long meant modified utility vehicles — cold, unbranded, purely functional. Eternal Repos was created to change that, with one purpose-built ceremonial hearse designed to the standard families and institutions deserve.",
+    eyebrow: 'The Eternal Promise',
+    heading: 'Why Eternal Repos Exists',
+    intro: 'For years, funeral transportation in India has largely depended on modified utility vehicles. They fulfil a basic purpose, but they are rarely designed around the emotional needs of families, the expectations of institutions, or the dignity of the person being carried.\n\nEternal Repos was created to change that. We believe the final journey should not feel like an arrangement made at the last moment. It should feel organised, peaceful, respectful, and worthy of the life being remembered.\n\nOur purpose is simple:\nTo bring dignity, care, and professionalism to every final journey.',
     cards: [
       {
-        id: 'silent-luxury',
-        title: 'SILENT LUXURY',
-        description: 'Acoustic-insulated interiors, warm ambient lighting, and climate-controlled calm — free of engine noise and clinical starkness. A peaceful space for reflection and prayer.',
+        id: 'designed-for-peace',
+        title: 'DESIGNED FOR PEACE',
+        subtitle: 'Calm over noise and confusion',
+        description: 'Grieving families need calm, not noise and confusion. The Eternal Repos vehicle is designed with acoustic insulation, warm lighting, controlled temperature, clean interiors, and thoughtful detailing to create a peaceful environment throughout the journey.',
         icon: 'VolumeX'
       },
       {
-        id: 'premium-design',
-        title: 'PREMIUM DESIGN',
-        description: 'Champagne gold detailing, panoramic reinforced glass, and hospitality-grade textures — ceremonial craftsmanship that signals respect and quality at every touchpoint.',
+        id: 'designed-with-purpose',
+        title: 'DESIGNED WITH PURPOSE',
+        subtitle: 'Specifically for ceremonial use',
+        description: 'Every part of the vehicle serves a clear purpose. From the panoramic glass and hydraulic platform to floral arrangements, climate control, and interior finishes, each element has been designed specifically for ceremonial use. Nothing feels temporary. Nothing feels improvised.',
         icon: 'Sparkles'
       },
       {
-        id: 'institutional-trust',
-        title: 'INSTITUTIONAL TRUST',
-        description: 'Built to the standards hospitals, NGOs, and municipal bodies require — hospital-grade antimicrobial surfaces, reliable engineering, and consistently professional presentation.',
+        id: 'built-for-trust',
+        title: 'BUILT FOR TRUST',
+        subtitle: 'Dependable operational standards',
+        description: 'Institutions need more than a well-designed vehicle. They need reliability, hygiene, operational discipline, trained presentation, and consistent service standards. Eternal Repos is built to support hospitals, funeral service providers, municipal bodies, trusts, and community organisations with dependable ceremonial mobility.',
         icon: 'ShieldCheck'
       }
     ]
   },
 
   vehicle: {
-    eyebrow: 'One Vehicle · One Promise',
-    heading: 'The Silent Journey, the Glass Sanctuary',
-    leadParagraph: 'Not two variants, not a range — a single, fully-loaded ceremonial hearse built from the ground up on a wide-body chassis, engineered for comfort, dignity, and grace.',
+    eyebrow: 'One Vehicle · One Standard · One Promise',
+    heading: 'The Eternal Ceremonial Vehicle',
+    subheading: 'One Vehicle. One Standard. One Promise.',
+    leadParagraph: 'Eternal Repos does not offer multiple basic and premium variants. We have created one fully equipped ceremonial vehicle designed to deliver the same standard of dignity, comfort, and professionalism for every family.\n\nBuilt on the Force Urbania XL wide-body platform, the vehicle combines modern engineering with thoughtful ceremonial design.',
     chassis: 'Force Urbania XL Wide-Body Architecture',
     mainImage: vehicleDarkViewsImg,
+    calmSpaceTitle: 'A Calm Space for the Final Journey',
+    calmSpaceDescription: 'The vehicle has been designed to help families remain close to their loved one in a peaceful and respectful setting. Warm lighting, noise reduction, climate control, air purification, and carefully selected materials help create an atmosphere suitable for prayer, reflection, and remembrance.',
+    thoughtfulTitle: 'Thoughtfully Designed for Ceremony',
+    thoughtfulDescription: 'Every ceremony has its own traditions, emotions, and requirements. The vehicle supports these moments through panoramic side glass, a precision hydraulic bier platform, integrated floral mounting, external memorial displays, warm interior lighting, multi-zone climate management, high-quality sound support, and clean antimicrobial surfaces.\n\nThe result is a vehicle that is not only visually refined but also practical, reliable, and respectful.',
+    downloadCta: 'Download Vehicle Specifications',
     features: [
-      'Panoramic side glass — 360° ceremonial viewing',
+      'Force Urbania XL wide-body platform',
+      '360° panoramic ceremonial viewing',
       'Precision hydraulic bier platform',
-      'Warm ambient lighting & calm interiors',
+      'Warm ambient lighting',
+      'Acoustic noise reduction',
+      'Multi-zone climate control',
+      'Aromatic air purification',
       'Hospital-grade antimicrobial surfaces',
-      'Aromatic air purification throughout',
-      'High-fidelity surround sound',
+      'Integrated floral mounting system',
       'External LED memorial displays',
-      'Integrated floral mounting systems',
-      'Multi-zone precision climate management',
-      'Acoustic noise reduction barrier'
+      'High-fidelity audio system',
+      'Professional ceremonial presentation'
     ],
     hotspots: [
       {
@@ -156,9 +174,9 @@ export const ETERNAL_DATA = {
       },
       {
         id: 'glass',
-        title: 'Panoramic Reinforced Glass Sanctuary',
+        title: '360° Panoramic Ceremonial Viewing Glass',
         category: 'exterior',
-        description: 'Double-glazed UV-protected 360° glass allowing respectful family visibility during ceremonial processions.',
+        description: 'Double-glazed UV-protected 360° panoramic side glass allowing respectful family visibility during ceremonial processions.',
         iconName: 'Eye',
         position: { x: 35, y: 38 }
       },
@@ -166,13 +184,13 @@ export const ETERNAL_DATA = {
         id: 'air',
         title: 'Aromatic Air Purification System',
         category: 'hygiene',
-        description: 'Continuous HEPA air filtration blended with subtle natural floral essences to ensure a serene atmosphere.',
+        description: 'Continuous HEPA air filtration blended with subtle natural floral essences to ensure a serene, clean atmosphere.',
         iconName: 'Wind',
         position: { x: 68, y: 30 }
       },
       {
         id: 'sound',
-        title: 'High-Fidelity Surround Sound System',
+        title: 'High-Fidelity Audio System',
         category: 'tech',
         description: 'Discreet interior & exterior acoustic speakers configured for soft devotional chants, prayers, or quiet tribute music.',
         iconName: 'Music',
@@ -188,7 +206,7 @@ export const ETERNAL_DATA = {
       },
       {
         id: 'led',
-        title: 'External Memorial LED Displays',
+        title: 'External LED Memorial Displays',
         category: 'exterior',
         description: 'Weatherproof high-contrast LED screens customizable with the deceased person\'s name, family tribute, or institutional logo.',
         iconName: 'Tv',
@@ -198,14 +216,86 @@ export const ETERNAL_DATA = {
   },
 
   trustBar: {
-    eyebrow: 'Trusted by Institutions Across Delhi NCR',
-    heading: 'Built for the partners who set the standard',
+    eyebrow: 'Built for Organisations That Care About Every Family',
+    heading: 'Partnerships Across Healthcare & Community',
     categories: [
-      'Premium Hospitals',
+      'Hospitals & Healthcare Institutions',
       'Funeral Management Companies',
       'Municipal Corporations',
       'Religious Trusts & NGOs'
     ]
+  },
+
+  forFamilies: {
+    eyebrow: 'For Families',
+    heading: 'A Peaceful and Respectful Final Journey',
+    lead: 'No family should have to compromise on dignity while saying goodbye.',
+    body: 'Eternal Repos provides a calm, clean, and thoughtfully designed environment for families to accompany their loved one during the final journey.\n\nIt is not about luxury for display. It is about comfort during grief. Order during uncertainty. And respect during one of life\'s most personal moments.\n\nBecause every life deserves to be remembered with dignity.'
+  },
+
+  operatingPrinciples: {
+    eyebrow: 'The Eternal Standard',
+    heading: 'More Than a Vehicle',
+    subheading: 'A dignified final journey depends on more than design. It requires trained people, clear processes, punctuality, hygiene, reliability, and sensitivity. The Eternal Standard brings all these elements together.',
+    principles: [
+      {
+        title: 'Respect',
+        description: 'Every person and every family is treated with dignity.'
+      },
+      {
+        title: 'Reliability',
+        description: 'The service is delivered with discipline and clear coordination.'
+      },
+      {
+        title: 'Presentation',
+        description: 'The vehicle and team maintain professional standards at all times.'
+      },
+      {
+        title: 'Sensitivity',
+        description: 'Communication is calm, respectful, and appropriate to the situation.'
+      },
+      {
+        title: 'Consistency',
+        description: 'Every family receives the same standard of care.'
+      }
+    ]
+  },
+
+  partnershipSection: {
+    eyebrow: 'Partnership Section',
+    heading: 'Let Us Raise the Standard Together.',
+    subheading: 'Eternal Repos is building partnerships with hospitals, funeral management companies, municipal organisations, NGOs, religious trusts, and institutions across Delhi NCR.',
+    body: 'We are looking to work with organisations that share one belief:\nEvery final journey should be handled with dignity.\n\nWhether you want to improve the experience offered to families, upgrade your existing funeral mobility service, or explore an institutional partnership, our team would be pleased to speak with you.',
+    primaryCta: 'Request a Partnership Discussion',
+    secondaryCta: 'Schedule a Vehicle Demonstration'
+  },
+
+  aboutUsPage: {
+    eyebrow: 'About Us',
+    heading: 'Our Story',
+    story: 'Eternal Repos was founded after recognising a clear gap in India\'s end-of-life care ecosystem. While hospitals, funeral professionals, and families make every effort to manage final rites respectfully, the transportation experience has often remained overlooked.\n\nMost available vehicles are adapted for the purpose rather than designed for it. Eternal Repos was created to address this gap.\n\nWe are developing a purpose-built ceremonial mobility solution that brings together thoughtful design, professional service standards, institutional reliability, and genuine sensitivity.\n\nOur aim is not simply to introduce a new vehicle. Our aim is to improve how the final journey is experienced in India.',
+    visionHeading: 'Our Vision',
+    vision: 'To establish a dignified and dependable standard for ceremonial mobility across India.',
+    missionHeading: 'Our Mission',
+    mission: 'To support families and institutions with purpose-built funeral mobility that is respectful, reliable, professionally managed, and designed around real human needs.',
+    beliefHeading: 'Our Brand Belief',
+    belief: 'Dignity should not be an upgrade. It should be the standard.'
+  },
+
+  insightsPage: {
+    eyebrow: 'Insights',
+    heading: 'Conversations That Matter',
+    intro: 'The subject of death is often avoided, even though every family eventually has to face it. Through Eternal Insights, we aim to create more open and useful conversations.',
+    topics: [
+      'Dignity in the final journey',
+      'Funeral planning and preparedness',
+      'Support for grieving families',
+      'Institutional end-of-life protocols',
+      'Funeral service standards',
+      'Religious and cultural practices',
+      'The future of ceremonial mobility in India'
+    ],
+    closing: 'Our purpose is to help families and institutions make informed, respectful, and thoughtful decisions.'
   },
 
   pullQuotes: {
@@ -215,131 +305,172 @@ export const ETERNAL_DATA = {
       {
         id: 'hospitals',
         audience: 'FOR HOSPITALS',
-        quote: '“Your patients\' families deserve the same care at departure as at admission.”',
-        sub: 'Elevate your healthcare institution\'s end-of-life continuum with uncompromised dignity.'
+        quote: '“Care Should Not End at the Hospital Door.”',
+        sub: 'Extend your healthcare institution\'s compassionate continuum of care with a dignified, professionally managed departure experience.'
       },
       {
         id: 'funeral-mgmt',
         audience: 'FOR FUNERAL MANAGEMENT COMPANIES',
-        quote: '“Upgrade your fleet. Upgrade your brand. Elevate every farewell you serve.”',
-        sub: 'Position your business as Delhi NCR\'s premier provider with bespoke ceremonial mobility.'
+        quote: '“Upgrade the Experience You Deliver.”',
+        sub: 'Enable your firm to offer a purpose-built ceremonial vehicle that reflects professionalism, care, and brand distinction.'
       },
       {
         id: 'families',
         audience: 'FOR FAMILIES',
-        quote: '“Your loved one lived with dignity. Their final journey deserves nothing less.”',
-        sub: 'A peaceful, quiet, and honored tribute for life\'s most sacred moment.'
+        quote: '“Comfort during grief. Order during uncertainty. Respect during life\'s most personal moment.”',
+        sub: 'A calm, clean, and thoughtsfully designed environment to accompany your loved one with dignity.'
       }
     ]
   },
 
   closingCta: {
     eyebrow: 'Partner With Eternal Repos',
-    heading: 'Bring dignified farewell mobility to those you serve',
-    subtext: 'We work with hospitals, funeral firms, municipal bodies, and religious trusts across Delhi NCR. Let\'s discuss a partnership built on trust and tribute.',
-    primaryBtn: 'Request a Partnership',
+    heading: 'Let Us Raise the Standard Together',
+    subtext: 'Eternal Repos is building partnerships with hospitals, funeral management companies, municipal organisations, NGOs, religious trusts, and institutions across Delhi NCR.',
+    primaryBtn: 'Request a Partnership Discussion',
     secondaryBtn: 'Schedule a Vehicle Demonstration'
   },
 
   services: [
     {
-      id: 'fabrication',
-      title: 'Vehicle Fabrication',
-      subtitle: 'Bespoke Ceremonial Conversions',
-      description: 'Turnkey fabrication of wide-body vehicle chassis into ultra-luxury ceremonial hearse vehicles crafted with champagne gold detailing, panoramic glass, and hydraulic bier systems.',
-      icon: 'Wrench',
+      id: 'ceremonial-mobility',
+      title: 'Ceremonial Hearse Mobility',
+      subtitle: 'Purpose-Built Departure Transport',
+      description: 'Structured, dignified, and professionally managed ceremonial hearse mobility across Delhi NCR for families and institutional partners.',
+      icon: 'Truck',
       features: [
-        'Custom interior wood & leather finish',
-        'Hydraulic bier platform installation',
-        'Acoustic insulation & floral mounting',
-        'Custom exterior livery & memorial screens'
+        '360° panoramic ceremonial viewing',
+        'Precision hydraulic bier platform',
+        'Climate-controlled acoustic sanctuary',
+        'Professional ceremonial presentation'
       ]
     },
     {
-      id: 'leasing',
-      title: 'Vehicle Leasing',
-      subtitle: 'Flexible Institutional Fleet Contracts',
-      description: 'Long-term leasing models designed for hospitals, funeral management firms, and municipal bodies seeking instant fleet upgrades without high capital expenditure.',
-      icon: 'KeyRound',
+      id: 'hospital-coordination',
+      title: 'Hospital Departure Coordination',
+      subtitle: 'Seamless End-of-Life Care Continuum',
+      description: 'Defined departure protocols and hygienic, compassionate transport coordination extending healthcare care beyond admission.',
+      icon: 'Building2',
       features: [
-        'Short & long-term institutional leases',
-        'Dedicated driver & operator training',
-        'Standardized maintenance inclusions',
-        '24/7 priority replacement guarantee'
+        'Mortuary to vehicle transfer coordination',
+        'Hospital-grade antimicrobial sanitization',
+        'Punctual 24-hour response commitment',
+        'Consistent operational support'
       ]
     },
     {
-      id: 'maintenance',
-      title: 'Fleet Maintenance (AMC)',
-      subtitle: 'Continuous Operation & Hygiene Guarantee',
-      description: 'Comprehensive annual maintenance contracts covering mechanical health, hydraulic systems calibration, climate unit servicing, and hospital-grade sanitization.',
-      icon: 'Activity',
+      id: 'funeral-partnerships',
+      title: 'Funeral Management Partnerships',
+      subtitle: 'Elevated Fleet & Service Offering',
+      description: 'Enabling funeral service providers to strengthen their service offering through a purpose-built ceremonial vehicle.',
+      icon: 'Handshake',
       features: [
-        'Quarterly hydraulic bier calibration',
-        'Antimicrobial deep-clean protocols',
-        'HVAC & aromatic filter replacement',
-        '24/7 Delhi NCR roadside assistance'
+        'Differentiated premium ceremonial fleet',
+        'Improved family satisfaction & trust',
+        'Stronger brand positioning',
+        'Opportunity to serve institutional clients'
       ]
     },
     {
-      id: 'refrigeration',
-      title: 'Refrigeration Systems',
-      subtitle: 'Precision Temperature Management',
-      description: 'State-of-the-art climate and mortuary refrigeration technology integrated into chassis to ensure reliable preservation across Delhi NCR weather conditions.',
-      icon: 'ThermometerSnowflake',
+      id: 'institutional-mobility',
+      title: 'Institutional Mobility Support',
+      subtitle: 'Reliable Fleet Operational Discipline',
+      description: 'Dependable ceremonial mobility services tailored for organisations, healthcare systems, and municipal bodies.',
+      icon: 'ShieldCheck',
       features: [
-        'Precision digital temperature control',
-        'Dual-compressor redundant backup',
-        'Low-noise silent cooling technology',
-        'Seamless integration with bier platform'
+        'Defined service & hygiene protocols',
+        'Trained ceremonial presentation staff',
+        'High reliability and punctuality',
+        'Flexible institutional engagement models'
       ]
     },
     {
-      id: 'branding',
-      title: 'Branding & Customisation',
-      subtitle: 'Institutional Identity & Ceremonial Livery',
-      description: 'Tailored branding packages for hospitals and NGOs, embedding subtle crests, heraldic logos, and external digital display programming into the vehicle design.',
-      icon: 'Palette',
+      id: 'community-support',
+      title: 'Religious & Community Support',
+      subtitle: 'Respecting Traditions & Rituals',
+      description: 'Accommodating traditional practices, floral arrangements, prayers, and ceremonial requirements with sensitivity.',
+      icon: 'HeartHandshake',
       features: [
-        'Subtle laser-etched institutional logos',
-        'Customized ambient lighting hues',
-        'Digital LED message customization',
-        'Coordinated ceremonial drapes & mounts'
+        'Integrated floral mounting systems',
+        'High-fidelity audio for prayers/chants',
+        'Respectful ceremonial presentation',
+        'Community trust and accessibility'
+      ]
+    },
+    {
+      id: 'municipal-partnerships',
+      title: 'Municipal & Civic Partnerships',
+      subtitle: 'Modern Funeral Mobility for Cities',
+      description: 'Supporting municipal organisations in improving public funeral mobility standards with reliability and hygiene.',
+      icon: 'Landmark',
+      features: [
+        'Efficient civic mobility standards',
+        'Hygiene-focused vehicle operations',
+        'Public trust & accessibility',
+        'Wide-body Urbania XL platform reliability'
       ]
     }
   ] as ServiceItem[],
 
   institutions: {
-    eyebrow: 'B2B Institutional Portal',
-    heading: 'Transforming End-of-Life Mobility for Professional Partners',
-    subheading: 'We partner with healthcare systems, municipal bodies, NGOs, and funeral directors to deliver uncompromised dignity.',
+    eyebrow: 'For Institutions',
+    heading: 'Built for Organisations That Care About Every Family',
+    subheading: 'Eternal Repos partners with organisations that understand that care should continue until the very end. Our ceremonial mobility solution supports hospitals, funeral service providers, municipal organisations, religious trusts, NGOs, and community institutions.',
     segments: [
       {
         id: 'hospitals',
-        title: 'Premium Hospitals & Health Systems',
-        description: 'Extend your hospital\'s compassionate patient care through dignified departure transport services.',
-        benefits: ['Hygienic protocol compliance', 'Seamless transfer from mortuary to vehicle', 'Enhances hospital reputation and family trust'],
+        title: 'Hospitals and Healthcare Institutions',
+        subtitle: 'Care Should Not End at the Hospital Door.',
+        description: 'Hospitals support families through some of the most difficult moments of their lives. Eternal Repos helps healthcare institutions extend that care by providing a dignified and professionally managed departure experience.',
+        benefits: [
+          'A more respectful experience for families',
+          'Reliable and professional presentation',
+          'Hygiene-focused vehicle interiors',
+          'Defined service protocols',
+          'Consistent operational support',
+          'Stronger continuity of care'
+        ],
         ctaText: 'Hospital Partnership Inquiry'
       },
       {
         id: 'funeral-firms',
         title: 'Funeral Management Companies',
-        description: 'Differentiate your fleet with Delhi NCR\'s premier ceremonial hearse, serving high-profile and discerning clients.',
-        benefits: ['Instant fleet elevation', 'High client satisfaction', 'Flexible leasing or purchase options'],
+        subtitle: 'Upgrade the Experience You Deliver.',
+        description: 'Families today expect funeral service providers to offer more organised, transparent, and dignified services. Eternal Repos enables funeral management companies to strengthen their service offering through a purpose-built ceremonial vehicle that reflects professionalism and care.',
+        benefits: [
+          'A differentiated premium service',
+          'Improved family experience',
+          'Stronger brand positioning',
+          'Professional ceremonial presentation',
+          'Reliable operational support',
+          'Opportunity to serve institutional clients'
+        ],
         ctaText: 'Fleet Upgrade Inquiry'
       },
       {
         id: 'municipalities',
-        title: 'Municipal Corporations',
-        description: 'Standardize municipal mortuary transport with modern, reliable, and respectful vehicles built to highest civic standards.',
-        benefits: ['Long-term AMC maintenance', 'Public service dignity', 'Robust wide-body fleet reliability'],
-        ctaText: 'Civic Tender Inquiry'
+        title: 'Municipal Bodies',
+        subtitle: 'Modern Funeral Mobility for Modern Cities.',
+        description: 'Public funeral services should be efficient, respectful, accessible, and professionally managed. Eternal Repos can support municipal organisations in improving funeral mobility standards while maintaining reliability, hygiene, and public trust.',
+        benefits: [
+          'Efficient civic mobility standards',
+          'Public service dignity and accessibility',
+          'Reliable wide-body vehicle operations',
+          'Hygiene-focused vehicle operations'
+        ],
+        ctaText: 'Civic Partnership Inquiry'
       },
       {
         id: 'ngos',
-        title: 'Religious Trusts & NGOs',
-        description: 'Provide dignified final journeys for community members with philanthropic and heavily subsidized fleet models.',
-        benefits: ['Customized branding options', 'Community service impact', 'Durable, low-maintenance design'],
+        title: 'Religious Trusts and NGOs',
+        subtitle: 'Respecting Traditions. Supporting Communities.',
+        description: 'Religious and community organisations often support families during deeply emotional moments. Our vehicle is designed to accommodate traditional practices, floral arrangements, prayers, and ceremonial requirements while maintaining dignity and operational discipline.',
+        benefits: [
+          'Accommodates traditional practices & rituals',
+          'Integrated floral mounting & sound support',
+          'Dignified community departure service',
+          'Dependable community partnership'
+        ],
         ctaText: 'Trust Partnership Inquiry'
       }
     ] as PartnerSegment[]
@@ -351,14 +482,14 @@ export const ETERNAL_DATA = {
       title: 'Eternal Repos — 360° Exterior View',
       category: 'exterior',
       image: vehicle360DarkImg,
-      caption: 'India\'s first ultra-premium ceremonial hearse — ivory & maroon with panoramic glass and gold accents.'
+      caption: 'India\'s first purpose-built ceremonial hearse — ivory & maroon with panoramic glass and gold accents.'
     },
     {
       id: 'g2',
       title: 'Full Design Overview — All Angles',
       category: 'exterior',
       image: overviewSheetImg,
-      caption: 'Complete vehicle design sheet — front, side, rear, 3/4 views and interior of the Eternal ceremonial hearse.'
+      caption: 'Complete vehicle design sheet — front, side, rear, 3/4 views and interior of the Eternal Repos ceremonial hearse.'
     },
     {
       id: 'g3',
@@ -553,31 +684,31 @@ export const ETERNAL_DATA = {
 
   blog: [
     {
-      id: 'dignified-mobility-standard',
-      title: 'Redefining Funeral Mobility: Why Dignity Matters at Every Journey Stage',
+      id: 'dignity-in-the-final-journey',
+      title: 'Dignity in the Final Journey: Why Every Life Deserves Respect',
       category: 'Industry Insights',
-      date: 'July 15, 2026',
+      date: 'July 25, 2026',
       readTime: '4 min read',
-      excerpt: 'For decades, end-of-life transport in India relied on modified utility vans. Discover how purpose-built ceremonial vehicles are restoring respect and peace for families.',
+      excerpt: 'For years, funeral transportation in India depended on modified utility vehicles. Discover how purpose-built ceremonial mobility brings peace, order, and respect to families.',
       content: [
         'The transition from life is a moment deserving of profound respect. Yet for many years, families across Indian metropolitan cities faced cold, clinical, and poorly presented utility transport.',
-        'Azimuth Business on Wheels launched Eternal to solve this critical gap in India\'s healthcare and funeral ecosystem. By designing a vehicle specifically built for ceremonial honor—complete with acoustic insulation, panoramic glass, and climate control—we ensure that every farewell honors the legacy of the individual.',
-        'Hospitals and funeral providers who adopt high standards of departure care report significantly higher trust and emotional gratitude from grieving families.'
+        'Eternal Repos was created to address this gap. By designing a vehicle specifically built for ceremonial honor—complete with acoustic noise reduction, 360° panoramic glass, and climate control—we ensure that every final journey feels organized, peaceful, and respectful.',
+        'Hospitals, funeral directors, and municipal bodies that adopt high standards of departure care report significantly higher trust and emotional gratitude from grieving families.'
       ],
-      author: 'Azimuth Research Team'
+      author: 'Eternal Repos Insights Team'
     },
     {
-      id: 'b2b-hospital-continuum-care',
-      title: 'The Unspoken Dimension of Hospital Quality: End-of-Life Continuum Care',
-      category: 'Healthcare B2B',
-      date: 'June 28, 2026',
+      id: 'institutional-end-of-life-protocols',
+      title: 'Care Should Not End at the Hospital Door: Institutional End-of-Life Protocols',
+      category: 'Healthcare & B2B',
+      date: 'July 10, 2026',
       readTime: '5 min read',
-      excerpt: 'How leading private hospitals in Delhi NCR are integrating premium ceremonial mobility into their patient departure protocols.',
+      excerpt: 'How leading private healthcare institutions in Delhi NCR extend their continuum of care through dignified departure transport.',
       content: [
-        'When a hospital provides state-of-the-art medical care, that commitment to excellence should not end at the mortuary door.',
-        'Institutional partners across Delhi NCR are realizing that the final impression left on a patient\'s family occurs during vehicle departure. Eternal provides hospitals with dedicated, hygienic, and dignified fleet leasing solutions that align with international hospital accreditation standards.'
+        'When a hospital provides compassionate medical care, that commitment should not end at the mortuary door.',
+        'Institutional partners across Delhi NCR are realizing that the final impression left on a patient\'s family occurs during vehicle departure. Eternal Repos provides healthcare institutions with dedicated, hygienic, and dignified departure solutions that align with institutional excellence.'
       ],
-      author: 'Strategic Partnerships Division'
+      author: 'Institutional Partnerships Division'
     }
   ] as BlogArticle[]
 };
