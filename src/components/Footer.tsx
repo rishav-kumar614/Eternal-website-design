@@ -1,6 +1,7 @@
 import React from 'react';
 import { ETERNAL_DATA } from '../data/eternalData';
 import { Shield, Phone, Mail, MapPin, Linkedin, Instagram, MessageSquare, ArrowUpRight } from 'lucide-react';
+import logoImg from '../assets/images/logo.png';
 
 interface FooterProps {
   setActiveTab: (tab: string) => void;
@@ -37,33 +38,12 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, onOpenB2BModal, is
           
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <div
-                className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
-                  isLightMode
-                    ? 'bg-gradient-to-tr from-amber-300 via-amber-200 to-gold-400 border border-gold-500/70 shadow-md'
-                    : 'bg-gradient-to-tr from-brown-800 via-gold-500/40 to-gold-400/20 border border-gold-400/50 shadow-gold-glow'
-                }`}
-              >
-                <span
-                  className={`font-serif font-bold text-xl tracking-widest ${
-                    isLightMode ? 'text-obsidian-950 font-black' : 'text-gold-300'
-                  }`}
-                >
-                  E
-                </span>
-              </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <span
-                    className={`font-serif text-2xl font-bold tracking-wider transition-colors ${
-                      isLightMode ? 'text-slate-900' : 'text-slate-100'
-                    }`}
-                  >
-                    ETERNAL REPOS
-                  </span>
-                </div>
-              </div>
+            <div className="flex items-center">
+              <img
+                src={logoImg}
+                alt="Eternal Repos — Tribute in Motion"
+                className="h-20 w-auto object-contain"
+              />
             </div>
 
             <p className={`font-serif italic text-lg ${isLightMode ? 'text-gold-700 font-semibold' : 'text-gold-300'}`}>

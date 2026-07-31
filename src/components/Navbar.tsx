@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Shield, ChevronRight, PhoneCall, Sun, Moon } from 'lucide-react';
 import { ETERNAL_DATA } from '../data/eternalData';
+import logoImg from '../assets/images/logo.png';
 
 interface NavbarProps {
   activeTab: string;
@@ -51,12 +52,12 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? `header-scrolled py-2.5 shadow-xl backdrop-blur-md border-b ${
+          ? `header-scrolled py-0 shadow-xl backdrop-blur-md border-b ${
               isLightMode
                 ? 'bg-white/95 border-gold-500/30'
                 : 'bg-obsidian-900/90 border-gold-500/20'
             }`
-          : `header-transparent py-4 bg-gradient-to-b ${
+          : `header-transparent py-0 bg-gradient-to-b ${
               isLightMode
                 ? 'from-amber-100/40 via-amber-50/20 to-transparent'
                 : 'from-obsidian-900/90 via-obsidian-900/60 to-transparent'
@@ -69,41 +70,13 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Brand Logo */}
           <button 
             onClick={() => handleNavClick('home')}
-            className="flex items-center gap-2.5 group text-left focus:outline-none shrink-0"
+            className="flex items-center group text-left focus:outline-none shrink-0"
           >
-            <div
-              className={`w-9 h-9 rounded-full flex items-center justify-center transition-all ${
-                isLightMode
-                  ? 'bg-gradient-to-tr from-amber-200 via-amber-100 to-gold-300 border border-gold-500/60 shadow-md group-hover:border-gold-600'
-                  : 'bg-gradient-to-tr from-brown-800 via-gold-500/40 to-gold-400/20 border border-gold-400/50 shadow-gold-glow group-hover:border-gold-300'
-              }`}
-            >
-              <span
-                className={`font-serif font-bold text-lg tracking-widest ${
-                  isLightMode ? 'text-obsidian-900' : 'text-gold-300'
-                }`}
-              >
-                E
-              </span>
-            </div>
-            <div>
-              <div className="flex items-center gap-1.5 sm:gap-2">
-                <span
-                  className={`font-serif text-lg sm:text-xl font-bold tracking-wider transition-colors ${
-                    isLightMode ? 'text-slate-900' : 'text-slate-100'
-                  }`}
-                >
-                  ETERNAL REPOS
-                </span>
-              </div>
-              <p
-                className={`text-[9px] tracking-widest uppercase font-mono ${
-                  isLightMode ? 'text-slate-700 font-semibold' : 'text-slate-300'
-                }`}
-              >
-                Luxury Funeral Mobility
-              </p>
-            </div>
+            <img
+              src={logoImg}
+              alt="Eternal Repos — Tribute in Motion"
+              className="h-24 w-auto object-contain transition-opacity group-hover:opacity-90 mix-blend-multiply dark:mix-blend-screen ml-6"
+            />
           </button>
 
           {/* Desktop Navigation */}
