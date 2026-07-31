@@ -81,7 +81,7 @@ export const Gallery: React.FC<GalleryProps> = ({ onSelectItem }) => {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter contrast-105"
+                    className={`w-full h-full object-cover ${item.id === 'g2' ? 'object-top' : ''} group-hover:scale-110 transition-transform duration-700 filter contrast-105`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-obsidian-900/50 to-transparent opacity-90 transition-opacity" />
                 </div>

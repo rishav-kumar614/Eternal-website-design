@@ -269,7 +269,36 @@ export const Vehicle: React.FC<VehicleProps> = ({ onOpenBrochureModal, onOpenB2B
 
       </section>
 
+      {/* Colour Options — Brand Palette */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="p-6 rounded-3xl border border-gold-500/20 bg-obsidian-800/60 backdrop-blur-sm space-y-5">
+          <div className="flex items-center justify-between">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-gold-400">COLOUR</span>
+            <span className="text-[10px] font-mono text-slate-500">EXTERIOR OPTIONS</span>
+          </div>
+          <div className="flex flex-wrap gap-4">
+            {[
+              { name: 'Deep Ivory', hex: '#FDF8F0', label: 'Cream' },
+              { name: 'Champagne Gold', hex: '#8B6914', label: 'Gold' },
+              { name: 'Rich Dark Brown', hex: '#2C1810', label: 'Brown' },
+              { name: 'Charcoal Dark', hex: '#1A1A1A', label: 'Charcoal' },
+              { name: 'Warm White', hex: '#FFFFFF', label: 'White' },
+            ].map((colour) => (
+              <div key={colour.hex} className="flex flex-col items-center gap-2">
+                <div
+                  className="w-12 h-12 rounded-xl border border-gold-500/30 shadow-md"
+                  style={{ backgroundColor: colour.hex }}
+                />
+                <span className="text-[10px] font-mono text-slate-400 text-center leading-tight">{colour.label}</span>
+                <span className="text-[9px] font-mono text-slate-600">{colour.hex}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Specifications Breakdown Table */}
+
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         <div className="text-center space-y-2">

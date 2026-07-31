@@ -52,7 +52,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
                   Every Final Journey{' '}
                 </span>
                 <br />
-                <span className="gold-gradient-text italic font-bold">
+                <span className="gold-gradient-text italic font-bold pb-2 inline-block">
                   Deserves Dignity.
                 </span>
               </h1>
