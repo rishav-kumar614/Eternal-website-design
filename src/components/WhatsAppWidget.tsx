@@ -45,17 +45,17 @@ export const WhatsAppWidget: React.FC = () => {
         </div>
       )}
 
-      {/* Trigger Button */}
+      {/* Trigger Button — Circle Icon */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="whatsapp-trigger-btn group relative flex items-center gap-3 px-4 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs shadow-xl border border-emerald-400/40 transition-all hover:scale-105"
+        className="whatsapp-trigger-btn group relative flex items-center justify-center w-14 h-14 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-xl border border-emerald-400/40 transition-all hover:scale-110"
         aria-label="WhatsApp Business Chat"
       >
-        <MessageSquare className="w-5 h-5 fill-current" />
-        <span className="hidden sm:inline tracking-wider font-mono">WhatsApp Support</span>
-        <span className="relative flex h-2 w-2">
+        <MessageSquare className="w-6 h-6 fill-current" />
+        {/* Ping dot */}
+        <span className="absolute top-1 right-1 flex h-2.5 w-2.5">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-200"></span>
+          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-200"></span>
         </span>
       </button>
 

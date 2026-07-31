@@ -75,7 +75,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             <img
               src={logoImg}
               alt="Eternal Repos — Tribute in Motion"
-              className="h-24 w-auto object-contain transition-opacity group-hover:opacity-90 mix-blend-multiply dark:mix-blend-screen ml-6"
+              className={`h-24 w-auto object-contain transition-opacity group-hover:opacity-90 ml-6 ${
+                isLightMode
+                  ? 'saturate-150 contrast-125 brightness-90'
+                  : 'mix-blend-screen'
+              }`}
             />
           </button>
 
