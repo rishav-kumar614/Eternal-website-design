@@ -329,12 +329,7 @@ export const Home: React.FC<HomeProps> = ({ setActiveTab, onOpenB2BModal, onOpen
                   alt="The Eternal Luxury Hearse"
                   className="w-full h-[450px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-obsidian-900 via-transparent to-transparent opacity-80" />
-                
-                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-obsidian-900/90 border border-gold-500/30 backdrop-blur-md">
-                  <span className="text-[10px] uppercase font-mono tracking-widest text-gold-400">CHASSIS FOUNDATION</span>
-                  <h4 className="font-serif text-lg font-bold text-slate-100">{ETERNAL_DATA.vehicle.chassis}</h4>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian-900/40 via-transparent to-transparent opacity-80" />
               </div>
             </motion.div>
 
