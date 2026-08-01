@@ -73,7 +73,7 @@ export const TextReveal: React.FC<TextRevealProps> = ({
           word.toLowerCase().includes(h.toLowerCase())
         );
         return (
-          <span key={idx} className="inline-block overflow-hidden py-0.5">
+          <span key={idx} className="inline-block py-0.5 pb-1">
             <motion.span
               variants={wordVariants}
               className={`inline-block ${

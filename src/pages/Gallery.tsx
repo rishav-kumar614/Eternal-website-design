@@ -25,25 +25,22 @@ export const Gallery: React.FC<GalleryProps> = ({ onSelectItem }) => {
     : ETERNAL_DATA.gallery.filter(item => item.category === selectedCategory);
 
   return (
-    <div className="py-20 space-y-16">
+    <div className="pt-36 pb-32 space-y-20 bg-obsidian-900 overflow-hidden">
       
       {/* Header */}
       <section className="max-w-4xl mx-auto px-4 text-center space-y-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-400/10 border border-gold-500/30 text-gold-300 text-xs uppercase font-mono tracking-widest"
-        >
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Gallery</span>
-        </motion.div>
+        <div className="flex items-center justify-center gap-3 mb-2">
+          <span className="w-8 h-px bg-gold-400" />
+          <span className="text-xs uppercase font-mono tracking-[0.25em] text-gold-400 font-bold">Visual Showcase</span>
+          <span className="w-8 h-px bg-gold-400" />
+        </div>
 
         <h1 className="font-serif text-4xl sm:text-5xl font-bold text-slate-100">
           <TextReveal text="Designed with Purpose. Presented with Dignity." highlightWords={["Purpose", "Dignity"]} />
         </h1>
 
-        <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          <TextReveal mode="fade-up" text="Explore the Eternal Repos vehicle, its ceremonial interiors, design details, institutional demonstrations, and moments from our journey." />
+        <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed font-light">
+          <TextReveal mode="fade-up" text="Explore the Eternal Repos vehicle, ceremonial interiors, design details, and moments from our journey." />
         </p>
       </section>
 

@@ -11,6 +11,14 @@
   }
 }
 
+/* ── Hero Ambient Glow Background ── */
+.hero-ambient-glow {
+  background: 
+    radial-gradient(ellipse 65% 55% at 50% 10%, rgba(139, 105, 20, 0.3) 0%, transparent 70%),
+    radial-gradient(ellipse 45% 45% at 85% 45%, rgba(212, 175, 55, 0.15) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 55% at 15% 55%, rgba(44, 24, 16, 0.5) 0%, transparent 70%);
+}
+
 /* ── Hero Truck Image Keyframe Animations ── */
 @keyframes shimmerSweep {
   0%   { left: -60%; opacity: 0; }
@@ -219,65 +227,64 @@ html.light main {
   border-color: inherit;
 }
 
-/* ── Light Mode Hero Overrides ── */
+/* ── Light Mode Hero Overrides (Carousel Image Fully Visible) ── */
 html.light .hero-section {
-  background-color: #FAF8F5 !important;
+  background-color: #08080a !important;
 }
 
-html.light .hero-ambient-glow {
-  background: radial-gradient(ellipse at 25% 50%, rgba(184, 134, 11, 0.06) 0%, transparent 60%),
-              radial-gradient(ellipse at 75% 30%, rgba(184, 134, 11, 0.04) 0%, transparent 55%);
+html.light .hero-overlay-bottom {
+  background: linear-gradient(to top, rgba(8, 8, 10, 0.95) 0%, rgba(8, 8, 10, 0.5) 40%, rgba(8, 8, 10, 0.1) 100%) !important;
 }
 
-html.light .hero-eyebrow-badge {
-  background-color: #FFFFFF;
-  border-color: rgba(184, 134, 11, 0.35);
-  color: #8B6914;
-  box-shadow: 0 2px 12px rgba(184, 134, 11, 0.1);
+html.light .hero-overlay-left {
+  background: linear-gradient(to right, rgba(8, 8, 10, 0.85) 0%, rgba(8, 8, 10, 0.4) 40%, transparent 75%) !important;
 }
 
-html.light .hero-headline {
-  color: #0F172A !important;
-  text-shadow: none !important;
+html.light .hero-title-text {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
 }
 
-html.light .hero-headline span {
-  color: #0F172A;
+html.light .hero-subtext {
+  color: rgba(226, 232, 240, 0.9) !important;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8) !important;
 }
 
-html.light .hero-headline span.gold-gradient-text {
-  background: linear-gradient(135deg, #B8860B 0%, #D4AF37 50%, #8B6914 100%) !important;
-  background-clip: text !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  filter: none !important;
-}
-
-html.light .hero-subtagline {
-  color: #1E293B !important;
-}
-
-html.light .hero-subtagline-card {
-  border-left-color: #B8860B;
-  background: rgba(184, 134, 11, 0.06);
+html.light .hero-metric-label {
+  color: #94A3B8 !important;
 }
 
 html.light .hero-secondary-btn {
-  background-color: #FFFFFF;
-  border-color: rgba(184, 134, 11, 0.4);
-  color: #0F172A;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-html.light .hero-secondary-btn:hover {
-  background-color: #F8F3EA;
-  border-color: rgba(184, 134, 11, 0.6);
-}
-html.light .hero-secondary-btn svg {
-  color: #B8860B;
+  background-color: rgba(17, 18, 22, 0.7) !important;
+  border-color: rgba(212, 175, 55, 0.4) !important;
+  color: #F3E5AB !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
 }
 
-html.light .hero-trust-bar {
-  border-top-color: rgba(184, 134, 11, 0.2);
+html.light .hero-secondary-btn:hover {
+  background-color: rgba(212, 175, 55, 0.15) !important;
+  border-color: rgba(212, 175, 55, 0.7) !important;
+}
+
+html.light .hero-ctrl-btn {
+  background-color: rgba(17, 18, 22, 0.6) !important;
+  border-color: rgba(212, 175, 55, 0.3) !important;
+  color: #F3E5AB !important;
+}
+
+html.light .hero-ctrl-btn:hover {
+  background-color: #D4AF37 !important;
+  color: #08080a !important;
+}
+
+html.light .hero-dot-inactive {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+html.light .hero-slide-label {
+  color: #F3E5AB !important;
+  background-color: rgba(17, 18, 22, 0.75) !important;
+  border-color: rgba(212, 175, 55, 0.3) !important;
 }
 
 /* ── Why Eternal Section Light Theme Overrides ── */
@@ -510,40 +517,41 @@ html.light header nav button:hover {
   color: #8B6914 !important;
 }
 
-/* 3 · Card Boxes & Philosophy Surface Override in Light Theme */
-html.light .bg-obsidian-900,
-html.light .bg-obsidian-900\/90,
-html.light .bg-obsidian-900\/80,
-html.light .bg-obsidian-900\/70,
-html.light .bg-obsidian-900\/60,
-html.light .bg-obsidian-900\/50 {
+/* 3 · Card Boxes & Philosophy Surface Override in Light Theme (EXCLUDING Hero Section) */
+html.light .bg-obsidian-950:not(.hero-section),
+html.light .bg-obsidian-900:not(.hero-section),
+html.light .bg-obsidian-900\/90:not(.hero-section),
+html.light .bg-obsidian-900\/80:not(.hero-section),
+html.light .bg-obsidian-900\/70:not(.hero-section),
+html.light .bg-obsidian-900\/60:not(.hero-section),
+html.light .bg-obsidian-900\/50:not(.hero-section) {
   background-color: #FAF8F5 !important;
 }
 
-html.light .bg-obsidian-800,
-html.light .bg-obsidian-800\/90,
-html.light .bg-obsidian-800\/80,
-html.light .bg-obsidian-800\/70,
-html.light .bg-obsidian-800\/60,
-html.light .bg-obsidian-800\/50 {
+html.light .bg-obsidian-800:not(.hero-section *),
+html.light .bg-obsidian-800\/90:not(.hero-section *),
+html.light .bg-obsidian-800\/80:not(.hero-section *),
+html.light .bg-obsidian-800\/70:not(.hero-section *),
+html.light .bg-obsidian-800\/60:not(.hero-section *),
+html.light .bg-obsidian-800\/50:not(.hero-section *) {
   background-color: #FFFFFF !important;
   box-shadow: 0 10px 30px -5px rgba(212, 175, 55, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04) !important;
   border-color: rgba(184, 134, 11, 0.3) !important;
 }
 
-html.light .bg-obsidian-700,
-html.light .bg-obsidian-700\/90,
-html.light .bg-obsidian-700\/80,
-html.light .bg-obsidian-700\/70,
-html.light .bg-obsidian-700\/60,
-html.light .bg-obsidian-700\/50 {
+html.light .bg-obsidian-700:not(.hero-section *),
+html.light .bg-obsidian-700\/90:not(.hero-section *),
+html.light .bg-obsidian-700\/80:not(.hero-section *),
+html.light .bg-obsidian-700\/70:not(.hero-section *),
+html.light .bg-obsidian-700\/60:not(.hero-section *),
+html.light .bg-obsidian-700\/50:not(.hero-section *) {
   background-color: #F5EFE6 !important;
 }
 
-html.light .bg-brown-900,
-html.light .bg-brown-800,
-html.light .bg-brown-800\/80,
-html.light .bg-brown-800\/90 {
+html.light .bg-brown-900:not(.hero-section *),
+html.light .bg-brown-800:not(.hero-section *),
+html.light .bg-brown-800\/80:not(.hero-section *),
+html.light .bg-brown-800\/90:not(.hero-section *) {
   background-color: #F8F3EA !important;
   border-color: rgba(184, 134, 11, 0.35) !important;
   box-shadow: 0 4px 20px rgba(184, 134, 11, 0.08) !important;
@@ -576,10 +584,10 @@ html.light .filter-tab-inactive:hover {
   box-shadow: 0 4px 12px rgba(184, 134, 11, 0.15) !important;
 }
 
-/* Fix Tailwind Card Gradients in Light Mode */
-html.light .bg-gradient-to-b:not(header):not(.whatsapp-trigger-btn),
-html.light .bg-gradient-to-br:not(header):not(.whatsapp-trigger-btn),
-html.light .bg-gradient-to-r:not(header):not(.whatsapp-trigger-btn):not(.whatsapp-action-btn) {
+/* Fix Tailwind Card Gradients in Light Mode (EXCLUDING Hero Section Overlays) */
+html.light .bg-gradient-to-b:not(header):not(.whatsapp-trigger-btn):not(.hero-section *),
+html.light .bg-gradient-to-br:not(header):not(.whatsapp-trigger-btn):not(.hero-section *),
+html.light .bg-gradient-to-r:not(header):not(.whatsapp-trigger-btn):not(.whatsapp-action-btn):not(.hero-section *):not(.hero-overlay-left) {
   background-image: linear-gradient(180deg, #FFFFFF 0%, #FBF7F0 100%) !important;
   border-color: rgba(184, 134, 11, 0.3) !important;
   box-shadow: 0 10px 30px -5px rgba(212, 175, 55, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04) !important;
@@ -641,31 +649,68 @@ html.light .brand-logo-icon span {
   font-weight: 900 !important;
 }
 
-/* 4 · Scoped Text Colors in Light Mode (excluding gallery card text) */
-html.light h1:not(.gallery-card-text h1),
-html.light h2:not(.gallery-card-text h2),
-html.light h3:not(.gallery-card-text h3),
-html.light h4:not(.gallery-card-text h4),
-html.light .text-slate-100:not(.gallery-card-text *),
-html.light .text-slate-200:not(.gallery-card-text *),
-html.light .text-gold-100:not(.gallery-card-text *) {
+/* 4 · Scoped Text Colors in Light Mode (excluding gallery card text and hero section) */
+html.light h1:not(.gallery-card-text h1):not(.hero-section *),
+html.light h2:not(.gallery-card-text h2):not(.hero-section *),
+html.light h3:not(.gallery-card-text h3):not(.hero-section *),
+html.light h4:not(.gallery-card-text h4):not(.hero-section *),
+html.light .text-slate-100:not(.gallery-card-text *):not(.hero-section *),
+html.light .text-slate-200:not(.gallery-card-text *):not(.hero-section *),
+html.light .text-gold-100:not(.gallery-card-text *):not(.hero-section *) {
   color: #0F172A !important;
 }
 
-html.light p:not(.gallery-card-text p),
-html.light span:not(.whatsapp-trigger-btn span):not(.gallery-card-text span),
-html.light .text-slate-300:not(.gallery-card-text *),
-html.light .text-slate-400:not(.gallery-card-text *) {
+html.light p:not(.gallery-card-text p):not(.hero-section *),
+html.light span:not(.whatsapp-trigger-btn span):not(.gallery-card-text span):not(.hero-section *),
+html.light .text-slate-300:not(.gallery-card-text *):not(.hero-section *),
+html.light .text-slate-400:not(.gallery-card-text *):not(.hero-section *) {
   color: #334155 !important;
 }
 
-html.light .text-gold-200:not(.gallery-card-text *),
-html.light .text-gold-300:not(.gallery-card-text *) {
+html.light .text-gold-200:not(.gallery-card-text *):not(.hero-section *),
+html.light .text-gold-300:not(.gallery-card-text *):not(.hero-section *) {
   color: #8B6914 !important;
 }
 
-html.light .text-gold-400:not(.gallery-card-text *) {
+html.light .text-gold-400:not(.gallery-card-text *):not(.hero-section *) {
   color: #B8860B !important;
+}
+
+/* Explicit Hero Section Text Colors for Light Mode (WHITE & GOLD over background photo) */
+html.light .hero-section .hero-title-text,
+html.light .hero-section h1 span {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+}
+
+html.light .hero-section h1 span.gold-gradient-text {
+  background: linear-gradient(135deg, #FDE68A 0%, #D4AF37 40%, #B48A1E 80%, #F59E0B 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  display: inline-block !important;
+}
+
+html.light .hero-section p,
+html.light .hero-section .hero-subtext {
+  color: #F1F5F9 !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+html.light .hero-section .text-gold-300,
+html.light .hero-section .text-gold-400 {
+  color: #F3E5AB !important;
+}
+
+html.light .hero-section .hero-metric-label {
+  color: #CBD5E1 !important;
+}
+
+html.light .hero-section .hero-secondary-btn,
+html.light .hero-section .hero-secondary-btn span {
+  color: #FFFFFF !important;
+  background-color: rgba(17, 18, 22, 0.75) !important;
+  border-color: rgba(212, 175, 55, 0.4) !important;
 }
 
 /* 5 · Borders & Dividers in Light Mode */
@@ -810,3 +855,22 @@ html.light ::-webkit-scrollbar-thumb {
   background: #D4AF37;
   border-radius: 4px;
 }
+
+/* ========================================================================= */
+/* 3D FLIP CARD UTILITIES                                                   */
+/* ========================================================================= */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+

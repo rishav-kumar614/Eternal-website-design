@@ -23,7 +23,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <div className="pt-28 pb-20 space-y-16 bg-obsidian-900 overflow-hidden">
+    <div className="pt-36 pb-32 space-y-20 bg-obsidian-900 overflow-hidden">
       
       {/* Title */}
       <motion.section 
@@ -32,14 +32,16 @@ export const Contact: React.FC = () => {
         transition={{ duration: 0.8 }}
         className="max-w-5xl mx-auto px-4 text-center space-y-4"
       >
-        <span className="text-xs uppercase font-mono tracking-widest text-gold-400 bg-gold-400/10 px-3 py-1 rounded-full border border-gold-500/20">
-          Contact Us
-        </span>
+        <div className="flex items-center justify-center gap-3 mb-2">
+          <span className="w-8 h-px bg-gold-400" />
+          <span className="text-xs uppercase font-mono tracking-[0.25em] text-gold-400 font-bold">Contact Us</span>
+          <span className="w-8 h-px bg-gold-400" />
+        </div>
         <h1 className="font-serif text-4xl sm:text-6xl font-bold text-slate-100">
           <TextReveal text="Speak With Our Team" highlightWords={["Team"]} />
         </h1>
-        <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
-          <TextReveal mode="fade-up" text="Whether you represent an institution, manage funeral services, support a community, or wish to understand the Eternal Repos experience, our team is available to assist you." />
+        <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto font-light leading-relaxed">
+          <TextReveal mode="fade-up" text="Whether you represent an institution, manage funeral services, or simply wish to understand the Eternal Repos experience, we are here." />
         </p>
       </motion.section>
 

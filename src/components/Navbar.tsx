@@ -52,16 +52,12 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? `header-scrolled py-0 shadow-xl backdrop-blur-md border-b ${
+          ? `header-scrolled py-2 shadow-xl backdrop-blur-md border-b ${
               isLightMode
-                ? 'bg-white/95 border-gold-500/30'
+                ? 'bg-white/85 border-gold-500/20'
                 : 'bg-obsidian-900/90 border-gold-500/20'
             }`
-          : `header-transparent py-0 bg-gradient-to-b ${
-              isLightMode
-                ? 'from-amber-100/40 via-amber-50/20 to-transparent'
-                : 'from-obsidian-900/90 via-obsidian-900/60 to-transparent'
-            }`
+          : 'header-transparent py-3 bg-transparent'
       }`}
     >
       <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8">

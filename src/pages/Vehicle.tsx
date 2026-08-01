@@ -3,7 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ETERNAL_DATA, VehicleHotspot } from '../data/eternalData';
 import { TiltCard } from '../components/TiltCard';
 import { VehicleInteractiveViewer } from '../components/VehicleInteractiveViewer';
-import { Sliders, Eye, Wind, Music, Shield, Tv, Sparkles, Check, ChevronRight, FileText } from 'lucide-react';
+import { VehicleFeatureTabs } from '../components/VehicleFeatureTabs';
+import { Sliders, Eye, Wind, Music, Shield, Tv, Sparkles, ChevronRight, FileText, Check } from 'lucide-react';
+import ceremonialExteriorImg from '../assets/images/eternal_ceremonial_exterior_1.png';
 
 interface VehicleProps {
   onOpenBrochureModal: () => void;
@@ -26,7 +28,7 @@ export const Vehicle: React.FC<VehicleProps> = ({ onOpenBrochureModal, onOpenB2B
   };
 
   return (
-    <div className="pt-28 pb-20 space-y-20 bg-obsidian-900 overflow-hidden">
+    <div className="pt-36 pb-32 space-y-28 sm:space-y-36 bg-obsidian-900 overflow-hidden">
       
       {/* ═══ PREMIUM HERO HEADER SECTION ═══ */}
       <motion.section
@@ -35,14 +37,14 @@ export const Vehicle: React.FC<VehicleProps> = ({ onOpenBrochureModal, onOpenB2B
         transition={{ duration: 0.8 }}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
           {/* LEFT: Headline + Description + CTAs */}
-          <div className="space-y-6">
+          <div className="lg:col-span-6 space-y-6 text-left">
             {/* Eyebrow Badge */}
-            <div className="inline-flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />
-              <span className="text-[11px] uppercase font-mono tracking-widest text-gold-400 bg-gold-400/10 px-3 py-1 rounded-full border border-gold-500/20">
+            <div className="flex items-center gap-3">
+              <span className="w-8 h-px bg-gold-400" />
+              <span className="text-xs uppercase font-mono tracking-[0.25em] text-gold-400 font-bold">
                 {ETERNAL_DATA.vehicle.eyebrow}
               </span>
             </div>
@@ -52,10 +54,8 @@ export const Vehicle: React.FC<VehicleProps> = ({ onOpenBrochureModal, onOpenB2B
               <h1 className="font-serif text-4xl sm:text-5xl xl:text-[3.25rem] font-bold text-slate-100 leading-[1.1]">
                 The Silent Journey,{' '}
                 <br />
-                <span className="gold-gradient-text">the Glass Sanctuary</span>
+                <span className="gold-gradient-text italic">the Glass Sanctuary</span>
               </h1>
-              {/* Gold accent line */}
-              <div className="w-16 h-0.5 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full mt-3" />
             </div>
 
             {/* Lead Paragraph */}
@@ -64,96 +64,63 @@ export const Vehicle: React.FC<VehicleProps> = ({ onOpenBrochureModal, onOpenB2B
             </p>
 
             {/* Chassis Badge */}
-            <div className="flex items-center gap-2 text-xs font-mono text-gold-300 bg-obsidian-800/80 border border-gold-500/20 rounded-xl px-4 py-2.5 w-fit">
-              <span className="text-gold-500">◈</span>
+            <div className="flex items-center gap-2.5 text-xs font-mono text-gold-300 bg-obsidian-800/80 border border-gold-500/20 rounded-full px-4 py-2 w-fit">
+              <span className="text-gold-400">◈</span>
               <span>CHASSIS:</span>
-              <span className="text-slate-200 font-semibold">{ETERNAL_DATA.vehicle.chassis}</span>
+              <span className="text-slate-100 font-semibold">{ETERNAL_DATA.vehicle.chassis}</span>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-start gap-3 pt-2">
+            <div className="flex flex-col sm:flex-row items-start gap-4 pt-2">
               <button
                 onClick={onOpenBrochureModal}
-                className="group flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 text-obsidian-900 font-bold text-xs uppercase tracking-wider shadow-gold-glow gold-shimmer hover:scale-105 transition-transform"
+                className="group flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 text-obsidian-950 font-bold text-xs uppercase tracking-wider shadow-gold-glow gold-shimmer hover:from-gold-300 hover:to-gold-500 transition-all"
               >
                 <FileText className="w-4 h-4" />
-                Explore Interactive Vehicle Sanctuary
-                <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                <span>Download Vehicle Specs (PDF)</span>
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
+
               <button
-                onClick={onOpenBrochureModal}
-                className="flex items-center gap-2 px-6 py-3 rounded-full border border-gold-500/30 text-gold-300 text-xs font-semibold hover:border-gold-400/60 hover:bg-obsidian-800 transition-all"
+                onClick={onOpenB2BModal}
+                className="flex items-center gap-2 px-7 py-3.5 rounded-full bg-obsidian-800/90 border border-gold-500/30 text-gold-200 text-xs font-semibold hover:border-gold-400 hover:bg-obsidian-800 transition-all"
               >
-                Download Vehicle Specs PDF
+                Schedule Live Demonstration
               </button>
             </div>
           </div>
 
-          {/* RIGHT: Feature Grid Card */}
-          <div className="relative">
-            {/* Glow blob */}
-            <div className="absolute -top-8 -right-8 w-48 h-48 bg-gold-500/10 rounded-full blur-3xl pointer-events-none" />
-
-            <div className="relative rounded-3xl border border-gold-500/25 bg-obsidian-800/60 backdrop-blur-xl p-6 shadow-2xl space-y-4">
-              {/* Card Header */}
-              <div className="flex items-center justify-between border-b border-gold-500/15 pb-4">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-gold-400">
-                  Standard Equipment — All Inclusive
-                </span>
-                <span className="text-[10px] font-mono text-slate-500">10 FEATURES</span>
-              </div>
-
-              {/* Features Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                {ETERNAL_DATA.vehicle.features.map((feature, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: idx * 0.05 }}
-                    className="flex items-start gap-2.5 p-2.5 rounded-xl bg-obsidian-900/60 border border-gold-500/10 hover:border-gold-500/30 hover:bg-obsidian-800/80 transition-all group"
-                  >
-                    <span className="mt-0.5 w-4 h-4 rounded-full bg-gold-400/15 border border-gold-500/30 flex items-center justify-center shrink-0">
-                      <Check className="w-2.5 h-2.5 text-gold-400" />
-                    </span>
-                    <span className="text-[11px] text-slate-300 leading-snug group-hover:text-slate-100 transition-colors">
-                      {feature}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Bottom accent */}
-              <div className="flex items-center gap-2 pt-2 border-t border-gold-500/15">
-                <div className="w-1.5 h-1.5 rounded-full bg-gold-400" />
-                <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">
-                  Every unit fully equipped. No variants. No compromise.
+          {/* RIGHT: High-Res Studio Exterior Photo Card */}
+          <div className="lg:col-span-6 relative">
+            <TiltCard className="rounded-3xl">
+              <div className="relative rounded-3xl overflow-hidden border border-gold-500/30 shadow-2xl group">
+                <img
+                  src={ceremonialExteriorImg}
+                  alt="The Eternal Ceremonial Vehicle"
+                  className="w-full h-[400px] sm:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950/80 via-transparent to-transparent" />
+                <span className="absolute bottom-4 left-4 text-[10px] font-mono text-gold-300 bg-obsidian-950/80 px-3.5 py-1 rounded-full border border-gold-500/20 uppercase tracking-widest">
+                  FORCE URBANIA XL CEREMONIAL SPEC
                 </span>
               </div>
-            </div>
+            </TiltCard>
           </div>
 
         </div>
       </motion.section>
 
-
       {/* 360-Degree Interactive Vehicle Showcase Viewer */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-        <div className="text-center space-y-2">
-          <span className="text-xs font-mono uppercase text-gold-400 tracking-widest">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="text-center space-y-3">
+          <span className="text-xs font-mono uppercase text-gold-400 tracking-widest bg-gold-400/10 px-3.5 py-1 rounded-full border border-gold-500/20">
             360° INTERACTIVE VEHICLE SHOWCASE
           </span>
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-100">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-100">
             Explore Every Angle, Interior & Feature
           </h2>
         </div>
 
-        <VehicleInteractiveViewer />
-      </section>
-
-      {/* Interactive 360 / Hotspot Vehicle Inspector */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        
         <div className="text-center space-y-2">
           <span className="text-xs font-mono uppercase text-gold-400 tracking-widest">
             INTERACTIVE FEATURE SHOWCASE
@@ -298,38 +265,55 @@ export const Vehicle: React.FC<VehicleProps> = ({ onOpenBrochureModal, onOpenB2B
       </section>
 
       {/* Specifications Breakdown Table */}
-
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
-        <div className="text-center space-y-2">
-          <span className="text-xs font-mono uppercase text-gold-400 tracking-widest">
+        <div className="text-center space-y-3 max-w-2xl mx-auto">
+          <span className="text-xs font-mono uppercase text-gold-400 tracking-widest bg-gold-400/10 px-3.5 py-1 rounded-full border border-gold-500/20">
             TECHNICAL ENGINEERING MATRIX
           </span>
-          <h2 className="font-serif text-3xl font-bold text-slate-100">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-100">
             Purpose-Built Ceremonial Specifications
           </h2>
+          <p className="text-xs sm:text-sm text-slate-400 font-light leading-relaxed">
+            Every Eternal Repos ceremonial vehicle is equipped to the exact same uncompromising standard.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {ETERNAL_DATA.vehicle.features.map((feature, idx) => (
-            <TiltCard key={idx} className="rounded-2xl">
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="p-5 rounded-2xl bg-obsidian-800 border border-gold-500/20 flex items-start gap-3 hover:border-gold-400/40 transition-colors h-full"
-              >
-                <div className="p-2 rounded-lg bg-gold-400/10 border border-gold-500/30 text-gold-400 shrink-0">
-                  <Check className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-slate-200 mb-1">Standard Equipment</h4>
-                  <p className="text-xs text-slate-400">{feature}</p>
-                </div>
-              </motion.div>
-            </TiltCard>
-          ))}
+        {/* 12 Specifications Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {ETERNAL_DATA.vehicle.features.map((feature, idx) => {
+            // Determine category badge for visual hierarchy
+            let category = "CHASSIS & TECH";
+            if (idx === 1 || idx === 3 || idx === 4 || idx === 5) category = "SANCTUARY & AMBIENCE";
+            else if (idx === 6 || idx === 7) category = "HYGIENE & HEALTH";
+            else if (idx >= 8) category = "CEREMONIAL & MEDIA";
+
+            return (
+              <TiltCard key={idx} className="rounded-2xl h-full">
+                <motion.div 
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.05 }}
+                  className="p-5 rounded-2xl bg-obsidian-800/90 border border-gold-500/20 flex flex-col justify-between hover:border-gold-400/50 hover:bg-obsidian-800 transition-all duration-300 h-full shadow-lg group"
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="p-2 rounded-xl bg-gold-400/10 border border-gold-500/30 text-gold-400 shrink-0 group-hover:bg-gold-400 group-hover:text-obsidian-950 transition-colors">
+                      <Check className="w-4 h-4" />
+                    </div>
+                    <div className="space-y-1">
+                      <span className="text-[9px] font-mono uppercase text-gold-400/80 tracking-widest font-semibold block">
+                        {category}
+                      </span>
+                      <h4 className="text-xs font-semibold text-slate-200 group-hover:text-gold-200 transition-colors leading-snug">
+                        {feature}
+                      </h4>
+                    </div>
+                  </div>
+                </motion.div>
+              </TiltCard>
+            );
+          })}
         </div>
 
         {/* CTAs */}
